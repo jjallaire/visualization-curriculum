@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Visualization Curriculum – 4&nbsp; Scales, Axes, and Legends</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007ba5; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #007ba5; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #007ba5; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <meta name="quarto:offset" content=".">
+  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <script src="site_libs/quarto-html/quarto-html.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<div id="quarto-search-results"></div>
+<header id="quarto-header" class="headroom fixed-top">
+<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <div class="container-fluid d-flex justify-content-between">
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">4&nbsp; Scales, Axes, and Legends</h1>
+    <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</nav>
+</header>
+ <!-- /navbar/sidebar -->
+<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="row flex-fill">
+  <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+  <div class="px-3 pt-lg-2 text-left">
+    <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
+    <div class="sidebar-title mt-1 mb-0 py-0">
+      Visualization Curriculum
+        <div class="sidebar-tools-main mt-1">
+    <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+  </div>
+    <div class="d-flex px-3 mt-2">
+      <div class="sidebar-search flex-fill">
+      <form class="d-flex mb-0">
+  <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+      </div>
+        <div class="sidebar-tools-collapse mt-1">
+    <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+  <div class="sidebar-menu-container"> 
+  <ul class="list-unstyled mt-3 px-3">
+      <li class="sidebar-item">
+  <a href="./index.html" class="">Introduction</a>
+</li>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Curriculum
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+        </div>
+      <div class="collapse  show" id="curriculum-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; Introduction to Altair</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; Data Transformation</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_scales_axes_legends.html" class="active"><span class="chapter-number">4</span>&nbsp; Scales, Axes, and Legends</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; Multi-View Composition</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; Interaction</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Support
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+        </div>
+      <div class="collapse  show" id="support-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./altair_debugging.html" class="">Altair Debugging Guide</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  </ul>
+  </div>
+</nav>
+  </div>
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+<main>
+<header id="title-block-header">
+<h1 class="title d-none d-lg-block display-7">4&nbsp; Scales, Axes, and Legends</h1>
+</header>
+
+<p>Visual encoding – mapping data to visual variables such as position, size, shape, or color – is the beating heart of data visualization. The workhorse that actually performs this mapping is the <em>scale</em>: a function that takes a data value as input (the scale <em>domain</em>) and returns a visual value, such as a pixel position or RGB color, as output (the scale <em>range</em>). Of course, a visualization is useless if no one can figure out what it conveys! In addition to graphical marks, a chart needs reference elements, or <em>guides</em>, that allow readers to decode the graphic. Guides such as <em>axes</em> (which visualize scales with spatial ranges) and <em>legends</em> (which visualize scales with color, size, or shape ranges), are the unsung heroes of effective data visualization!</p>
+<p>In this notebook, we will explore the options Altair provides to support customized designs of scale mappings, axes, and legends, using a running example about the effectiveness of antibiotic drugs.</p>
+<p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
+<div id="9-iDk57UO3ij" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" id="antibiotics-data"><span class="header-section-number">4.1</span> Antibiotics Data</h2>
+<p>After World War II, antibiotics were considered “wonder drugs”, as they were an easy remedy for what had been intractable ailments. To learn which drug worked most effectively for which bacterial infection, performance of the three most popular antibiotics on 16 bacteria were gathered.</p>
+<p>We will be using an antibiotics dataset from the <a href="https://github.com/vega/vega-datasets">vega-datasets collection</a>. In the examples below, we will pass the URL directly to Altair:</p>
+<div id="jbtcg3fmJ5_A" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>antibiotics <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can first load the data with Pandas to view the dataset in its entirety and get acquainted with the available fields:</p>
+<div id="WoMzr0HE6ipZ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="fa9edadf-8744-4514-d8ba-5401b7f66bed">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pd.read_json(antibiotics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+
+<table class="dataframe table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Bacteria</th>
+      <th>Penicillin</th>
+      <th>Streptomycin</th>
+      <th>Neomycin</th>
+      <th>Gram_Staining</th>
+      <th>Genus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aerobacter aerogenes</td>
+      <td>870.000</td>
+      <td>1.00</td>
+      <td>1.600</td>
+      <td>negative</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bacillus anthracis</td>
+      <td>0.001</td>
+      <td>0.01</td>
+      <td>0.007</td>
+      <td>positive</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brucella abortus</td>
+      <td>1.000</td>
+      <td>2.00</td>
+      <td>0.020</td>
+      <td>negative</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Diplococcus pneumoniae</td>
+      <td>0.005</td>
+      <td>11.00</td>
+      <td>10.000</td>
+      <td>positive</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Escherichia coli</td>
+      <td>100.000</td>
+      <td>0.40</td>
+      <td>0.100</td>
+      <td>negative</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Klebsiella pneumoniae</td>
+      <td>850.000</td>
+      <td>1.20</td>
+      <td>1.000</td>
+      <td>negative</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Mycobacterium tuberculosis</td>
+      <td>800.000</td>
+      <td>5.00</td>
+      <td>2.000</td>
+      <td>negative</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Proteus vulgaris</td>
+      <td>3.000</td>
+      <td>0.10</td>
+      <td>0.100</td>
+      <td>negative</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Pseudomonas aeruginosa</td>
+      <td>850.000</td>
+      <td>2.00</td>
+      <td>0.400</td>
+      <td>negative</td>
+      <td>other</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Salmonella (Eberthella) typhosa</td>
+      <td>1.000</td>
+      <td>0.40</td>
+      <td>0.008</td>
+      <td>negative</td>
+      <td>Salmonella</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Salmonella schottmuelleri</td>
+      <td>10.000</td>
+      <td>0.80</td>
+      <td>0.090</td>
+      <td>negative</td>
+      <td>Salmonella</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Staphylococcus albus</td>
+      <td>0.007</td>
+      <td>0.10</td>
+      <td>0.001</td>
+      <td>positive</td>
+      <td>Staphylococcus</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Staphylococcus aureus</td>
+      <td>0.030</td>
+      <td>0.03</td>
+      <td>0.001</td>
+      <td>positive</td>
+      <td>Staphylococcus</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Streptococcus fecalis</td>
+      <td>1.000</td>
+      <td>1.00</td>
+      <td>0.100</td>
+      <td>positive</td>
+      <td>Streptococcus</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Streptococcus hemolyticus</td>
+      <td>0.001</td>
+      <td>14.00</td>
+      <td>10.000</td>
+      <td>positive</td>
+      <td>Streptococcus</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Streptococcus viridans</td>
+      <td>0.005</td>
+      <td>10.00</td>
+      <td>40.000</td>
+      <td>positive</td>
+      <td>Streptococcus</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The numeric values in the table indicate the <a href="https://en.wikipedia.org/wiki/Minimum_inhibitory_concentration">minimum inhibitory concentration (MIC)</a>, a measure of the effectiveness of the antibiotic, which represents the concentration of antibiotic (in micrograms per milliliter) required to prevent growth in vitro. The reaction of the bacteria to a procedure called <a href="https://en.wikipedia.org/wiki/Gram_stain">Gram staining</a> is described by the nominal field <code>Gram_Staining</code>. Bacteria that turn dark blue or violet are Gram-positive. Otherwise, they are Gram-negative.</p>
+<p>As we examine different visualizations of this dataset, ask yourself: What might we learn about the relative effectiveness of the antibiotics? What might we learn about the bacterial species based on their antibiotic response?</p>
+</section>
+<section class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" id="configuring-scales-and-axes"><span class="header-section-number">4.2</span> Configuring Scales and Axes</h2>
+<section class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" id="plotting-antibiotic-resistance-adjusting-the-scale-type"><span class="header-section-number">4.2.1</span> Plotting Antibiotic Resistance: Adjusting the Scale Type</h3>
+<p>Let’s start by looking at a simple dot plot of the MIC for Neomycin.</p>
+<div id="dBOlbuYpKx6L" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="90dfa88f-a287-4d0f-84ee-02f88f2f4701">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-fe9304ee03664bc187933efbccc901d1"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-fe9304ee03664bc187933efbccc901d1") {
+      outputDiv = document.getElementById("altair-viz-fe9304ee03664bc187933efbccc901d1");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>We can see that the MIC values span orders of magnitude: most points to cluster on the left, with a few large outliers to the right.</em></p>
+<p>By default Altair uses a <code>linear</code> mapping between the domain values (MIC) and the range values (pixels). To get a better overview of the data, we can apply a different scale transformation.</p>
+<p>To change the scale type, we’ll set the <code>scale</code> attribute, using the <code>alt.Scale</code> method and <code>type</code> parameter.</p>
+<p>Here’s the result of using a square root (<code>sqrt</code>) scale type. Distances in the pixel range now correspond to the square root of distances in the data domain.</p>
+<div id="QB5YNBMWLewL" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="45edabce-e14c-4e47-ee0e-838d03eaebb9">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'sqrt'</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-57ad7d3e14d04ef4b1f148f851c1bf85"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-57ad7d3e14d04ef4b1f148f851c1bf85") {
+      outputDiv = document.getElementById("altair-viz-57ad7d3e14d04ef4b1f148f851c1bf85");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin", "scale": {"type": "sqrt"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>The points on the left are now better differentiated, but we still see some heavy skew.</em></p>
+<p>Let’s try using a <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic scale</a> (<code>log</code>) instead:</p>
+<div id="jGlWyOOMLoQ3" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="6e386312-0477-4f04-a845-f4c9f67a4ac0">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-b34db05dd8cb40d0b8ebb0529890230f"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-b34db05dd8cb40d0b8ebb0529890230f") {
+      outputDiv = document.getElementById("altair-viz-b34db05dd8cb40d0b8ebb0529890230f");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin", "scale": {"type": "log"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Now the data is much more evenly distributed and we can see the very large differences in concentrations required for different bacteria.</em></p>
+<p>In a standard linear scale, a visual (pixel) distance of 10 units might correspond to an <em>addition</em> of 10 units in the data domain. A logarithmic transform maps between multiplication and addition, such that <code>log(u) + log(v) = log(u*v)</code>. As a result, in a logarithmic scale, a visual distance of 10 units instead corresponds to <em>multiplication</em> by 10 units in the data domain, assuming a base 10 logarithm. The <code>log</code> scale above defaults to using the logarithm base 10, but we can adjust this by providing a <code>base</code> parameter to the scale.</p>
+</section>
+<section class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" id="styling-an-axis"><span class="header-section-number">4.2.2</span> Styling an Axis</h3>
+<p>Lower dosages indicate higher effectiveness. However, some people may expect values that are “better” to be “up and to the right” within a chart. If we want to cater to this convention, we can reverse the axis to encode “effectiveness” as a reversed MIC scale.</p>
+<p>To do this, we can set the encoding <code>sort</code> property to <code>'descending'</code>:</p>
+<div id="4gNdIiP7Lu8_" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="d11f184f-9040-444b-b478-5e63cae4102a">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-661c9e7d9c074eccad688d4907518947"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-661c9e7d9c074eccad688d4907518947") {
+      outputDiv = document.getElementById("altair-viz-661c9e7d9c074eccad688d4907518947");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin", "scale": {"type": "log"}, "sort": "descending"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Unfortunately the axis is starting to get a bit confusing: we’re plotting data on a logarithmic scale, in the reverse direction, and without a clear indication of what our units are!</em></p>
+<p>Let’s add a more informative axis title: we’ll use the <code>title</code> property of the encoding to provide the desired title text:</p>
+<div id="aP8fcU36L4iB" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="936f1956-ae09-492e-897d-027093205576">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-1aa517b9dc0f44f7a8b426306db7ed4d"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-1aa517b9dc0f44f7a8b426306db7ed4d") {
+      outputDiv = document.getElementById("altair-viz-1aa517b9dc0f44f7a8b426306db7ed4d");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin", "scale": {"type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>Much better!</p>
+<p>By default, Altair places the x-axis along the bottom of the chart. To change these defaults, we can add an <code>axis</code> attribute with <code>orient='top'</code>:</p>
+<div id="GMR7Tg4n-Vgu" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="053818a8-0e6c-4a7c-cb15-a0441406096b">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(orient<span class="op">=</span><span class="st">'top'</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-5457dc99385743caa6efec7f9b0a3718"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5457dc99385743caa6efec7f9b0a3718") {
+      outputDiv = document.getElementById("altair-viz-5457dc99385743caa6efec7f9b0a3718");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "axis": {"orient": "top"}, "field": "Neomycin", "scale": {"type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>Similarly, the y-axis defaults to a <code>'left'</code> orientation, but can be set to <code>'right'</code>.</p>
+</section>
+<section class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" id="comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing"><span class="header-section-number">4.2.3</span> Comparing Antibiotics: Adjusting Grid Lines, Tick Counts, and Sizing</h3>
+<p><em>How does neomycin compare to other antibiotics, such as streptomycin and penicillin?</em></p>
+<p>To start answering this question, we can create scatter plots, adding a y-axis encoding for another antibiotic that mirrors the design of our x-axis for neomycin.</p>
+<div id="CjDce4pG_SXP" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="9459f0fb-088e-4e60-92f3-5f7992b3509d">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Streptomycin:Q'</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Streptomycin MIC (μg/ml, reverse log scale)'</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-07a1756c7f054af59c7067121d044163"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-07a1756c7f054af59c7067121d044163") {
+      outputDiv = document.getElementById("altair-viz-07a1756c7f054af59c7067121d044163");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin", "scale": {"type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "field": "Streptomycin", "scale": {"type": "log"}, "sort": "descending", "title": "Streptomycin MIC (\u03bcg/ml, reverse log scale)"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>We can see that neomycin and streptomycin appear highly correlated, as the bacterial strains respond similarly to both antibiotics.</em></p>
+<p>Let’s move on and compare neomycin with penicillin:</p>
+<div id="hqc6DFgvNHAT" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="6713ba6b-8879-43be-e7ed-4340974b2c20">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-9f342e77b94441a68840fd2da9a1fcf6"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-9f342e77b94441a68840fd2da9a1fcf6") {
+      outputDiv = document.getElementById("altair-viz-9f342e77b94441a68840fd2da9a1fcf6");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin", "scale": {"type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "field": "Penicillin", "scale": {"type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Now we see a more differentiated response: some bacteria respond well to neomycin but not penicillin, and vice versa!</em></p>
+<p>While this plot is useful, we can make it better. The x and y axes use the same units, but have different extents (the chart width is larger than the height) and different domains (0.001 to 100 for the x-axis, and 0.001 to 1,000 for the y-axis).</p>
+<p>Let’s equalize the axes: we can add explicit <code>width</code> and <code>height</code> settings for the chart, and specify matching domains using the scale <code>domain</code> property.</p>
+<div id="8HdsAzWBNVoB" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="2701bbff-a789-4eb0-f6bd-3f66565be916">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-26464d21c2fc4f8a8ab89e129dcefb24"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-26464d21c2fc4f8a8ab89e129dcefb24") {
+      outputDiv = document.getElementById("altair-viz-26464d21c2fc4f8a8ab89e129dcefb24");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>The resulting plot is more balanced, and less prone to subtle misinterpretations!</em></p>
+<p>However, the grid lines are now rather dense. If we want to remove grid lines altogether, we can add <code>grid=False</code> to the <code>axis</code> attribute. But what if we instead want to reduce the number of tick marks, for example only including grid lines for each order of magnitude?</p>
+<p>To change the number of ticks, we can specify a target <code>tickCount</code> property for an <code>Axis</code> object. The <code>tickCount</code> is treated as a <em>suggestion</em> to Altair, to be considered alongside other aspects such as using nice, human-friendly intervals. We may not get <em>exactly</em> the number of tick marks we request, but we should get something close.</p>
+<div id="v4Awwd_kN_bf" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="b047adfe-6491-44f4-d84b-8e22836ad923">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-da1691dce0a84982831f487d201cb4ac"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-da1691dce0a84982831f487d201cb4ac") {
+      outputDiv = document.getElementById("altair-viz-da1691dce0a84982831f487d201cb4ac");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>By setting the <code>tickCount</code> to 5, we have the desired effect.</p>
+<p>Our scatter plot points feel a bit small. Let’s change the default size by setting the <code>size</code> property of the circle mark. This size value is the <em>area</em> of the mark in pixels.</p>
+<div id="aERDKc0KOhco" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="e3257bc3-40aa-4539-edea-a923c0329675">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>), </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-eeb594c0d84e41bb919a5c895dcbc081"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-eeb594c0d84e41bb919a5c895dcbc081") {
+      outputDiv = document.getElementById("altair-viz-eeb594c0d84e41bb919a5c895dcbc081");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>Here we’ve set the circle mark area to 80 pixels. <em>Further adjust the value as you see fit!</em></p>
+</section>
+</section>
+<section class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" id="configuring-color-legends"><span class="header-section-number">4.3</span> Configuring Color Legends</h2>
+<section class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" id="color-by-gram-staining"><span class="header-section-number">4.3.1</span> Color by Gram Staining</h3>
+<p><em>Above we saw that neomycin is more effective for some bacteria, while penicillin is more effective for others. But how can we tell which antibiotic to use if we don’t know the specific species of bacteria? Gram staining serves as a diagnostic for discriminating classes of bacteria!</em></p>
+<p>Let’s encode <code>Gram_Staining</code> on the <code>color</code> channel as a nominal data type:</p>
+<div id="pkSc_PXyAuGg" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="01446cfb-f968-4dfb-c695-4372f55bd5f1">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Gram_Staining:N'</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-fce3fd906253496e8610b34632e649ae"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-fce3fd906253496e8610b34632e649ae") {
+      outputDiv = document.getElementById("altair-viz-fce3fd906253496e8610b34632e649ae");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Gram_Staining"}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>We can see that Gram-positive bacteria seem most susceptible to penicillin, whereas neomycin is more effective for Gram-negative bacteria!</em></p>
+<p>The color scheme above was automatically chosen to provide perceptually-distinguishable colors for nominal (equal or not equal) comparisons. However, we might wish to customize the colors used. In this case, Gram staining results in <a href="https://en.wikipedia.org/wiki/Gram_stain#/media/File:Gram_stain_01.jpg">distinctive physical colorings: pink for Gram-negative, purple for Gram-positive</a>.</p>
+<p>Let’s use those colors by specifying an explicit scale mapping from the data <code>domain</code> to the color <code>range</code>:</p>
+<div id="XA4UUWriCEox" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="f2ada6d0-d969-4927-a268-6f842c1b65ad">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Gram_Staining:N'</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="st">'negative'</span>, <span class="st">'positive'</span>], <span class="bu">range</span><span class="op">=</span>[<span class="st">'hotpink'</span>, <span class="st">'purple'</span>])</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-8fa7dce418454d47afa567d22a4d7e51"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-8fa7dce418454d47afa567d22a4d7e51") {
+      outputDiv = document.getElementById("altair-viz-8fa7dce418454d47afa567d22a4d7e51");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Gram_Staining", "scale": {"domain": ["negative", "positive"], "range": ["hotpink", "purple"]}}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>By default legends are placed on the right side of the chart. Similar to axes, we can change the legend orientation using the <code>orient</code> parameter:</p>
+<div id="wlb7-9SNBUdZ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="32b3e78c-7860-4ef4-850f-9af24cb58edd">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Gram_Staining:N'</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="st">'negative'</span>, <span class="st">'positive'</span>], <span class="bu">range</span><span class="op">=</span>[<span class="st">'hotpink'</span>, <span class="st">'purple'</span>]),</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>          legend<span class="op">=</span>alt.Legend(orient<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-165353a2cd824f11b058672108b328f6"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-165353a2cd824f11b058672108b328f6") {
+      outputDiv = document.getElementById("altair-viz-165353a2cd824f11b058672108b328f6");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Gram_Staining", "legend": {"orient": "left"}, "scale": {"domain": ["negative", "positive"], "range": ["hotpink", "purple"]}}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>We can also remove a legend entirely by specifying <code>legend=None</code>:</p>
+<div id="YEcweSOABxss" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="a6e539ce-1b2c-4b6f-c504-edbeb659b5d4">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Gram_Staining:N'</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="st">'negative'</span>, <span class="st">'positive'</span>], <span class="bu">range</span><span class="op">=</span>[<span class="st">'hotpink'</span>, <span class="st">'purple'</span>]),</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>          legend<span class="op">=</span><span class="va">None</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-2f5a2bab99de4594b32413f523eec14a"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-2f5a2bab99de4594b32413f523eec14a") {
+      outputDiv = document.getElementById("altair-viz-2f5a2bab99de4594b32413f523eec14a");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Gram_Staining", "legend": null, "scale": {"domain": ["negative", "positive"], "range": ["hotpink", "purple"]}}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+</section>
+<section class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" id="color-by-species"><span class="header-section-number">4.3.2</span> Color by Species</h3>
+<p><em>So far we’ve considered the effectiveness of antibiotics. Let’s turn around and ask a different question: what might antibiotic response teach us about the different species of bacteria?</em></p>
+<p>To start, let’s encode <code>Bacteria</code> (a nominal data field) using the <code>color</code> channel:</p>
+<div id="di1mU7ynOq0u" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="4d7a1300-79ea-429c-9a6a-4de170eabddf">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Bacteria:N'</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-23e044436c8e434a83cefa81bf51da0d"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-23e044436c8e434a83cefa81bf51da0d") {
+      outputDiv = document.getElementById("altair-viz-23e044436c8e434a83cefa81bf51da0d");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Bacteria"}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>The result is a bit of a mess!</em> There are enough unique bacteria that Altair starts repeating colors from its default 10-color palette for nominal values.</p>
+<p>To use custom colors, we can update the color encoding <code>scale</code> property. One option is to provide explicit scale <code>domain</code> and <code>range</code> values to indicate the precise color mappings per value, as we did above for Gram staining. Another option is to use an alternative color scheme. Altair includes a variety of built-in color schemes. For a complete list, see the <a href="https://vega.github.io/vega/docs/schemes/#reference">Vega color scheme documentation</a>.</p>
+<p>Let’s try switching to a built-in 20-color scheme, <code>tableau20</code>, and set that using the scale <code>scheme</code> property.</p>
+<div id="wkt58FGQPCU2" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="365fc89f-4ab4-47aa-fe40-70f175c2c58d">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Bacteria:N'</span>,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(scheme<span class="op">=</span><span class="st">'tableau20'</span>))</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-aa764be2945140749b437b9796f5334b"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-aa764be2945140749b437b9796f5334b") {
+      outputDiv = document.getElementById("altair-viz-aa764be2945140749b437b9796f5334b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Bacteria", "scale": {"scheme": "tableau20"}}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>We now have a unique color for each bacteria, but the chart is still a mess. Among other issues, the encoding takes no account of bacteria that belong to the same genus. In the chart above, the two different Salmonella strains have very different hues (teal and pink), despite being biological cousins.</em></p>
+<p>To try a different scheme, we can also change the data type from nominal to ordinal. The default ordinal scheme uses blue shades, ramping from light to dark:</p>
+<div id="L3XSjQqePa-z" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="dd1dad11-c74e-4339-9533-4cd195af12a2">
+<div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Bacteria:O'</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-a8dafb9864c54bf6a8c5d6ef8db82bc3"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a8dafb9864c54bf6a8c5d6ef8db82bc3") {
+      outputDiv = document.getElementById("altair-viz-a8dafb9864c54bf6a8c5d6ef8db82bc3");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "ordinal", "field": "Bacteria"}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Some of those blue shades may be hard to distinguish.</em></p>
+<p>For more differentiated colors, we can experiment with alternatives to the default <code>blues</code> color scheme. The <code>viridis</code> scheme ramps through both hue and luminance:</p>
+<div id="r7Jb5izEE1b4" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="3927106a-dd42-43c5-847a-4f030b467c4c">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Bacteria:O'</span>,</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(scheme<span class="op">=</span><span class="st">'viridis'</span>))</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-a82a56c8f0c6403195b0533e6b4bd17a"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a82a56c8f0c6403195b0533e6b4bd17a") {
+      outputDiv = document.getElementById("altair-viz-a82a56c8f0c6403195b0533e6b4bd17a");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "ordinal", "field": "Bacteria", "scale": {"scheme": "viridis"}}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Bacteria from the same genus now have more similar colors than before, but the chart still remains confusing. There are many colors, they are hard to look up in the legend accurately, and two bacteria may have similar colors but different genus.</em></p>
+</section>
+<section class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" id="color-by-genus"><span class="header-section-number">4.3.3</span> Color by Genus</h3>
+<p>Let’s try to color by genus instead of bacteria. To do so, we will add a <code>calculate</code> transform that splits up the bacteria name on space characters and takes the first word in the resulting array. We can then encode the resulting <code>Genus</code> field using the <code>tableau20</code> color scheme.</p>
+<p>(Note that the antibiotics dataset includes a pre-calculated <code>Genus</code> field, but we will ignore it here in order to further explore Altair’s data transformations.)</p>
+<div id="39g0fVG6cuTG" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="654d3638-bded-4bbc-c88b-2e52c88e541c">
+<div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).transform_calculate(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    Genus<span class="op">=</span><span class="st">'split(datum.Bacteria, " ")[0]'</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Genus:N'</span>,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(scheme<span class="op">=</span><span class="st">'tableau20'</span>))</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-a3dd3f14f890471cab7b4e1f4822d26d"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a3dd3f14f890471cab7b4e1f4822d26d") {
+      outputDiv = document.getElementById("altair-viz-a3dd3f14f890471cab7b4e1f4822d26d");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Genus", "scale": {"scheme": "tableau20"}}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "transform": [{"calculate": "split(datum.Bacteria, \" \")[0]", "as": "Genus"}], "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Hmm… While the data are better segregated by genus, this cacapohony of colors doesn’t seem particularly useful.</em></p>
+<p><em>If we look at some of the previous charts carefully, we can see that only a handful of bacteria have a genus shared with another bacteria: Salmonella, Staphylococcus, and Streptococcus. To focus our comparison, we might add colors only for these repeated genus values.</em></p>
+<p>Let’s add another <code>calculate</code> transform that takes a genus name, keeps it if it is one of the repeated values, and otherwise uses the string <code>"Other"</code>.</p>
+<p>In addition, we can add custom color encodings using explicit <code>domain</code> and <code>range</code> arrays for the color encoding <code>scale</code>.</p>
+<div id="Qmi_geBiPgvr" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="9e06d0a1-756a-4a46-cedf-e2be85e7b09d">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).transform_calculate(</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  Split<span class="op">=</span><span class="st">'split(datum.Bacteria, " ")[0]'</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>).transform_calculate(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  Genus<span class="op">=</span><span class="st">'indexof(["Salmonella", "Staphylococcus", "Streptococcus"], datum.Split) &gt;= 0 ? datum.Split : "Other"'</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>).encode(</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Neomycin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, domain<span class="op">=</span>[<span class="fl">0.001</span>, <span class="dv">1000</span>]),</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>          axis<span class="op">=</span>alt.Axis(tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml, reverse log scale)'</span>),</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Genus:N'</span>,</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>            domain<span class="op">=</span>[<span class="st">'Salmonella'</span>, <span class="st">'Staphylococcus'</span>, <span class="st">'Streptococcus'</span>, <span class="st">'Other'</span>],</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>            <span class="bu">range</span><span class="op">=</span>[<span class="st">'rgb(76,120,168)'</span>, <span class="st">'rgb(84,162,75)'</span>, <span class="st">'rgb(228,87,86)'</span>, <span class="st">'rgb(121,112,110)'</span>]</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>          ))</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-31443e1bd8854372b85b8b541e9e3b23"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-31443e1bd8854372b85b8b541e9e3b23") {
+      outputDiv = document.getElementById("altair-viz-31443e1bd8854372b85b8b541e9e3b23");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": {"type": "circle", "size": 80}, "encoding": {"color": {"type": "nominal", "field": "Genus", "scale": {"domain": ["Salmonella", "Staphylococcus", "Streptococcus", "Other"], "range": ["rgb(76,120,168)", "rgb(84,162,75)", "rgb(228,87,86)", "rgb(121,112,110)"]}}, "x": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Neomycin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Neomycin MIC (\u03bcg/ml, reverse log scale)"}, "y": {"type": "quantitative", "axis": {"tickCount": 5}, "field": "Penicillin", "scale": {"domain": [0.001, 1000], "type": "log"}, "sort": "descending", "title": "Penicillin MIC (\u03bcg/ml, reverse log scale)"}}, "height": 250, "transform": [{"calculate": "split(datum.Bacteria, \" \")[0]", "as": "Split"}, {"calculate": "indexof([\"Salmonella\", \"Staphylococcus\", \"Streptococcus\"], datum.Split) >= 0 ? datum.Split : \"Other\"", "as": "Genus"}], "width": 250, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>We now have a much more revealing plot, made possible by customizations to the axes and legend. Take a moment to examine the plot above. Notice any surprising groupings?</em></p>
+<p><em>The upper-left region has a cluster of red Streptococcus bacteria, but with a grey Other bacteria alongside them. Meanwhile, towards the middle-right we see another red Streptococcus placed far away from it’s “cousins”. Might we expect bacteria from the same genus (and thus presumably more genetically similar) to be grouped closer together?</em></p>
+<p>As it so happens, the underlying dataset actually contains errors. The dataset reflects the species designations used in the early 1950s. However, the scientific consensus has since been overturned. That gray point in the upper-left? It’s now considered a Streptococcus! That red point towards the middle-right? It’s no longer considered a Streptococcus!</p>
+<p>Of course, on its own, this dataset doesn’t fully justify these reclassifications. Nevertheless, the data contain valuable biological clues that went overlooked for decades! Visualization, when used by an appropriately skilled and inquisitive viewer, can be a powerful tool for discovery.</p>
+<p>This example also reinforces an important lesson: <strong><em>always be skeptical of your data!</em></strong></p>
+</section>
+<section class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" id="color-by-antibiotic-response"><span class="header-section-number">4.3.4</span> Color by Antibiotic Response</h3>
+<p>We might also use the <code>color</code> channel to encode quantitative values. Though keep in mind that typically color is not as effective for conveying quantities as position or size encodings!</p>
+<p>Here is a basic heatmap of penicillin MIC values for each bacteria. We’ll use a <code>rect</code> mark and sort the bacteria by descending MIC values (from most to least resistant):</p>
+<div id="orEjpD5uU2m0" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="0a92631d-1f68-4840-d5cd-26399f559aba">
+<div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_rect().encode(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Bacteria:N'</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>      sort<span class="op">=</span>alt.EncodingSortField(field<span class="op">=</span><span class="st">'Penicillin'</span>, op<span class="op">=</span><span class="st">'max'</span>, order<span class="op">=</span><span class="st">'descending'</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Penicillin:Q'</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-2afcc32a638a45d3aa674035e430cd74"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-2afcc32a638a45d3aa674035e430cd74") {
+      outputDiv = document.getElementById("altair-viz-2afcc32a638a45d3aa674035e430cd74");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "rect", "encoding": {"color": {"type": "quantitative", "field": "Penicillin"}, "y": {"type": "nominal", "field": "Bacteria", "sort": {"field": "Penicillin", "op": "max", "order": "descending"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>We can further improve this chart by combining features we’ve seen thus far: a log-transformed scale, a change of axis orientation, a custom color scheme (<code>plasma</code>), tick count adjustment, and custom title text. We’ll also exercise configuration options to adjust the axis title placement and legend title alignment.</p>
+<div id="spIpf8S6J1pJ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="96210f62-39b2-4e61-a528-cd6f8b552f77">
+<div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_rect().encode(</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Bacteria:N'</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>      sort<span class="op">=</span>alt.EncodingSortField(field<span class="op">=</span><span class="st">'Penicillin'</span>, op<span class="op">=</span><span class="st">'max'</span>, order<span class="op">=</span><span class="st">'descending'</span>),</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>      axis<span class="op">=</span>alt.Axis(</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        orient<span class="op">=</span><span class="st">'right'</span>,     <span class="co"># orient axis on right side of chart</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        titleX<span class="op">=</span><span class="dv">7</span>,           <span class="co"># set x-position to 7 pixels right of chart</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        titleY<span class="op">=-</span><span class="dv">2</span>,          <span class="co"># set y-position to 2 pixels above chart</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        titleAlign<span class="op">=</span><span class="st">'left'</span>,  <span class="co"># use left-aligned text</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        titleAngle<span class="op">=</span><span class="dv">0</span>        <span class="co"># undo default title rotation</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>      scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, scheme<span class="op">=</span><span class="st">'plasma'</span>, nice<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>      legend<span class="op">=</span>alt.Legend(titleOrient<span class="op">=</span><span class="st">'right'</span>, tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>      title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml)'</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-8a32282ad21a4beeb6fb84dbf6c4b5ad"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-8a32282ad21a4beeb6fb84dbf6c4b5ad") {
+      outputDiv = document.getElementById("altair-viz-8a32282ad21a4beeb6fb84dbf6c4b5ad");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "rect", "encoding": {"color": {"type": "quantitative", "field": "Penicillin", "legend": {"tickCount": 5, "titleOrient": "right"}, "scale": {"nice": true, "scheme": "plasma", "type": "log"}, "title": "Penicillin MIC (\u03bcg/ml)"}, "y": {"type": "nominal", "axis": {"orient": "right", "titleAlign": "left", "titleAngle": 0, "titleX": 7, "titleY": -2}, "field": "Bacteria", "sort": {"field": "Penicillin", "op": "max", "order": "descending"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>Alternatively, we can remove the axis title altogether, and use the top-level <code>title</code> property to add a title for the entire chart:</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics, title<span class="op">=</span><span class="st">'Penicillin Resistance of Bacterial Strains'</span>).mark_rect().encode(</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Bacteria:N'</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>      sort<span class="op">=</span>alt.EncodingSortField(field<span class="op">=</span><span class="st">'Penicillin'</span>, op<span class="op">=</span><span class="st">'max'</span>, order<span class="op">=</span><span class="st">'descending'</span>),</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>      axis<span class="op">=</span>alt.Axis(orient<span class="op">=</span><span class="st">'right'</span>, title<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'Penicillin:Q'</span>,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>      scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>, scheme<span class="op">=</span><span class="st">'plasma'</span>, nice<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>      legend<span class="op">=</span>alt.Legend(titleOrient<span class="op">=</span><span class="st">'right'</span>, tickCount<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>      title<span class="op">=</span><span class="st">'Penicillin MIC (μg/ml)'</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>).configure_title(</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  anchor<span class="op">=</span><span class="st">'start'</span>, <span class="co"># anchor and left-align title</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  offset<span class="op">=</span><span class="dv">5</span>        <span class="co"># set title offset from chart</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-ea6d9ef1b7d34cd7b0318ec7e5f3971e"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ea6d9ef1b7d34cd7b0318ec7e5f3971e") {
+      outputDiv = document.getElementById("altair-viz-ea6d9ef1b7d34cd7b0318ec7e5f3971e");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "title": {"anchor": "start", "offset": 5}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json"}, "mark": "rect", "encoding": {"color": {"type": "quantitative", "field": "Penicillin", "legend": {"tickCount": 5, "titleOrient": "right"}, "scale": {"nice": true, "scheme": "plasma", "type": "log"}, "title": "Penicillin MIC (\u03bcg/ml)"}, "y": {"type": "nominal", "axis": {"orient": "right", "title": null}, "field": "Bacteria", "sort": {"field": "Penicillin", "op": "max", "order": "descending"}}}, "title": "Penicillin Resistance of Bacterial Strains", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+</section>
+</section>
+<section class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" id="summary"><span class="header-section-number">4.4</span> Summary</h2>
+<p>Integrating what we’ve learned across the notebooks so far about encodings, data transforms, and customization, you should now be prepared to make a wide variety of statistical graphics. Now you can put Altair into everyday use for exploring and communicating data!</p>
+<p>Interested in learning more about this topic?</p>
+<ul>
+<li>Start with the <a href="https://altair-viz.github.io/user_guide/customization.html">Altair Customizing Visualizations documentation</a>.</li>
+<li>For a complementary discussion of scale mappings, see <a href="https://medium.com/@mbostock/introducing-d3-scale-61980c51545f">“Introducing d3-scale”</a>.</li>
+<li>For a more in-depth exploration of all the ways axes and legends can be styled by the underlying Vega library (which powers Altair and Vega-Lite), see <a href="https://beta.observablehq.com/@jheer/a-guide-to-guides-axes-legends-in-vega">“A Guide to Guides: Axes &amp; Legends in Vega”</a>.</li>
+<li>For a fascinating history of the antibiotics dataset, see <a href="https://www.americanscientist.org/article/thats-funny">Wainer &amp; Lysen’s “That’s Funny…”</a> in the <em>American Scientist</em>.</li>
+</ul>
+<!-- -->
+</section>
+</main>
+<div class="row page-navigation ">
+  <div class="nav-page nav-page-previous col">
+      <a href="./altair_data_transformation.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; Data Transformation</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./altair_view_composition.html">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Multi-View Composition</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
+</div> <!-- /main column -->
+<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#antibiotics-data" class="nav-link" data-bs-target="#antibiotics-data"> <span class="header-section-number">4.1</span> Antibiotics Data</a></li>
+<li><a href="#configuring-scales-and-axes" class="nav-link" data-bs-target="#configuring-scales-and-axes"> <span class="header-section-number">4.2</span> Configuring Scales and Axes</a>
+<ul>
+<li><a href="#plotting-antibiotic-resistance-adjusting-the-scale-type" class="nav-link" data-bs-target="#plotting-antibiotic-resistance-adjusting-the-scale-type"> <span class="header-section-number">4.2.1</span> Plotting Antibiotic Resistance: Adjusting the Scale Type</a></li>
+<li><a href="#styling-an-axis" class="nav-link" data-bs-target="#styling-an-axis"> <span class="header-section-number">4.2.2</span> Styling an Axis</a></li>
+<li><a href="#comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing" class="nav-link" data-bs-target="#comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing"> <span class="header-section-number">4.2.3</span> Comparing Antibiotics: Adjusting Grid Lines, Tick Counts, and Sizing</a></li>
+</ul></li>
+<li><a href="#configuring-color-legends" class="nav-link" data-bs-target="#configuring-color-legends"> <span class="header-section-number">4.3</span> Configuring Color Legends</a>
+<ul>
+<li><a href="#color-by-gram-staining" class="nav-link" data-bs-target="#color-by-gram-staining"> <span class="header-section-number">4.3.1</span> Color by Gram Staining</a></li>
+<li><a href="#color-by-species" class="nav-link" data-bs-target="#color-by-species"> <span class="header-section-number">4.3.2</span> Color by Species</a></li>
+<li><a href="#color-by-genus" class="nav-link" data-bs-target="#color-by-genus"> <span class="header-section-number">4.3.3</span> Color by Genus</a></li>
+<li><a href="#color-by-antibiotic-response" class="nav-link" data-bs-target="#color-by-antibiotic-response"> <span class="header-section-number">4.3.4</span> Color by Antibiotic Response</a></li>
+</ul></li>
+<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">4.4</span> Summary</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div> <!-- /toc column -->
+</div> <!-- /row -->
+</div> <!-- /container fluid -->
+
+
+</body></html>

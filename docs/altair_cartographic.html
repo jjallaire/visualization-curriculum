@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Visualization Curriculum – 7&nbsp; Cartographic Visualization</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007ba5; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #007ba5; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #007ba5; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <meta name="quarto:offset" content=".">
+  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <script src="site_libs/quarto-html/quarto-html.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<div id="quarto-search-results"></div>
+<header id="quarto-header" class="headroom fixed-top">
+<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <div class="container-fluid d-flex justify-content-between">
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">7&nbsp; Cartographic Visualization</h1>
+    <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</nav>
+</header>
+ <!-- /navbar/sidebar -->
+<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="row flex-fill">
+  <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+  <div class="px-3 pt-lg-2 text-left">
+    <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
+    <div class="sidebar-title mt-1 mb-0 py-0">
+      Visualization Curriculum
+        <div class="sidebar-tools-main mt-1">
+    <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+  </div>
+    <div class="d-flex px-3 mt-2">
+      <div class="sidebar-search flex-fill">
+      <form class="d-flex mb-0">
+  <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+      </div>
+        <div class="sidebar-tools-collapse mt-1">
+    <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+  <div class="sidebar-menu-container"> 
+  <ul class="list-unstyled mt-3 px-3">
+      <li class="sidebar-item">
+  <a href="./index.html" class="">Introduction</a>
+</li>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Curriculum
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+        </div>
+      <div class="collapse  show" id="curriculum-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; Introduction to Altair</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; Data Transformation</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; Scales, Axes, and Legends</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; Multi-View Composition</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; Interaction</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_cartographic.html" class="active"><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Support
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+        </div>
+      <div class="collapse  show" id="support-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./altair_debugging.html" class="">Altair Debugging Guide</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  </ul>
+  </div>
+</nav>
+  </div>
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+<main>
+<header id="title-block-header">
+<h1 class="title d-none d-lg-block display-7">7&nbsp; Cartographic Visualization</h1>
+</header>
+
+<p><em>“The making of maps is one of humanity’s longest established intellectual endeavors and also one of its most complex, with scientific theory, graphical representation, geographical facts, and practical considerations blended together in an unending variety of ways.”</em> — <a href="https://books.google.com/books?id=cVy1Ms43fFYC">H. J. Steward</a></p>
+<p>Cartography – the study and practice of map-making – has a rich history spanning centuries of discovery and design. Cartographic visualization leverages mapping techniques to convey data containing spatial information, such as locations, routes, or trajectories on the surface of the Earth.</p>
+<div style="float: right; margin-left: 1em; margin-top: 1em;">
+<img width="300px" src="https://gist.githubusercontent.com/jheer/c90d582ef5322582cf4960ec7689f6f6/raw/8dc92382a837ccc34c076f4ce7dd864e7893324a/latlon.png">
+</div>
+<p>Approximating the Earth as a sphere, we can denote positions using a spherical coordinate system of <em>latitude</em> (angle in degrees north or south of the <em>equator</em>) and <em>longitude</em> (angle in degrees specifying east-west position). In this system, a <em>parallel</em> is a circle of constant latitude and a <em>meridian</em> is a circle of constant longitude. The <a href="https://en.wikipedia.org/wiki/Prime_meridian"><em>prime meridian</em></a> lies at 0° longitude and by convention is defined to pass through the Royal Observatory in Greenwich, England.</p>
+<p>To “flatten” a three-dimensional sphere on to a two-dimensional plane, we must apply a <a href="https://en.wikipedia.org/wiki/Map_projection">projection</a> that maps (<code>longitude</code>, <code>latitude</code>) pairs to (<code>x</code>, <code>y</code>) coordinates. Similar to <a href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_scales_axes_legends.ipynb">scales</a>, projections map from a data domain (spatial position) to a visual range (pixel position). However, the scale mappings we’ve seen thus far accept a one-dimensional domain, whereas map projections are inherently two-dimensional.</p>
+<p>In this notebook, we will introduce the basics of creating maps and visualizing spatial data with Altair, including:</p>
+<ul>
+<li>Data formats for representing geographic features,</li>
+<li>Geo-visualization techniques such as point, symbol, and choropleth maps, and</li>
+<li>A review of common cartographic projections.</li>
+</ul>
+<p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vega_datasets <span class="im">import</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" id="geographic-data-geojson-and-topojson"><span class="header-section-number">7.1</span> Geographic Data: GeoJSON and TopoJSON</h2>
+<p>Up to this point, we have worked with JSON and CSV formatted datasets that correspond to data tables made up of rows (records) and columns (fields). In order to represent geographic regions (countries, states, <em>etc.</em>) and trajectories (flight paths, subway lines, <em>etc.</em>), we need to expand our repertoire with additional formats designed to support rich geometries.</p>
+<p><a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> models geographic features within a specialized JSON format. A GeoJSON <code>feature</code> can include geometric data – such as <code>longitude</code>, <code>latitude</code> coordinates that make up a country boundary – as well as additional data attributes.</p>
+<p>Here is a GeoJSON <code>feature</code> object for the boundary of the U.S. state of Colorado:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Feature"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"id"</span><span class="fu">:</span> <span class="dv">8</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"properties"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Colorado"</span><span class="fu">},</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"geometry"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Polygon"</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"coordinates"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="ot">[[</span><span class="fl">-106.32056285448942</span><span class="ot">,</span><span class="fl">40.998675790862656</span><span class="ot">],[</span><span class="fl">-106.19134826714341</span><span class="ot">,</span><span class="fl">40.99813863734313</span><span class="ot">],[</span><span class="fl">-105.27607827344248</span><span class="ot">,</span><span class="fl">40.99813863734313</span><span class="ot">],[</span><span class="fl">-104.9422739227986</span><span class="ot">,</span><span class="fl">40.99813863734313</span><span class="ot">],[</span><span class="fl">-104.05212898774828</span><span class="ot">,</span><span class="fl">41.00136155846029</span><span class="ot">],[</span><span class="fl">-103.57475287338661</span><span class="ot">,</span><span class="fl">41.00189871197981</span><span class="ot">],[</span><span class="fl">-103.38093099236758</span><span class="ot">,</span><span class="fl">41.00189871197981</span><span class="ot">],[</span><span class="fl">-102.65589358559272</span><span class="ot">,</span><span class="fl">41.00189871197981</span><span class="ot">],[</span><span class="fl">-102.62000064466328</span><span class="ot">,</span><span class="fl">41.00189871197981</span><span class="ot">],[</span><span class="fl">-102.052892177978</span><span class="ot">,</span><span class="fl">41.00189871197981</span><span class="ot">],[</span><span class="fl">-102.052892177978</span><span class="ot">,</span><span class="fl">40.74889940428302</span><span class="ot">],[</span><span class="fl">-102.052892177978</span><span class="ot">,</span><span class="fl">40.69733266640851</span><span class="ot">],[</span><span class="fl">-102.052892177978</span><span class="ot">,</span><span class="fl">40.44003613055551</span><span class="ot">],[</span><span class="fl">-102.052892177978</span><span class="ot">,</span><span class="fl">40.3492571857556</span><span class="ot">],[</span><span class="fl">-102.052892177978</span><span class="ot">,</span><span class="fl">40.00333031918079</span><span class="ot">],[</span><span class="fl">-102.04930288388505</span><span class="ot">,</span><span class="fl">39.57414465707943</span><span class="ot">],[</span><span class="fl">-102.04930288388505</span><span class="ot">,</span><span class="fl">39.56823596836465</span><span class="ot">],[</span><span class="fl">-102.0457135897921</span><span class="ot">,</span><span class="fl">39.1331416175485</span><span class="ot">],[</span><span class="fl">-102.0457135897921</span><span class="ot">,</span><span class="fl">39.0466599009048</span><span class="ot">],[</span><span class="fl">-102.0457135897921</span><span class="ot">,</span><span class="fl">38.69751011321283</span><span class="ot">],[</span><span class="fl">-102.0457135897921</span><span class="ot">,</span><span class="fl">38.61478847120581</span><span class="ot">],[</span><span class="fl">-102.0457135897921</span><span class="ot">,</span><span class="fl">38.268861604631</span><span class="ot">],[</span><span class="fl">-102.0457135897921</span><span class="ot">,</span><span class="fl">38.262415762396685</span><span class="ot">],[</span><span class="fl">-102.04212429569915</span><span class="ot">,</span><span class="fl">37.738153927339205</span><span class="ot">],[</span><span class="fl">-102.04212429569915</span><span class="ot">,</span><span class="fl">37.64415206142214</span><span class="ot">],[</span><span class="fl">-102.04212429569915</span><span class="ot">,</span><span class="fl">37.38900413964724</span><span class="ot">],[</span><span class="fl">-102.04212429569915</span><span class="ot">,</span><span class="fl">36.99365914927603</span><span class="ot">],[</span><span class="fl">-103.00046581851544</span><span class="ot">,</span><span class="fl">37.00010499151034</span><span class="ot">],[</span><span class="fl">-103.08660887674611</span><span class="ot">,</span><span class="fl">37.00010499151034</span><span class="ot">],[</span><span class="fl">-104.00905745863294</span><span class="ot">,</span><span class="fl">36.99580776335414</span><span class="ot">],[</span><span class="fl">-105.15404227428235</span><span class="ot">,</span><span class="fl">36.995270609834606</span><span class="ot">],[</span><span class="fl">-105.2222388620483</span><span class="ot">,</span><span class="fl">36.995270609834606</span><span class="ot">],[</span><span class="fl">-105.7175614468747</span><span class="ot">,</span><span class="fl">36.99580776335414</span><span class="ot">],[</span><span class="fl">-106.00829426840322</span><span class="ot">,</span><span class="fl">36.995270609834606</span><span class="ot">],[</span><span class="fl">-106.47490250048605</span><span class="ot">,</span><span class="fl">36.99365914927603</span><span class="ot">],[</span><span class="fl">-107.4224761410235</span><span class="ot">,</span><span class="fl">37.00010499151034</span><span class="ot">],[</span><span class="fl">-107.48349414060355</span><span class="ot">,</span><span class="fl">37.00010499151034</span><span class="ot">],[</span><span class="fl">-108.38081766383978</span><span class="ot">,</span><span class="fl">36.99903068447129</span><span class="ot">],[</span><span class="fl">-109.04483707103458</span><span class="ot">,</span><span class="fl">36.99903068447129</span><span class="ot">],[</span><span class="fl">-109.04483707103458</span><span class="ot">,</span><span class="fl">37.484617466122884</span><span class="ot">],[</span><span class="fl">-109.04124777694163</span><span class="ot">,</span><span class="fl">37.88049961001363</span><span class="ot">],[</span><span class="fl">-109.04124777694163</span><span class="ot">,</span><span class="fl">38.15283644441336</span><span class="ot">],[</span><span class="fl">-109.05919424740635</span><span class="ot">,</span><span class="fl">38.49983761802722</span><span class="ot">],[</span><span class="fl">-109.05201565922046</span><span class="ot">,</span><span class="fl">39.36680339854235</span><span class="ot">],[</span><span class="fl">-109.05201565922046</span><span class="ot">,</span><span class="fl">39.49786885730673</span><span class="ot">],[</span><span class="fl">-109.05201565922046</span><span class="ot">,</span><span class="fl">39.66062637372313</span><span class="ot">],[</span><span class="fl">-109.05201565922046</span><span class="ot">,</span><span class="fl">40.22248895514744</span><span class="ot">],[</span><span class="fl">-109.05201565922046</span><span class="ot">,</span><span class="fl">40.653823231326896</span><span class="ot">],[</span><span class="fl">-109.05201565922046</span><span class="ot">,</span><span class="fl">41.000287251421234</span><span class="ot">],[</span><span class="fl">-107.91779872584989</span><span class="ot">,</span><span class="fl">41.00189871197981</span><span class="ot">],[</span><span class="fl">-107.3183866123281</span><span class="ot">,</span><span class="fl">41.00297301901887</span><span class="ot">],[</span><span class="fl">-106.85895696843116</span><span class="ot">,</span><span class="fl">41.00189871197981</span><span class="ot">],[</span><span class="fl">-106.32056285448942</span><span class="ot">,</span><span class="fl">40.998675790862656</span><span class="ot">]]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>feature</code> includes a <code>properties</code> object, which can include any number of data fields, plus a <code>geometry</code> object, which in this case contains a single polygon that consists of <code>[longitude, latitude]</code> coordinates for the state boundary. The coordinates continue off to the right for a while should you care to scroll…</p>
+<p>To learn more about the nitty-gritty details of GeoJSON, see the <a href="http://geojson.org/">official GeoJSON specification</a> or read <a href="https://macwright.org/2015/03/23/geojson-second-bite">Tom MacWright’s helpful primer</a>.</p>
+<p>One drawback of GeoJSON as a storage format is that it can be redundant, resulting in larger file sizes. Consider: Colorado shares boundaries with six other states (seven if you include the corner touching Arizona). Instead of using separate, overlapping coordinate lists for each of those states, a more compact approach is to encode shared borders only once, representing the <em>topology</em> of geographic regions. Fortunately, this is precisely what the <a href="https://github.com/topojson/topojson/blob/master/README.md">TopoJSON</a> format does!</p>
+<p>Let’s load a TopoJSON file of world countries (at 110 meter resolution):</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>world <span class="op">=</span> data.world_110m.url</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>‘https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json’</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>world_topo <span class="op">=</span> data.world_110m()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>world_topo.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>dict_keys([‘type’, ‘transform’, ‘objects’, ‘arcs’])</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>world_topo[<span class="st">'type'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>‘Topology’</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>world_topo[<span class="st">'objects'</span>].keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>dict_keys([‘land’, ‘countries’])</p>
+</div>
+</div>
+<p><em>Inspect the <code>world_topo</code> TopoJSON dictionary object above to see its contents.</em></p>
+<p>In the data above, the <code>objects</code> property indicates the named elements we can extract from the data: geometries for all <code>countries</code>, or a single polygon representing all <code>land</code> on Earth. Either of these can be unpacked to GeoJSON data we can then visualize.</p>
+<p>As TopoJSON is a specialized format, we need to instruct Altair to parse the TopoJSON format, indicating which named faeture object we wish to extract from the topology. The following code indicates that we want to extract GeoJSON features from the <code>world</code> dataset for the <code>countries</code> object:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt<span class="op">.</span><span class="fu">topo_feature</span>(world<span class="op">,</span> <span class="st">'countries'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This <code>alt.topo_feature</code> method call expands to the following Vega-Lite JSON:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"values"</span><span class="fu">:</span> <span class="er">world</span><span class="fu">,</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"format"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"type"</span><span class="fu">:</span> <span class="st">"topojson"</span><span class="fu">,</span> <span class="dt">"feature"</span><span class="fu">:</span> <span class="st">"countries"</span><span class="fu">}</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now that we can load geographic data, we’re ready to start making maps!</p>
+</section>
+<section class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" id="geoshape-marks"><span class="header-section-number">7.2</span> Geoshape Marks</h2>
+<p>To visualize geographic data, Altair provides the <code>geoshape</code> mark type. To create a basic map, we can create a <code>geoshape</code> mark and pass it our TopoJSON data, which is then unpacked into GeoJSON features, one for each country of the world:</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(world, <span class="st">'countries'</span>)).mark_geoshape()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-3b71f6f10ccc4455b5be0aac7442a152"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-3b71f6f10ccc4455b5be0aac7442a152") {
+      outputDiv = document.getElementById("altair-viz-3b71f6f10ccc4455b5be0aac7442a152");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": "geoshape", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>In the example above, Altair applies a default blue color and uses a default map projection (<code>mercator</code>). We can customize the colors and boundary stroke widths using standard mark properties. Using the <code>project</code> method we can also add our own map projection:</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(world, <span class="st">'countries'</span>)).mark_geoshape(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    fill<span class="op">=</span><span class="st">'#2a1d0c'</span>, stroke<span class="op">=</span><span class="st">'#706545'</span>, strokeWidth<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'mercator'</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-897dca68f9054d728c742a31f656dec7"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-897dca68f9054d728c742a31f656dec7") {
+      outputDiv = document.getElementById("altair-viz-897dca68f9054d728c742a31f656dec7");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}, "projection": {"type": "mercator"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>By default Altair automatically adjusts the projection so that all the data fits within the width and height of the chart. We can also specify projection parameters, such as <code>scale</code> (zoom level) and <code>translate</code> (panning), to customize the projection settings. Here we adjust the <code>scale</code> and <code>translate</code> parameters to focus on Europe:</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(world, <span class="st">'countries'</span>)).mark_geoshape(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    fill<span class="op">=</span><span class="st">'#2a1d0c'</span>, stroke<span class="op">=</span><span class="st">'#706545'</span>, strokeWidth<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'mercator'</span>, scale<span class="op">=</span><span class="dv">400</span>, translate<span class="op">=</span>[<span class="dv">100</span>, <span class="dv">550</span>]</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-e0b054ec057946a4b58c7c17ce75d17e"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-e0b054ec057946a4b58c7c17ce75d17e") {
+      outputDiv = document.getElementById("altair-viz-e0b054ec057946a4b58c7c17ce75d17e");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}, "projection": {"scale": 400, "translate": [100, 550], "type": "mercator"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Note how the 110m resolution of the data becomes apparent at this scale. To see more detailed coast lines and boundaries, we need an input file with more fine-grained geometries. Adjust the <code>scale</code> and <code>translate</code> parameters to focus the map on other regions!</em></p>
+<p>So far our map shows countries only. Using the <code>layer</code> operator, we can combine multiple map elements. Altair includes <em>data generators</em> we can use to create data for additional map layers:</p>
+<ul>
+<li>The sphere generator (<code>{'sphere': True}</code>) provides a GeoJSON representation of the full sphere of the Earth. We can create an additional <code>geoshape</code> mark that fills in the shape of the Earth as a background layer.</li>
+<li>The graticule generator (<code>{'graticule': ...}</code>) creates a GeoJSON feature representing a <em>graticule</em>: a grid formed by lines of latitude and longitude. The default graticule has meridians and parallels every 10° between ±80° latitude. For the polar regions, there are meridians every 90°. These settings can be customized using the <code>stepMinor</code> and <code>stepMajor</code> properties.</li>
+</ul>
+<p>Let’s layer sphere, graticule, and country marks into a reusable map specification:</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">map</span> <span class="op">=</span> alt.layer(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># use the sphere of the Earth as the base layer</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    alt.Chart({<span class="st">'sphere'</span>: <span class="va">True</span>}).mark_geoshape(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="st">'#e6f3ff'</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add a graticule for geographic reference lines</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    alt.Chart({<span class="st">'graticule'</span>: <span class="va">True</span>}).mark_geoshape(</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        stroke<span class="op">=</span><span class="st">'#ffffff'</span>, strokeWidth<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and then the countries of the world</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    alt.Chart(alt.topo_feature(world, <span class="st">'countries'</span>)).mark_geoshape(</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="st">'#2a1d0c'</span>, stroke<span class="op">=</span><span class="st">'#706545'</span>, strokeWidth<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">400</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can extend the map with a desired projection and draw the result. Here we apply a <a href="https://en.wikipedia.org/wiki/Natural_Earth_projection">Natural Earth projection</a>. The <em>sphere</em> layer provides the light blue background; the <em>graticule</em> layer provides the white geographic reference lines.</p>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">map</span>.project(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'naturalEarth1'</span>, scale<span class="op">=</span><span class="dv">110</span>, translate<span class="op">=</span>[<span class="dv">300</span>, <span class="dv">200</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-3d05d933065c4ad996f5e60d50e4efec"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-3d05d933065c4ad996f5e60d50e4efec") {
+      outputDiv = document.getElementById("altair-viz-3d05d933065c4ad996f5e60d50e4efec");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 400, "projection": {"scale": 110, "translate": [300, 200], "type": "naturalEarth1"}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+</section>
+<section class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" id="point-maps"><span class="header-section-number">7.3</span> Point Maps</h2>
+<p>In addition to the <em>geometric</em> data provided by GeoJSON or TopoJSON files, many tabular datasets include geographic information in the form of fields for <code>longitude</code> and <code>latitude</code> coordinates, or references to geographic regions such as country names, state names, postal codes, <em>etc.</em>, which can be mapped to coordinates using a <a href="https://en.wikipedia.org/wiki/Geocoding">geocoding service</a>. In some cases, location data is rich enough that we can see meaningful patterns by projecting the data points alone — no base map required!</p>
+<p>Let’s look at a dataset of 5-digit zip codes in the United States, including <code>longitude</code>, <code>latitude</code> coordinates for each post office in addition to a <code>zip_code</code> field.</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>zipcodes <span class="op">=</span> data.zipcodes.url</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>zipcodes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>‘https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/zipcodes.csv’</p>
+</div>
+</div>
+<p>We can visualize each post office location using a small (1-pixel) <code>square</code> mark. However, to set the positions we do <em>not</em> use <code>x</code> and <code>y</code> channels. <em>Why is that?</em></p>
+<p>While cartographic projections map (<code>longitude</code>, <code>latitude</code>) coordinates to (<code>x</code>, <code>y</code>) coordinates, they can do so in arbitrary ways. There is no guarantee, for example, that <code>longitude</code> → <code>x</code> and <code>latitude</code> → <code>y</code>! Instead, Altair includes special <code>longitude</code> and <code>latitude</code> encoding channels to handle geographic coordinates. These channels indicate which data fields should be mapped to <code>longitude</code> and <code>latitude</code> coordinates, and then applies a projection to map those coordinates to (<code>x</code>, <code>y</code>) positions.</p>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(zipcodes).mark_square(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="dv">1</span>, opacity<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    longitude<span class="op">=</span><span class="st">'longitude:Q'</span>, <span class="co"># apply the field named 'longitude' to the longitude channel</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    latitude<span class="op">=</span><span class="st">'latitude:Q'</span>    <span class="co"># apply the field named 'latitude' to the latitude channel</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-590c21ee9b4a4a76a47a17c87379b386"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-590c21ee9b4a4a76a47a17c87379b386") {
+      outputDiv = document.getElementById("altair-viz-590c21ee9b4a4a76a47a17c87379b386");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/zipcodes.csv"}, "mark": {"type": "square", "opacity": 1, "size": 1}, "encoding": {"latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}}, "height": 500, "projection": {"type": "albersUsa"}, "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Plotting zip codes only, we can see the outline of the United States and discern meaningful patterns in the density of post offices, without a base map or additional reference elements!</em></p>
+<p>We use the <code>albersUsa</code> projection, which takes some liberties with the actual geometry of the Earth, with scaled versions of Alaska and Hawaii in the bottom-left corner. As we did not specify projection <code>scale</code> or <code>translate</code> parameters, Altair sets them automatically to fit the visualized data.</p>
+<p>We can now go on to ask more questions of our dataset. For example, is there any rhyme or reason to the allocation of zip codes? To assess this question we can add a color encoding based on the first digit of the zip code. We first add a <code>calculate</code> transform to extract the first digit, and encode the result using the color channel:</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(zipcodes).transform_calculate(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    digit<span class="op">=</span><span class="st">'datum.zip_code[0]'</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>).mark_square(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="dv">2</span>, opacity<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>).encode(</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    longitude<span class="op">=</span><span class="st">'longitude:Q'</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    latitude<span class="op">=</span><span class="st">'latitude:Q'</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'digit:N'</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-dbb1003a7fbe478f8191b27da6c4f3a1"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-dbb1003a7fbe478f8191b27da6c4f3a1") {
+      outputDiv = document.getElementById("altair-viz-dbb1003a7fbe478f8191b27da6c4f3a1");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/zipcodes.csv"}, "mark": {"type": "square", "opacity": 1, "size": 2}, "encoding": {"color": {"type": "nominal", "field": "digit"}, "latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}}, "height": 500, "projection": {"type": "albersUsa"}, "transform": [{"calculate": "datum.zip_code[0]", "as": "digit"}], "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>To zoom in on a specific digit, add a filter transform to limit the data shown! Try adding an <a href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_interaction.ipynb">interactive selection</a> to filter to a single digit and dynamically update the map. And be sure to use strings (`‘1’`) instead of numbers (`1`) when filtering digit values!</em></p>
+<p>(This example is inspired by Ben Fry’s classic <a href="https://benfry.com/zipdecode/">zipdecode</a> visualization!)</p>
+<p>We might further wonder what the <em>sequence</em> of zip codes might indicate. One way to explore this question is to connect each consecutive zip code using a <code>line</code> mark, as done in Robert Kosara’s <a href="https://eagereyes.org/zipscribble-maps/united-states">ZipScribble</a> visualization:</p>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(zipcodes).transform_filter(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'-150 &lt; datum.longitude &amp;&amp; 22 &lt; datum.latitude &amp;&amp; datum.latitude &lt; 55'</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>).transform_calculate(</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    digit<span class="op">=</span><span class="st">'datum.zip_code[0]'</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>).mark_line(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    strokeWidth<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>).encode(</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    longitude<span class="op">=</span><span class="st">'longitude:Q'</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    latitude<span class="op">=</span><span class="st">'latitude:Q'</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'digit:N'</span>,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    order<span class="op">=</span><span class="st">'zip_code:O'</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-9d4cd2d31afe4797a52bf5deea604127"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-9d4cd2d31afe4797a52bf5deea604127") {
+      outputDiv = document.getElementById("altair-viz-9d4cd2d31afe4797a52bf5deea604127");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/zipcodes.csv"}, "mark": {"type": "line", "strokeWidth": 0.5}, "encoding": {"color": {"type": "nominal", "field": "digit"}, "latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "order": {"type": "ordinal", "field": "zip_code"}}, "height": 500, "projection": {"type": "albersUsa"}, "transform": [{"filter": "-150 < datum.longitude && 22 < datum.latitude && datum.latitude < 55"}, {"calculate": "datum.zip_code[0]", "as": "digit"}], "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>We can now see how zip codes further cluster into smaller areas, indicating a hierarchical allocation of codes by location, but with some notable variability within local clusters.</em></p>
+<p>If you were paying careful attention to our earlier maps, you may have noticed that there are zip codes being plotted in the upper-left corner! These correspond to locations such as Puerto Rico or American Samoa, which contain U.S. zip codes but are mapped to <code>null</code> coordinates (<code>0</code>, <code>0</code>) by the <code>albersUsa</code> projection. In addition, Alaska and Hawaii can complicate our view of the connecting line segments. In response, the code above includes an additional filter that removes points outside our chosen <code>longitude</code> and <code>latitude</code> spans.</p>
+<p><em>Remove the filter above to see what happens!</em></p>
+</section>
+<section class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" id="symbol-maps"><span class="header-section-number">7.4</span> Symbol Maps</h2>
+<p>Now let’s combine a base map and plotted data as separate layers. We’ll examine the U.S. commercial flight network, considering both airports and flight routes. To do so, we’ll need three datasets. For our base map, we’ll use a TopoJSON file for the United States at 10m resolution, containing features for <code>states</code> or <code>counties</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>usa <span class="op">=</span> data.us_10m.url</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>usa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>‘https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json’</p>
+</div>
+</div>
+<p>For the airports, we will use a dataset with fields for the <code>longitude</code> and <code>latitude</code> coordinates of each airport as well as the <code>iata</code> airport code — for example, <code>'SEA'</code> for <a href="https://en.wikipedia.org/wiki/Seattle%E2%80%93Tacoma_International_Airport">Seattle-Tacoma International Airport</a>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>airports <span class="op">=</span> data.airports.url</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>airports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>‘https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv’</p>
+</div>
+</div>
+<p>Finally, we will use a dataset of flight routes, which contains <code>origin</code> and <code>destination</code> fields with the IATA codes for the corresponding airports:</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>flights <span class="op">=</span> data.flights_airport.url</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>flights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>‘https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-airport.csv’</p>
+</div>
+</div>
+<p>Let’s start by creating a base map using the <code>albersUsa</code> projection, and add a layer that plots <code>circle</code> marks for each airport:</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.layer(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    alt.Chart(alt.topo_feature(usa, <span class="st">'states'</span>)).mark_geoshape(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="st">'#ddd'</span>, stroke<span class="op">=</span><span class="st">'#fff'</span>, strokeWidth<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    alt.Chart(airports).mark_circle(size<span class="op">=</span><span class="dv">9</span>).encode(</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        latitude<span class="op">=</span><span class="st">'latitude:Q'</span>,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        longitude<span class="op">=</span><span class="st">'longitude:Q'</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        tooltip<span class="op">=</span><span class="st">'iata:N'</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-8bfd500ac70d45d8ae45f181534ac48f"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-8bfd500ac70d45d8ae45f181534ac48f") {
+      outputDiv = document.getElementById("altair-viz-8bfd500ac70d45d8ae45f181534ac48f");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#ddd", "stroke": "#fff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv"}, "mark": {"type": "circle", "size": 9}, "encoding": {"latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "tooltip": {"type": "nominal", "field": "iata"}}}], "height": 500, "projection": {"type": "albersUsa"}, "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>That’s a lot of airports! Obviously, not all of them are major hubs.</em></p>
+<p>Similar to our zip codes dataset, our airport data includes points that lie outside the continental United States. So we again see points in the upper-left corner. We might want to filter these points, but to do so we first need to know more about them.</p>
+<p><em>Update the map projection above to <code>albers</code> – side-stepping the idiosyncratic behavior of <code>albersUsa</code> – so that the actual locations of these additional points is revealed!</em></p>
+<p>Now, instead of showing all airports in an undifferentiated fashion, let’s identify major hubs by considering the total number of routes that originate at each airport. We’ll use the <code>routes</code> dataset as our primary data source: it contains a list of flight routes that we can aggregate to count the number of routes for each <code>origin</code> airport.</p>
+<p>However, the <code>routes</code> dataset does not include the <em>locations</em> of the airports! To augment the <code>routes</code> data with locations, we need a new data transformation: <code>lookup</code>. The <code>lookup</code> transform takes a field value in a primary dataset and uses it as a <em>key</em> to look up related information in another table. In this case, we want to match the <code>origin</code> airport code in our <code>routes</code> dataset against the <code>iata</code> field of the <code>airports</code> dataset, then extract the corresponding <code>latitude</code> and <code>longitude</code> fields.</p>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.layer(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    alt.Chart(alt.topo_feature(usa, <span class="st">'states'</span>)).mark_geoshape(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="st">'#ddd'</span>, stroke<span class="op">=</span><span class="st">'#fff'</span>, strokeWidth<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    alt.Chart(flights).mark_circle().transform_aggregate(</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        groupby<span class="op">=</span>[<span class="st">'origin'</span>],</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        routes<span class="op">=</span><span class="st">'count()'</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    ).transform_lookup(</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        lookup<span class="op">=</span><span class="st">'origin'</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        from_<span class="op">=</span>alt.LookupData(data<span class="op">=</span>airports, key<span class="op">=</span><span class="st">'iata'</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>                             fields<span class="op">=</span>[<span class="st">'state'</span>, <span class="st">'latitude'</span>, <span class="st">'longitude'</span>])</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    ).transform_filter(</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'datum.state !== "PR" &amp;&amp; datum.state !== "VI"'</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    ).encode(</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        latitude<span class="op">=</span><span class="st">'latitude:Q'</span>,</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>        longitude<span class="op">=</span><span class="st">'longitude:Q'</span>,</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>        tooltip<span class="op">=</span>[<span class="st">'origin:N'</span>, <span class="st">'routes:Q'</span>],</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>        size<span class="op">=</span>alt.Size(<span class="st">'routes:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1000</span>]), legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>        order<span class="op">=</span>alt.Order(<span class="st">'routes:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>)</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-2dfe6d91318242e1980d78ba4436e6e0"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-2dfe6d91318242e1980d78ba4436e6e0") {
+      outputDiv = document.getElementById("altair-viz-2dfe6d91318242e1980d78ba4436e6e0");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#ddd", "stroke": "#fff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-airport.csv"}, "mark": "circle", "encoding": {"latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "order": {"type": "quantitative", "field": "routes", "sort": "descending"}, "size": {"type": "quantitative", "field": "routes", "legend": null, "scale": {"range": [0, 1000]}}, "tooltip": [{"type": "nominal", "field": "origin"}, {"type": "quantitative", "field": "routes"}]}, "transform": [{"aggregate": [{"op": "count", "as": "routes"}], "groupby": ["origin"]}, {"lookup": "origin", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv"}, "key": "iata", "fields": ["state", "latitude", "longitude"]}}, {"filter": "datum.state !== \"PR\" && datum.state !== \"VI\""}]}], "height": 500, "projection": {"type": "albersUsa"}, "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Which U.S. airports have the highest number of outgoing routes?</em></p>
+<p>Now that we can see the airports, which may wish to interact with them to better understand the structure of the air traffic network. We can add a <code>rule</code> mark layer to represent paths from <code>origin</code> airports to <code>destination</code> airports, which requires two <code>lookup</code> transforms to retreive coordinates for each end point. In addition, we can use a <code>single</code> selection to filter these routes, such that only the routes originating at the currently selected airport are shown.</p>
+<p><em>Starting from the static map above, can you build an interactive version? Feel free to skip the code below to engage with the interactive map first, and think through how you might build it on your own!</em></p>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># interactive selection for origin airport</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># select nearest airport to mouse cursor</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>origin <span class="op">=</span> alt.selection_single(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    on<span class="op">=</span><span class="st">'mouseover'</span>, nearest<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span>[<span class="st">'origin'</span>], empty<span class="op">=</span><span class="st">'none'</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># shared data reference for lookup transforms</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>foreign <span class="op">=</span> alt.LookupData(data<span class="op">=</span>airports, key<span class="op">=</span><span class="st">'iata'</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                         fields<span class="op">=</span>[<span class="st">'latitude'</span>, <span class="st">'longitude'</span>])</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>alt.layer(</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># base map of the United States</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    alt.Chart(alt.topo_feature(usa, <span class="st">'states'</span>)).mark_geoshape(</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="st">'#ddd'</span>, stroke<span class="op">=</span><span class="st">'#fff'</span>, strokeWidth<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># route lines from selected origin airport to destination airports</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>    alt.Chart(flights).mark_rule(</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">'#000'</span>, opacity<span class="op">=</span><span class="fl">0.35</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    ).transform_filter(</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        origin <span class="co"># filter to selected origin only</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>    ).transform_lookup(</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>        lookup<span class="op">=</span><span class="st">'origin'</span>, from_<span class="op">=</span>foreign <span class="co"># origin lat/lon</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>    ).transform_lookup(</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>        lookup<span class="op">=</span><span class="st">'destination'</span>, from_<span class="op">=</span>foreign, as_<span class="op">=</span>[<span class="st">'lat2'</span>, <span class="st">'lon2'</span>] <span class="co"># dest lat/lon</span></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>    ).encode(</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>        latitude<span class="op">=</span><span class="st">'latitude:Q'</span>,</span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>        longitude<span class="op">=</span><span class="st">'longitude:Q'</span>,</span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>        latitude2<span class="op">=</span><span class="st">'lat2'</span>,</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>        longitude2<span class="op">=</span><span class="st">'lon2'</span>,</span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># size airports by number of outgoing routes</span></span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. aggregate flights-airport data set</span></span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. lookup location data from airports data set</span></span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. remove Puerto Rico (PR) and Virgin Islands (VI)</span></span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>    alt.Chart(flights).mark_circle().transform_aggregate(</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>        groupby<span class="op">=</span>[<span class="st">'origin'</span>],</span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>        routes<span class="op">=</span><span class="st">'count()'</span></span>
+<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a>    ).transform_lookup(</span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a>        lookup<span class="op">=</span><span class="st">'origin'</span>,</span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>        from_<span class="op">=</span>alt.LookupData(data<span class="op">=</span>airports, key<span class="op">=</span><span class="st">'iata'</span>,</span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a>                             fields<span class="op">=</span>[<span class="st">'state'</span>, <span class="st">'latitude'</span>, <span class="st">'longitude'</span>])</span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a>    ).transform_filter(</span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'datum.state !== "PR" &amp;&amp; datum.state !== "VI"'</span></span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a>    ).add_selection(</span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>        origin</span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a>    ).encode(</span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a>        latitude<span class="op">=</span><span class="st">'latitude:Q'</span>,</span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>        longitude<span class="op">=</span><span class="st">'longitude:Q'</span>,</span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a>        tooltip<span class="op">=</span>[<span class="st">'origin:N'</span>, <span class="st">'routes:Q'</span>],</span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>        size<span class="op">=</span>alt.Size(<span class="st">'routes:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1000</span>]), legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>        order<span class="op">=</span>alt.Order(<span class="st">'routes:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>) <span class="co"># place smaller circles on top</span></span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span></span>
+<span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb24-58"><a href="#cb24-58" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb24-60"><a href="#cb24-60" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb24-61"><a href="#cb24-61" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-912a1048c4d449bda69425bd15a5d7eb"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-912a1048c4d449bda69425bd15a5d7eb") {
+      outputDiv = document.getElementById("altair-viz-912a1048c4d449bda69425bd15a5d7eb");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#ddd", "stroke": "#fff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-airport.csv"}, "mark": {"type": "rule", "color": "#000", "opacity": 0.35}, "encoding": {"latitude": {"field": "latitude", "type": "quantitative"}, "latitude2": {"field": "lat2"}, "longitude": {"field": "longitude", "type": "quantitative"}, "longitude2": {"field": "lon2"}}, "transform": [{"filter": {"selection": "selector001"}}, {"lookup": "origin", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv"}, "key": "iata", "fields": ["latitude", "longitude"]}}, {"lookup": "destination", "as": ["lat2", "lon2"], "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv"}, "key": "iata", "fields": ["latitude", "longitude"]}}]}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-airport.csv"}, "mark": "circle", "encoding": {"latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "order": {"type": "quantitative", "field": "routes", "sort": "descending"}, "size": {"type": "quantitative", "field": "routes", "legend": null, "scale": {"range": [0, 1000]}}, "tooltip": [{"type": "nominal", "field": "origin"}, {"type": "quantitative", "field": "routes"}]}, "selection": {"selector001": {"type": "single", "on": "mouseover", "nearest": true, "fields": ["origin"], "empty": "none"}}, "transform": [{"aggregate": [{"op": "count", "as": "routes"}], "groupby": ["origin"]}, {"lookup": "origin", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv"}, "key": "iata", "fields": ["state", "latitude", "longitude"]}}, {"filter": "datum.state !== \"PR\" && datum.state !== \"VI\""}]}], "height": 500, "projection": {"type": "albersUsa"}, "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Mouseover the map to probe the flight network!</em></p>
+</section>
+<section class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" id="choropleth-maps"><span class="header-section-number">7.5</span> Choropleth Maps</h2>
+<p>A <a href="https://en.wikipedia.org/wiki/Choropleth_map">choropleth map</a> uses shaded or textured regions to visualize data values. Sized symbol maps are often more accurate to read, as people tend to be better at estimating proportional differences between the area of circles than between color shades. Nevertheless, choropleth maps are popular in practice and particularly useful when too many symbols become perceptually overwhelming.</p>
+<p>For example, while the United States only has 50 states, it has thousands of counties within those states. Let’s build a choropleth map of the unemployment rate per county, back in the recession year of 2008. In some cases, input GeoJSON or TopoJSON files might include statistical data that we can directly visualize. In this case, however, we have two files: our TopoJSON file that includes county boundary features (<code>usa</code>), and a separate text file that contains unemployment statistics:</p>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>unemp <span class="op">=</span> data.unemployment.url</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>unemp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p>‘https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment.tsv’</p>
+</div>
+</div>
+<p>To integrate our data sources, we will again need to use the <code>lookup</code> transform, augmenting our TopoJSON-based <code>geoshape</code> data with unemployment rates. We can then create a map that includes a <code>color</code> encoding for the looked-up <code>rate</code> field.</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(usa, <span class="st">'counties'</span>)).mark_geoshape(</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="st">'#aaa'</span>, strokeWidth<span class="op">=</span><span class="fl">0.25</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>).transform_lookup(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    lookup<span class="op">=</span><span class="st">'id'</span>, from_<span class="op">=</span>alt.LookupData(data<span class="op">=</span>unemp, key<span class="op">=</span><span class="st">'id'</span>, fields<span class="op">=</span>[<span class="st">'rate'</span>])</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>).encode(</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'rate:Q'</span>,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>              scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.3</span>], clamp<span class="op">=</span><span class="va">True</span>), </span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>              legend<span class="op">=</span>alt.Legend(<span class="bu">format</span><span class="op">=</span><span class="st">'%'</span>)),</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'rate:Q'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'.0%'</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>).project(</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-5c6fb9bc292741a6aba8d259bba67e34"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5c6fb9bc292741a6aba8d259bba67e34") {
+      outputDiv = document.getElementById("altair-viz-5c6fb9bc292741a6aba8d259bba67e34");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "counties", "type": "topojson"}}, "mark": {"type": "geoshape", "stroke": "#aaa", "strokeWidth": 0.25}, "encoding": {"color": {"type": "quantitative", "field": "rate", "legend": {"format": "%"}, "scale": {"clamp": true, "domain": [0, 0.3]}}, "tooltip": {"type": "quantitative", "field": "rate", "format": ".0%"}}, "height": 500, "projection": {"type": "albersUsa"}, "transform": [{"lookup": "id", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment.tsv"}, "key": "id", "fields": ["rate"]}}], "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Examine the unemployment rates by county. Higher values in Michigan may relate to the automotive industry. Counties in the <a href="https://en.wikipedia.org/wiki/Great_Plains">Great Plains</a> and Mountain states exhibit both low <strong>and</strong> high rates. Is this variation meaningful, or is it possibly an <a href="https://medium.com/@uwdata/surprise-maps-showing-the-unexpected-e92b67398865">artifact of lower sample sizes</a>? To explore further, try changing the upper scale domain (e.g., to <code>0.2</code>) to adjust the color mapping.</em></p>
+<p>A central concern for choropleth maps is the choice of colors. Above, we use Altair’s default <code>'yellowgreenblue'</code> scheme for heatmaps. Below we compare other schemes, including a <em>single-hue sequential</em> scheme (<code>teals</code>) that varies in luminance only, a <em>multi-hue sequential</em> scheme (<code>viridis</code>) that ramps in both luminance and hue, and a <em>diverging</em> scheme (<code>blueorange</code>) that uses a white mid-point:</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utility function to generate a map specification for a provided color scheme</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> map_(scheme):</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> alt.Chart().mark_geoshape().project(<span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span>).encode(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        alt.Color(<span class="st">'rate:Q'</span>, scale<span class="op">=</span>alt.Scale(scheme<span class="op">=</span>scheme), legend<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    ).properties(width<span class="op">=</span><span class="dv">305</span>, height<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    map_(<span class="st">'tealblues'</span>), map_(<span class="st">'viridis'</span>), map_(<span class="st">'blueorange'</span>),</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>alt.topo_feature(usa, <span class="st">'counties'</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>).transform_lookup(</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    lookup<span class="op">=</span><span class="st">'id'</span>, from_<span class="op">=</span>alt.LookupData(data<span class="op">=</span>unemp, key<span class="op">=</span><span class="st">'id'</span>, fields<span class="op">=</span>[<span class="st">'rate'</span>])</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>).resolve_scale(</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'independent'</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-8941e3569a54408f91e664a3903dda7d"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-8941e3569a54408f91e664a3903dda7d") {
+      outputDiv = document.getElementById("altair-viz-8941e3569a54408f91e664a3903dda7d");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "hconcat": [{"mark": "geoshape", "encoding": {"color": {"type": "quantitative", "field": "rate", "legend": null, "scale": {"scheme": "tealblues"}}}, "height": 200, "projection": {"type": "albersUsa"}, "width": 305}, {"mark": "geoshape", "encoding": {"color": {"type": "quantitative", "field": "rate", "legend": null, "scale": {"scheme": "viridis"}}}, "height": 200, "projection": {"type": "albersUsa"}, "width": 305}, {"mark": "geoshape", "encoding": {"color": {"type": "quantitative", "field": "rate", "legend": null, "scale": {"scheme": "blueorange"}}}, "height": 200, "projection": {"type": "albersUsa"}, "width": 305}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "counties", "type": "topojson"}}, "resolve": {"scale": {"color": "independent"}}, "transform": [{"lookup": "id", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment.tsv"}, "key": "id", "fields": ["rate"]}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p><em>Which color schemes do you find to be more effective? Why might that be? Modify the maps above to use other available schemes, as described in the <a href="https://vega.github.io/vega/docs/schemes/">Vega Color Schemes documentation</a>.</em></p>
+</section>
+<section class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" id="cartographic-projections"><span class="header-section-number">7.6</span> Cartographic Projections</h2>
+<p>Now that we have some experience creating maps, let’s take a closer look at cartographic projections. As explained by <a href="https://en.wikipedia.org/wiki/Map_projection">Wikipedia</a>,</p>
+<blockquote class="blockquote">
+<p><em>All map projections necessarily distort the surface in some fashion. Depending on the purpose of the map, some distortions are acceptable and others are not; therefore, different map projections exist in order to preserve some properties of the sphere-like body at the expense of other properties.</em></p>
+</blockquote>
+<p>Some of the properties we might wish to consider include:</p>
+<ul>
+<li><em>Area</em>: Does the projection distort region sizes?</li>
+<li><em>Bearing</em>: Does a straight line correspond to a constant direction of travel?</li>
+<li><em>Distance</em>: Do lines of equal length correspond to equal distances on the globe?</li>
+<li><em>Shape</em>: Does the projection preserve spatial relations (angles) between points?</li>
+</ul>
+<p>Selecting an appropriate projection thus depends on the use case for the map. For example, if we are assessing land use and the extent of land matters, we might choose an area-preserving projection. If we want to visualize shockwaves emanating from an earthquake, we might focus the map on the quake’s epicenter and preserve distances outward from that point. Or, if we wish to aid navigation, the preservation of bearing and shape may be more important.</p>
+<p>We can also characterize projections in terms of the <em>projection surface</em>. Cylindrical projections, for example, project surface points of the sphere onto a surrounding cylinder; the “unrolled” cylinder then provides our map. As we further describe below, we might alternatively project onto the surface of a cone (conic projections) or directly onto a flat plane (azimuthal projections).</p>
+<p><em>Let’s first build up our intuition by interacting with a variety of projections! <strong><a href="https://observablehq.com/@vega/vega-lite-cartographic-projections">Open the online Vega-Lite Cartographic Projections notebook</a>.</strong> Use the controls on that page to select a projection and explore projection parameters, such as the <code>scale</code> (zooming) and x/y translation (panning). The rotation (<a href="https://en.wikipedia.org/wiki/Aircraft_principal_axes">yaw, pitch, roll</a>) controls determine the orientation of the globe relative to the surface being projected upon.</em></p>
+<section class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" id="a-tour-of-specific-projection-types"><span class="header-section-number">7.6.1</span> A Tour of Specific Projection Types</h3>
+<p><a href=""><strong>Cylindrical projections</strong></a> map the sphere onto a surrounding cylinder, then unroll the cylinder. If the major axis of the cylinder is oriented north-south, meridians are mapped to straight lines. <a href="https://en.wikipedia.org/wiki/Map_projection#Pseudocylindrical">Pseudo-cylindrical</a> projections represent a central meridian as a straight line, with other meridians “bending” away from the center.</p>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>minimap <span class="op">=</span> <span class="bu">map</span>.properties(width<span class="op">=</span><span class="dv">225</span>, height<span class="op">=</span><span class="dv">225</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'equirectangular'</span>).properties(title<span class="op">=</span><span class="st">'equirectangular'</span>),</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'mercator'</span>).properties(title<span class="op">=</span><span class="st">'mercator'</span>),</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'transverseMercator'</span>).properties(title<span class="op">=</span><span class="st">'transverseMercator'</span>),</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'naturalEarth1'</span>).properties(title<span class="op">=</span><span class="st">'naturalEarth1'</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>).properties(spacing<span class="op">=</span><span class="dv">10</span>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-ed469db6f8c142b8ada8d322b85c9f90"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ed469db6f8c142b8ada8d322b85c9f90") {
+      outputDiv = document.getElementById("altair-viz-ed469db6f8c142b8ada8d322b85c9f90");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "hconcat": [{"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 225, "projection": {"type": "equirectangular"}, "title": "equirectangular", "width": 225}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 225, "projection": {"type": "mercator"}, "title": "mercator", "width": 225}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 225, "projection": {"type": "transverseMercator"}, "title": "transverseMercator", "width": 225}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 225, "projection": {"type": "naturalEarth1"}, "title": "naturalEarth1", "width": 225}], "spacing": 10, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Equirectangular_projection">Equirectangular</a> (<code>equirectangular</code>): Scale <code>lat</code>, <code>lon</code> coordinate values directly.</li>
+<li><a href="https://en.wikipedia.org/wiki/Mercator_projection">Mercator</a> (<code>mercator</code>): Project onto a cylinder, using <code>lon</code> directly, but subjecting <code>lat</code> to a non-linear transformation. Straight lines preserve constant compass bearings (<a href="https://en.wikipedia.org/wiki/Rhumb_line">rhumb lines</a>), making this projection well-suited to navigation. However, areas in the far north or south can be greatly distorted.</li>
+<li><a href="https://en.wikipedia.org/wiki/Transverse_Mercator_projection">Transverse Mercator</a> (<code>transverseMercator</code>): A mercator projection, but with the bounding cylinder rotated to a transverse axis. Whereas the standard Mercator projection has highest accuracy along the equator, the Transverse Mercator projection is most accurate along the central meridian.</li>
+<li><a href="https://en.wikipedia.org/wiki/Natural_Earth_projection">Natural Earth</a> (<code>naturalEarth1</code>): A pseudo-cylindrical projection designed for showing the whole Earth in one view. <br><br></li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Map_projection#Conic"><strong>Conic projections</strong></a> map the sphere onto a cone, and then unroll the cone on to the plane. Conic projections are configured by two <em>standard parallels</em>, which determine where the cone intersects the globe.</p>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>minimap <span class="op">=</span> <span class="bu">map</span>.properties(width<span class="op">=</span><span class="dv">180</span>, height<span class="op">=</span><span class="dv">130</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'conicEqualArea'</span>).properties(title<span class="op">=</span><span class="st">'conicEqualArea'</span>),</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'conicEquidistant'</span>).properties(title<span class="op">=</span><span class="st">'conicEquidistant'</span>),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'conicConformal'</span>, scale<span class="op">=</span><span class="dv">35</span>, translate<span class="op">=</span>[<span class="dv">90</span>,<span class="dv">65</span>]).properties(title<span class="op">=</span><span class="st">'conicConformal'</span>),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'albers'</span>).properties(title<span class="op">=</span><span class="st">'albers'</span>),</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span>).properties(title<span class="op">=</span><span class="st">'albersUsa'</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>).properties(spacing<span class="op">=</span><span class="dv">10</span>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-1b67039c1d73469f94386aa42bb3633f"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-1b67039c1d73469f94386aa42bb3633f") {
+      outputDiv = document.getElementById("altair-viz-1b67039c1d73469f94386aa42bb3633f");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "hconcat": [{"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 130, "projection": {"type": "conicEqualArea"}, "title": "conicEqualArea", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 130, "projection": {"type": "conicEquidistant"}, "title": "conicEquidistant", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 130, "projection": {"scale": 35, "translate": [90, 65], "type": "conicConformal"}, "title": "conicConformal", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 130, "projection": {"type": "albers"}, "title": "albers", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 130, "projection": {"type": "albersUsa"}, "title": "albersUsa", "width": 180}], "spacing": 10, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Albers_projection">Conic Equal Area</a> (<code>conicEqualArea</code>): Area-preserving conic projection. Shape and distance are not preserved, but roughly accurate within standard parallels.</li>
+<li><a href="https://en.wikipedia.org/wiki/Equidistant_conic_projection">Conic Equidistant</a> (<code>conicEquidistant</code>): Conic projection that preserves distance along the meridians and standard parallels.</li>
+<li><a href="https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection">Conic Conformal</a> (<code>conicConformal</code>): Conic projection that preserves shape (local angles), but not area or distance.</li>
+<li><a href="https://en.wikipedia.org/wiki/Albers_projection">Albers</a> (<code>albers</code>): A variant of the conic equal area projection with standard parallels optimized for creating maps of the United States.</li>
+<li><a href="https://en.wikipedia.org/wiki/Albers_projection">Albers USA</a> (<code>albersUsa</code>): A hybrid projection for the 50 states of the United States of America. This projection stitches together three Albers projections with different parameters for the continental U.S., Alaska, and Hawaii. <br><br></li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Map_projection#Azimuthal_%28projections_onto_a_plane%29"><strong>Azimuthal projections</strong></a> map the sphere directly onto a plane.</p>
+<div class="cell">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>minimap <span class="op">=</span> <span class="bu">map</span>.properties(width<span class="op">=</span><span class="dv">180</span>, height<span class="op">=</span><span class="dv">180</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'azimuthalEqualArea'</span>).properties(title<span class="op">=</span><span class="st">'azimuthalEqualArea'</span>),</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'azimuthalEquidistant'</span>).properties(title<span class="op">=</span><span class="st">'azimuthalEquidistant'</span>),</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'orthographic'</span>).properties(title<span class="op">=</span><span class="st">'orthographic'</span>),</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'stereographic'</span>).properties(title<span class="op">=</span><span class="st">'stereographic'</span>),</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'gnomonic'</span>).properties(title<span class="op">=</span><span class="st">'gnomonic'</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>).properties(spacing<span class="op">=</span><span class="dv">10</span>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="altair-viz-f7f484e2c4324d56a5c04b106ca8283f"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-f7f484e2c4324d56a5c04b106ca8283f") {
+      outputDiv = document.getElementById("altair-viz-f7f484e2c4324d56a5c04b106ca8283f");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "hconcat": [{"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 180, "projection": {"type": "azimuthalEqualArea"}, "title": "azimuthalEqualArea", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 180, "projection": {"type": "azimuthalEquidistant"}, "title": "azimuthalEquidistant", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 180, "projection": {"type": "orthographic"}, "title": "orthographic", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 180, "projection": {"type": "stereographic"}, "title": "stereographic", "width": 180}, {"layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#e6f3ff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5}}], "height": 180, "projection": {"type": "gnomonic"}, "title": "gnomonic", "width": 180}], "spacing": 10, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection">Azimuthal Equal Area</a> (<code>azimuthalEqualArea</code>): Accurately projects area in all parts of the globe, but does not preserve shape (local angles).</li>
+<li><a href="https://en.wikipedia.org/wiki/Azimuthal_equidistant_projection">Azimuthal Equidistant</a> (<code>azimuthalEquidistant</code>): Preserves proportional distance from the projection center to all other points on the globe.</li>
+<li><a href="https://en.wikipedia.org/wiki/Orthographic_projection_in_cartography">Orthographic</a> (<code>orthographic</code>): Projects a visible hemisphere onto a distant plane. Approximately matches a view of the Earth from outer space.</li>
+<li><a href="https://en.wikipedia.org/wiki/Stereographic_projection">Stereographic</a> (<code>stereographic</code>): Preserves shape, but not area or distance.</li>
+<li><a href="https://en.wikipedia.org/wiki/Gnomonic_projection">Gnomonic</a> (<code>gnomonic</code>): Projects the surface of the sphere directly onto a tangent plane. <a href="https://en.wikipedia.org/wiki/Great_circle">Great circles</a> around the Earth are projected to straight lines, showing the shortest path between points. <br><br></li>
+</ul>
+</section>
+</section>
+<section class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" id="coda-wrangling-geographic-data"><span class="header-section-number">7.7</span> Coda: Wrangling Geographic Data</h2>
+<p>The examples above all draw from the vega-datasets collection, including geometric (TopoJSON) and tabular (airports, unemployment rates) data. A common challenge to getting starting with geographic visualization is collecting the necessary data for your task. A number of data providers abound, including services such as the <a href="https://www.usgs.gov/products/data-and-tools/data-and-tools-topics">United States Geological Survey</a> and <a href="https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html">U.S. Census Bureau</a>.</p>
+<p>In many cases you may have existing data with a geographic component, but require additional measures or geometry. To help you get started, here is one workflow:</p>
+<ol type="1">
+<li>Visit <a href="http://www.naturalearthdata.com/downloads/">Natural Earth Data</a> and browse to select data for regions and resolutions of interest. Download the corresponding zip file(s).</li>
+<li>Go to <a href="https://mapshaper.org/">MapShaper</a> and drop your downloaded zip file onto the page. Revise the data as desired, and then “Export” generated TopoJSON or GeoJSON files.</li>
+<li>Load the exported data from MapShaper for use with Altair!</li>
+</ol>
+<p>Of course, many other tools – both open-source and proprietary – exist for working with geographic data. For more about geo-data wrangling and map creation, see Mike Bostock’s tutorial series on <a href="https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c">Command-Line Cartography</a>.</p>
+</section>
+<section class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" id="summary"><span class="header-section-number">7.8</span> Summary</h2>
+<p>At this point, we’ve only dipped our toes into the waters of map-making. <em>(You didn’t expect a single notebook to impart centuries of learning, did you?)</em> For example, we left untouched topics such as <a href="https://en.wikipedia.org/wiki/Cartogram"><em>cartograms</em></a> and conveying <a href="https://en.wikipedia.org/wiki/Topography"><em>topography</em></a> — as in Imhof’s illuminating book <a href="https://books.google.com/books?id=cVy1Ms43fFYC"><em>Cartographic Relief Presentation</em></a>. Nevertheless, you should now be well-equipped to create a rich array of geo-visualizations. For more, MacEachren’s book <a href="https://books.google.com/books?id=xhAvN3B0CkUC"><em>How Maps Work: Representation, Visualization, and Design</em></a> provides a valuable overview of map-making from the perspective of data visualization.</p>
+<!-- -->
+</section>
+</main>
+<div class="row page-navigation ">
+  <div class="nav-page nav-page-previous col">
+      <a href="./altair_interaction.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; Interaction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./altair_debugging.html">
+        <span class="nav-page-text">Altair Debugging Guide</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
+</div> <!-- /main column -->
+<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#geographic-data-geojson-and-topojson" class="nav-link" data-bs-target="#geographic-data-geojson-and-topojson"> <span class="header-section-number">7.1</span> Geographic Data: GeoJSON and TopoJSON</a></li>
+<li><a href="#geoshape-marks" class="nav-link" data-bs-target="#geoshape-marks"> <span class="header-section-number">7.2</span> Geoshape Marks</a></li>
+<li><a href="#point-maps" class="nav-link" data-bs-target="#point-maps"> <span class="header-section-number">7.3</span> Point Maps</a></li>
+<li><a href="#symbol-maps" class="nav-link" data-bs-target="#symbol-maps"> <span class="header-section-number">7.4</span> Symbol Maps</a></li>
+<li><a href="#choropleth-maps" class="nav-link" data-bs-target="#choropleth-maps"> <span class="header-section-number">7.5</span> Choropleth Maps</a></li>
+<li><a href="#cartographic-projections" class="nav-link" data-bs-target="#cartographic-projections"> <span class="header-section-number">7.6</span> Cartographic Projections</a>
+<ul>
+<li><a href="#a-tour-of-specific-projection-types" class="nav-link" data-bs-target="#a-tour-of-specific-projection-types"> <span class="header-section-number">7.6.1</span> A Tour of Specific Projection Types</a></li>
+</ul></li>
+<li><a href="#coda-wrangling-geographic-data" class="nav-link" data-bs-target="#coda-wrangling-geographic-data"> <span class="header-section-number">7.7</span> Coda: Wrangling Geographic Data</a></li>
+<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">7.8</span> Summary</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div> <!-- /toc column -->
+</div> <!-- /row -->
+</div> <!-- /container fluid -->
+
+
+</body></html>

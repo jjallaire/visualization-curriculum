@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft">
+  <title>Visualization Curriculum</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <meta name="quarto:offset" content=".">
+  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <script src="site_libs/quarto-html/quarto-html.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<div id="quarto-search-results"></div>
+<header id="quarto-header" class="headroom fixed-top">
+<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <div class="container-fluid d-flex justify-content-between">
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">Visualization Curriculum</h1>
+    <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</nav>
+</header>
+ <!-- /navbar/sidebar -->
+<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="row flex-fill">
+  <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+  <div class="px-3 pt-lg-2 text-left">
+    <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
+    <div class="sidebar-title mt-1 mb-0 py-0">
+      Visualization Curriculum
+        <div class="sidebar-tools-main mt-1">
+    <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+  </div>
+    <div class="d-flex px-3 mt-2">
+      <div class="sidebar-search flex-fill">
+      <form class="d-flex mb-0">
+  <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+      </div>
+        <div class="sidebar-tools-collapse mt-1">
+    <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+  <div class="sidebar-menu-container"> 
+  <ul class="list-unstyled mt-3 px-3">
+      <li class="sidebar-item">
+  <a href="./index.html" class="active">Introduction</a>
+</li>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Curriculum
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+        </div>
+      <div class="collapse  show" id="curriculum-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; Introduction to Altair</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; Data Transformation</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; Scales, Axes, and Legends</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; Multi-View Composition</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; Interaction</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Support
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+        </div>
+      <div class="collapse  show" id="support-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./altair_debugging.html" class="">Altair Debugging Guide</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  </ul>
+  </div>
+</nav>
+  </div>
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+<main>
+<header id="title-block-header">
+<h1 class="title d-none d-lg-block display-7">Visualization Curriculum</h1>
+<p class="author">Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft</p>
+</header>
+
+<section class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
+<p>A data visualization curriculum of interactive notebooks, using <a href="https://vega.github.io/vega-lite/">Vega-Lite</a> and <a href="https://altair-viz.github.io/">Altair</a>. This book contains a series of Python-based Jupyter notebooks, a corresponding set of JavaScript notebooks are available online on <a href="https://observablehq.com/@uwdata/data-visualization-curriculum">Observable</a>.</p>
+<section class="level2">
+<h2 class="anchored" id="getting-started">Getting Started</h2>
+<p>The visualization curriculum can be used either online or on your local computer. You can view and interact with the plots directly in this Jupyter Book. If you want to modify the code, you have a few different options:</p>
+<ul>
+<li>To read JavaScript notebooks online using <a href="https://observablehq.com/">Observable</a>, navigate to the “Observable” page above and click the corresponding notebook.</li>
+<li>To read Python notebooks online using <a href="https://colab.research.google.com/">Colab</a>, click the corresponding section in this book, hover over the little rocket ship at the top of the page, and select “Colab” from the menu.</li>
+<li>To read Python notebooks locally, follow the instructions below.</li>
+</ul>
+<section class="level3">
+<h3 class="anchored" id="local-installation">Local Installation</h3>
+<ol type="1">
+<li><a href="https://altair-viz.github.io/getting_started/installation.html">Install Altair and a notebook environment</a>. The most recent versions of these notebooks use <em>Altair version 4</em>.</li>
+<li>Download the notebooks from the <a href="https://github.com/uwdata/visualization-curriculum/releases">releases page</a>. Typically you will want to use the most recent release. (If you wish to use notebooks for Altair version 3, download the <a href="https://github.com/uwdata/visualization-curriculum/releases/tag/altair-v3">Altair v3.2 release</a>.)</li>
+<li>Open the notebooks in your local notebook environment. For example, if you have JupyterLab installed (v1.0 or higher is required), run <code>jupyter lab</code> within the directory containing the notebooks.</li>
+</ol>
+<p>Depending on your programming environment (and whether or not you have a live internet connection), you may want to specify a particular <a href="https://altair-viz.github.io/user_guide/display_frontends.html">renderer</a> for Altair.</p>
+</section>
+</section>
+<section class="level2">
+<h2 class="anchored" id="credits">Credits</h2>
+<p>Developed at the University of Washington by Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft. Thanks to the <a href="https://idl.cs.washington.edu/">UW Interactive Data Lab</a> and Arvind Satyanarayan for their valuable input and feedback! Thanks also to the students of <a href="https://courses.cs.washington.edu/courses/cse512/19sp/">UW CSE512 Spring 2019</a>, the first group to use these notebooks within an integrated course curriculum.</p>
+<!-- -->
+</section>
+</section>
+</main>
+<div class="row page-navigation ">
+  <div class="nav-page nav-page-previous col">
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./altair_introduction.html">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; Introduction to Altair</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
+</div> <!-- /main column -->
+<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#introduction" class="nav-link" data-bs-target="#introduction">Introduction</a>
+<ul>
+<li><a href="#getting-started" class="nav-link" data-bs-target="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#local-installation" class="nav-link" data-bs-target="#local-installation">Local Installation</a></li>
+</ul></li>
+<li><a href="#credits" class="nav-link" data-bs-target="#credits">Credits</a></li>
+</ul></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div> <!-- /toc column -->
+</div> <!-- /row -->
+</div> <!-- /container fluid -->
+
+
+</body></html>

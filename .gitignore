@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.venv
+.ipynb_checkpoints
+visualization-curriculum.Rproj
+.DS_Store
+
+.quarto/
+*_cache/

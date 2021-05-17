@@ -232,6 +232,7 @@
   </div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
+
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-7">Altair Debugging Guide</h1>
 </header>
@@ -260,25 +261,25 @@
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install altair vega_datasets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>Requirement already satisfied: altair in ./.venv/lib/python3.8/site-packages (4.1.0)
-Requirement already satisfied: vega_datasets in ./.venv/lib/python3.8/site-packages (0.9.0)
-Requirement already satisfied: pandas&gt;=0.18 in ./.venv/lib/python3.8/site-packages (from altair) (1.2.4)
-Requirement already satisfied: entrypoints in ./.venv/lib/python3.8/site-packages (from altair) (0.3)
-Requirement already satisfied: jsonschema in ./.venv/lib/python3.8/site-packages (from altair) (3.2.0)</code></pre>
+<pre><code>Requirement already satisfied: altair in ./.venv/lib/python3.8/site-packages (4.1.0)</code></pre>
 </div>
 <div class="cell-output-stdout">
-<pre><code>Requirement already satisfied: numpy in ./.venv/lib/python3.8/site-packages (from altair) (1.20.3)
-Requirement already satisfied: jinja2 in ./.venv/lib/python3.8/site-packages (from altair) (3.0.0)
+<pre><code>Requirement already satisfied: vega_datasets in ./.venv/lib/python3.8/site-packages (0.9.0)
+Requirement already satisfied: pandas&gt;=0.18 in ./.venv/lib/python3.8/site-packages (from altair) (1.2.4)
+Requirement already satisfied: numpy in ./.venv/lib/python3.8/site-packages (from altair) (1.20.3)
 Requirement already satisfied: toolz in ./.venv/lib/python3.8/site-packages (from altair) (0.11.1)
-Requirement already satisfied: pytz&gt;=2017.3 in ./.venv/lib/python3.8/site-packages (from pandas&gt;=0.18-&gt;altair) (2021.1)
+Requirement already satisfied: entrypoints in ./.venv/lib/python3.8/site-packages (from altair) (0.3)
+Requirement already satisfied: jinja2 in ./.venv/lib/python3.8/site-packages (from altair) (3.0.0)
+Requirement already satisfied: jsonschema in ./.venv/lib/python3.8/site-packages (from altair) (3.2.0)
 Requirement already satisfied: python-dateutil&gt;=2.7.3 in ./.venv/lib/python3.8/site-packages (from pandas&gt;=0.18-&gt;altair) (2.8.1)
-Requirement already satisfied: setuptools in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (47.1.0)
-Requirement already satisfied: six&gt;=1.11.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (1.16.0)
+Requirement already satisfied: pytz&gt;=2017.3 in ./.venv/lib/python3.8/site-packages (from pandas&gt;=0.18-&gt;altair) (2021.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0.0rc2 in ./.venv/lib/python3.8/site-packages (from jinja2-&gt;altair) (2.0.0)
 Requirement already satisfied: attrs&gt;=17.4.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (21.2.0)</code></pre>
 </div>
 <div class="cell-output-stdout">
-<pre><code>Requirement already satisfied: pyrsistent&gt;=0.14.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (0.17.3)
-Requirement already satisfied: MarkupSafe&gt;=2.0.0rc2 in ./.venv/lib/python3.8/site-packages (from jinja2-&gt;altair) (2.0.0)</code></pre>
+<pre><code>Requirement already satisfied: six&gt;=1.11.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (1.16.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (0.17.3)
+Requirement already satisfied: setuptools in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (47.1.0)</code></pre>
 </div>
 <div class="cell-output-stdout">
 <pre><code>[33mWARNING: You are using pip version 20.1.1; however, version 21.1.1 is available.
@@ -323,12 +324,12 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-bcbeeb4250854412b62b04253f8e700b"></div>
+<div id="altair-viz-03ec0ab26bd54c768ba650257e6e18f4"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-bcbeeb4250854412b62b04253f8e700b") {
-      outputDiv = document.getElementById("altair-viz-bcbeeb4250854412b62b04253f8e700b");
+    if (outputDiv.id !== "altair-viz-03ec0ab26bd54c768ba650257e6e18f4") {
+      outputDiv = document.getElementById("altair-viz-03ec0ab26bd54c768ba650257e6e18f4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -408,12 +409,12 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-fecfa529d9e64cd79e0fc02bbc88fdcc"></div>
+<div id="altair-viz-a32f5d337ee14b409bd6ead533ae98be"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fecfa529d9e64cd79e0fc02bbc88fdcc") {
-      outputDiv = document.getElementById("altair-viz-fecfa529d9e64cd79e0fc02bbc88fdcc");
+    if (outputDiv.id !== "altair-viz-a32f5d337ee14b409bd6ead533ae98be") {
+      outputDiv = document.getElementById("altair-viz-a32f5d337ee14b409bd6ead533ae98be");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -541,12 +542,12 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-8141e86429e54fd8b62f6c953dd945a2"></div>
+<div id="altair-viz-aefc427cb27f482a929def26b2a3fd88"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8141e86429e54fd8b62f6c953dd945a2") {
-      outputDiv = document.getElementById("altair-viz-8141e86429e54fd8b62f6c953dd945a2");
+    if (outputDiv.id !== "altair-viz-aefc427cb27f482a929def26b2a3fd88") {
+      outputDiv = document.getElementById("altair-viz-aefc427cb27f482a929def26b2a3fd88");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -605,13 +606,13 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <!-- -->
 </section>
 </main>
-<div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+<div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./altair_cartographic.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
   </div>
 </div>
 </div> <!-- /main column -->
@@ -640,6 +641,7 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>

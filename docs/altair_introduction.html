@@ -99,7 +99,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top">
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -230,6 +230,27 @@
   </div>
 </nav>
   </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#imports" class="nav-link active" data-scroll-target="#imports"> <span class="header-section-number">1.1</span> Imports</a></li>
+<li><a href="#renderers" class="nav-link" data-scroll-target="#renderers"> <span class="header-section-number">1.2</span> Renderers</a></li>
+<li><a href="#data" class="nav-link" data-scroll-target="#data"> <span class="header-section-number">1.3</span> Data</a>
+<ul class="collapse">
+<li><a href="#weather-data" class="nav-link" data-scroll-target="#weather-data"> <span class="header-section-number">1.3.1</span> Weather Data</a></li>
+</ul></li>
+<li><a href="#the-chart-object" class="nav-link" data-scroll-target="#the-chart-object"> <span class="header-section-number">1.4</span> The Chart Object</a></li>
+<li><a href="#marks-and-encodings" class="nav-link" data-scroll-target="#marks-and-encodings"> <span class="header-section-number">1.5</span> Marks and Encodings</a></li>
+<li><a href="#data-transformation-aggregation" class="nav-link" data-scroll-target="#data-transformation-aggregation"> <span class="header-section-number">1.6</span> Data Transformation: Aggregation</a></li>
+<li><a href="#changing-the-mark-type" class="nav-link" data-scroll-target="#changing-the-mark-type"> <span class="header-section-number">1.7</span> Changing the Mark Type</a></li>
+<li><a href="#customizing-a-visualization" class="nav-link" data-scroll-target="#customizing-a-visualization"> <span class="header-section-number">1.8</span> Customizing a Visualization</a></li>
+<li><a href="#multiple-views" class="nav-link" data-scroll-target="#multiple-views"> <span class="header-section-number">1.9</span> Multiple Views</a></li>
+<li><a href="#interactivity" class="nav-link" data-scroll-target="#interactivity"> <span class="header-section-number">1.10</span> Interactivity</a></li>
+<li><a href="#aside-examining-the-json-output" class="nav-link" data-scroll-target="#aside-examining-the-json-output"> <span class="header-section-number">1.11</span> Aside: Examining the JSON Output</a></li>
+<li><a href="#publishing-a-visualization" class="nav-link" data-scroll-target="#publishing-a-visualization"> <span class="header-section-number">1.12</span> Publishing a Visualization</a></li>
+<li><a href="#next-steps" class="nav-link" data-scroll-target="#next-steps"> <span class="header-section-number">1.13</span> Next Steps</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
 
@@ -1676,28 +1697,6 @@
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#imports" class="nav-link" data-bs-target="#imports"> <span class="header-section-number">1.1</span> Imports</a></li>
-<li><a href="#renderers" class="nav-link" data-bs-target="#renderers"> <span class="header-section-number">1.2</span> Renderers</a></li>
-<li><a href="#data" class="nav-link" data-bs-target="#data"> <span class="header-section-number">1.3</span> Data</a>
-<ul>
-<li><a href="#weather-data" class="nav-link" data-bs-target="#weather-data"> <span class="header-section-number">1.3.1</span> Weather Data</a></li>
-</ul></li>
-<li><a href="#the-chart-object" class="nav-link" data-bs-target="#the-chart-object"> <span class="header-section-number">1.4</span> The Chart Object</a></li>
-<li><a href="#marks-and-encodings" class="nav-link" data-bs-target="#marks-and-encodings"> <span class="header-section-number">1.5</span> Marks and Encodings</a></li>
-<li><a href="#data-transformation-aggregation" class="nav-link" data-bs-target="#data-transformation-aggregation"> <span class="header-section-number">1.6</span> Data Transformation: Aggregation</a></li>
-<li><a href="#changing-the-mark-type" class="nav-link" data-bs-target="#changing-the-mark-type"> <span class="header-section-number">1.7</span> Changing the Mark Type</a></li>
-<li><a href="#customizing-a-visualization" class="nav-link" data-bs-target="#customizing-a-visualization"> <span class="header-section-number">1.8</span> Customizing a Visualization</a></li>
-<li><a href="#multiple-views" class="nav-link" data-bs-target="#multiple-views"> <span class="header-section-number">1.9</span> Multiple Views</a></li>
-<li><a href="#interactivity" class="nav-link" data-bs-target="#interactivity"> <span class="header-section-number">1.10</span> Interactivity</a></li>
-<li><a href="#aside-examining-the-json-output" class="nav-link" data-bs-target="#aside-examining-the-json-output"> <span class="header-section-number">1.11</span> Aside: Examining the JSON Output</a></li>
-<li><a href="#publishing-a-visualization" class="nav-link" data-bs-target="#publishing-a-visualization"> <span class="header-section-number">1.12</span> Publishing a Visualization</a></li>
-<li><a href="#next-steps" class="nav-link" data-bs-target="#next-steps"> <span class="header-section-number">1.13</span> Next Steps</a></li>
-</ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

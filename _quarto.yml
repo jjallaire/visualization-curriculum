@@ -25,7 +25,6 @@ book:
       chapters:
         - altair_debugging.ipynb
 
-execute: true
 freeze: auto
 allow-errors: true
 

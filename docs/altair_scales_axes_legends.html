@@ -99,7 +99,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top">
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -230,6 +230,26 @@
   </div>
 </nav>
   </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#antibiotics-data" class="nav-link active" data-scroll-target="#antibiotics-data"> <span class="header-section-number">4.1</span> Antibiotics Data</a></li>
+<li><a href="#configuring-scales-and-axes" class="nav-link" data-scroll-target="#configuring-scales-and-axes"> <span class="header-section-number">4.2</span> Configuring Scales and Axes</a>
+<ul class="collapse">
+<li><a href="#plotting-antibiotic-resistance-adjusting-the-scale-type" class="nav-link" data-scroll-target="#plotting-antibiotic-resistance-adjusting-the-scale-type"> <span class="header-section-number">4.2.1</span> Plotting Antibiotic Resistance: Adjusting the Scale Type</a></li>
+<li><a href="#styling-an-axis" class="nav-link" data-scroll-target="#styling-an-axis"> <span class="header-section-number">4.2.2</span> Styling an Axis</a></li>
+<li><a href="#comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing" class="nav-link" data-scroll-target="#comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing"> <span class="header-section-number">4.2.3</span> Comparing Antibiotics: Adjusting Grid Lines, Tick Counts, and Sizing</a></li>
+</ul></li>
+<li><a href="#configuring-color-legends" class="nav-link" data-scroll-target="#configuring-color-legends"> <span class="header-section-number">4.3</span> Configuring Color Legends</a>
+<ul class="collapse">
+<li><a href="#color-by-gram-staining" class="nav-link" data-scroll-target="#color-by-gram-staining"> <span class="header-section-number">4.3.1</span> Color by Gram Staining</a></li>
+<li><a href="#color-by-species" class="nav-link" data-scroll-target="#color-by-species"> <span class="header-section-number">4.3.2</span> Color by Species</a></li>
+<li><a href="#color-by-genus" class="nav-link" data-scroll-target="#color-by-genus"> <span class="header-section-number">4.3.3</span> Color by Genus</a></li>
+<li><a href="#color-by-antibiotic-response" class="nav-link" data-scroll-target="#color-by-antibiotic-response"> <span class="header-section-number">4.3.4</span> Color by Antibiotic Response</a></li>
+</ul></li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">4.4</span> Summary</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
 
@@ -2103,27 +2123,6 @@
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#antibiotics-data" class="nav-link" data-bs-target="#antibiotics-data"> <span class="header-section-number">4.1</span> Antibiotics Data</a></li>
-<li><a href="#configuring-scales-and-axes" class="nav-link" data-bs-target="#configuring-scales-and-axes"> <span class="header-section-number">4.2</span> Configuring Scales and Axes</a>
-<ul>
-<li><a href="#plotting-antibiotic-resistance-adjusting-the-scale-type" class="nav-link" data-bs-target="#plotting-antibiotic-resistance-adjusting-the-scale-type"> <span class="header-section-number">4.2.1</span> Plotting Antibiotic Resistance: Adjusting the Scale Type</a></li>
-<li><a href="#styling-an-axis" class="nav-link" data-bs-target="#styling-an-axis"> <span class="header-section-number">4.2.2</span> Styling an Axis</a></li>
-<li><a href="#comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing" class="nav-link" data-bs-target="#comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing"> <span class="header-section-number">4.2.3</span> Comparing Antibiotics: Adjusting Grid Lines, Tick Counts, and Sizing</a></li>
-</ul></li>
-<li><a href="#configuring-color-legends" class="nav-link" data-bs-target="#configuring-color-legends"> <span class="header-section-number">4.3</span> Configuring Color Legends</a>
-<ul>
-<li><a href="#color-by-gram-staining" class="nav-link" data-bs-target="#color-by-gram-staining"> <span class="header-section-number">4.3.1</span> Color by Gram Staining</a></li>
-<li><a href="#color-by-species" class="nav-link" data-bs-target="#color-by-species"> <span class="header-section-number">4.3.2</span> Color by Species</a></li>
-<li><a href="#color-by-genus" class="nav-link" data-bs-target="#color-by-genus"> <span class="header-section-number">4.3.3</span> Color by Genus</a></li>
-<li><a href="#color-by-antibiotic-response" class="nav-link" data-bs-target="#color-by-antibiotic-response"> <span class="header-section-number">4.3.4</span> Color by Antibiotic Response</a></li>
-</ul></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">4.4</span> Summary</a></li>
-</ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

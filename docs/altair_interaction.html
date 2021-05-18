@@ -99,7 +99,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top">
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -230,6 +230,26 @@
   </div>
 </nav>
   </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#datasets" class="nav-link active" data-scroll-target="#datasets"> <span class="header-section-number">6.1</span> Datasets</a></li>
+<li><a href="#introducing-selections" class="nav-link" data-scroll-target="#introducing-selections"> <span class="header-section-number">6.2</span> Introducing Selections</a></li>
+<li><a href="#dynamic-queries" class="nav-link" data-scroll-target="#dynamic-queries"> <span class="header-section-number">6.3</span> Dynamic Queries</a>
+<ul class="collapse">
+<li><a href="#binding-selections-to-multiple-inputs" class="nav-link" data-scroll-target="#binding-selections-to-multiple-inputs"> <span class="header-section-number">6.3.1</span> Binding Selections to Multiple Inputs</a></li>
+<li><a href="#using-visualizations-as-dynamic-queries" class="nav-link" data-scroll-target="#using-visualizations-as-dynamic-queries"> <span class="header-section-number">6.3.2</span> Using Visualizations as Dynamic Queries</a></li>
+</ul></li>
+<li><a href="#panning-zooming" class="nav-link" data-scroll-target="#panning-zooming"> <span class="header-section-number">6.4</span> Panning &amp; Zooming</a></li>
+<li><a href="#navigation-overview-detail" class="nav-link" data-scroll-target="#navigation-overview-detail"> <span class="header-section-number">6.5</span> Navigation: Overview + Detail</a></li>
+<li><a href="#details-on-demand" class="nav-link" data-scroll-target="#details-on-demand"> <span class="header-section-number">6.6</span> Details on Demand</a></li>
+<li><a href="#brushing-linking-revisited" class="nav-link" data-scroll-target="#brushing-linking-revisited"> <span class="header-section-number">6.7</span> Brushing &amp; Linking, Revisited</a>
+<ul class="collapse">
+<li><a href="#cross-filtering" class="nav-link" data-scroll-target="#cross-filtering"> <span class="header-section-number">6.7.1</span> Cross-Filtering</a></li>
+</ul></li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">6.8</span> Summary</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
 
@@ -1433,27 +1453,6 @@
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#datasets" class="nav-link" data-bs-target="#datasets"> <span class="header-section-number">6.1</span> Datasets</a></li>
-<li><a href="#introducing-selections" class="nav-link" data-bs-target="#introducing-selections"> <span class="header-section-number">6.2</span> Introducing Selections</a></li>
-<li><a href="#dynamic-queries" class="nav-link" data-bs-target="#dynamic-queries"> <span class="header-section-number">6.3</span> Dynamic Queries</a>
-<ul>
-<li><a href="#binding-selections-to-multiple-inputs" class="nav-link" data-bs-target="#binding-selections-to-multiple-inputs"> <span class="header-section-number">6.3.1</span> Binding Selections to Multiple Inputs</a></li>
-<li><a href="#using-visualizations-as-dynamic-queries" class="nav-link" data-bs-target="#using-visualizations-as-dynamic-queries"> <span class="header-section-number">6.3.2</span> Using Visualizations as Dynamic Queries</a></li>
-</ul></li>
-<li><a href="#panning-zooming" class="nav-link" data-bs-target="#panning-zooming"> <span class="header-section-number">6.4</span> Panning &amp; Zooming</a></li>
-<li><a href="#navigation-overview-detail" class="nav-link" data-bs-target="#navigation-overview-detail"> <span class="header-section-number">6.5</span> Navigation: Overview + Detail</a></li>
-<li><a href="#details-on-demand" class="nav-link" data-bs-target="#details-on-demand"> <span class="header-section-number">6.6</span> Details on Demand</a></li>
-<li><a href="#brushing-linking-revisited" class="nav-link" data-bs-target="#brushing-linking-revisited"> <span class="header-section-number">6.7</span> Brushing &amp; Linking, Revisited</a>
-<ul>
-<li><a href="#cross-filtering" class="nav-link" data-bs-target="#cross-filtering"> <span class="header-section-number">6.7.1</span> Cross-Filtering</a></li>
-</ul></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">6.8</span> Summary</a></li>
-</ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

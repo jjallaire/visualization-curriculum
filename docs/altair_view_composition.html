@@ -85,6 +85,8 @@
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./altair_interaction.html" rel="next">
+  <link href="./altair_scales_axes_legends.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,6 +100,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -115,23 +143,25 @@
 <div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
   <div class="px-3 pt-lg-2 text-left">
     <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Visualization Curriculum
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -140,8 +170,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -151,13 +181,13 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -173,12 +203,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Curriculum
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -210,12 +240,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Support
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="support-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -248,7 +278,6 @@
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
-
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-7">5&nbsp; Multi-View Composition</h1>
 </header>
@@ -263,17 +292,17 @@
 </ul>
 <p>We’ll then look at how these operations form a <em>view composition algebra</em>, in which the operations can be combined to build a variety of complex multi-view displays.</p>
 <p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
-<div id="dIig-LFMn1DY" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" id="weather-data"><span class="header-section-number">5.1</span> Weather Data</h2>
 <p>We will be visualizing weather statistics for the U.S. cities of Seattle and New York. Let’s load the dataset and peek at the first and last 10 rows:</p>
-<div id="r3obq-Ksn8W5" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="cell">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>weather <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/weather.csv'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="NFKYk5waoSVd" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="49003cdc-647a-4a87-8c9b-293b3f7e153f">
+<div class="cell" data-outputid="49003cdc-647a-4a87-8c9b-293b3f7e153f">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(weather)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -398,7 +427,7 @@
 </div>
 </div>
 </div>
-<div id="myLKf7LWS2T4" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="d72e8414-f30b-47e8-8ac4-dde69462dbf4">
+<div class="cell" data-outputid="d72e8414-f30b-47e8-8ac4-dde69462dbf4">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.tail(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -530,7 +559,7 @@
 <section class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" id="shared-axes"><span class="header-section-number">5.2.1</span> Shared Axes</h3>
 <p>Let’s start by plotting the minimum and maximum average temperatures per month:</p>
-<div id="iwgqOsfoyVe_" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="77cb9541-dc66-45ac-f06f-7d05ed093534">
+<div class="cell" data-outputid="77cb9541-dc66-45ac-f06f-7d05ed093534">
 <div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(weather).mark_area().encode(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>),</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>),</span>
@@ -538,12 +567,12 @@
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-5a4de08747824b12a891047a0719b158"></div>
+<div id="altair-viz-9214e350f9d64f0aad6890867f5f7116"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5a4de08747824b12a891047a0719b158") {
-      outputDiv = document.getElementById("altair-viz-5a4de08747824b12a891047a0719b158");
+    if (outputDiv.id !== "altair-viz-9214e350f9d64f0aad6890867f5f7116") {
+      outputDiv = document.getElementById("altair-viz-9214e350f9d64f0aad6890867f5f7116");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -591,7 +620,7 @@
 </div>
 <p><em>The plot shows us temperature ranges for each month over the entirety of our data. However, this is pretty misleading as it aggregates the measurements for both Seattle and New York!</em></p>
 <p>Let’s subdivide the data by location using a color encoding, while also adjusting the mark opacity to accommodate overlapping areas:</p>
-<div id="PbNkncWsRKrV" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="fb6da544-e1e7-477e-fedc-e1f0a3dc61b4">
+<div class="cell" data-outputid="fb6da544-e1e7-477e-fedc-e1f0a3dc61b4">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(weather).mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>),</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>),</span>
@@ -600,12 +629,12 @@
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-725c00d6ac484ba89937bb9c245df46e"></div>
+<div id="altair-viz-df7be3deb4f84194bf2e3d04ad0b02d8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-725c00d6ac484ba89937bb9c245df46e") {
-      outputDiv = document.getElementById("altair-viz-725c00d6ac484ba89937bb9c245df46e");
+    if (outputDiv.id !== "altair-viz-df7be3deb4f84194bf2e3d04ad0b02d8") {
+      outputDiv = document.getElementById("altair-viz-df7be3deb4f84194bf2e3d04ad0b02d8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -654,7 +683,7 @@
 <p><em>We can see that Seattle is more temperate: warmer in the winter, and cooler in the summer.</em></p>
 <p>In this case we’ve created a layered chart without any special features by simply subdividing the area marks by color. While the chart above shows us the temperature ranges, we might also want to emphasize the middle of the range.</p>
 <p>Let’s create a line chart showing the average temperature midpoint. We’ll use a <code>calculate</code> transform to compute the midpoints between the minimum and maximum daily temperatures:</p>
-<div id="zHfuCUbyzW7q" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="257e2570-49f0-4502-aebb-b8b28aae3897">
+<div class="cell" data-outputid="257e2570-49f0-4502-aebb-b8b28aae3897">
 <div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(weather).mark_line().transform_calculate(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  temp_mid<span class="op">=</span><span class="st">'(+datum.temp_min + +datum.temp_max) / 2'</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
@@ -664,12 +693,12 @@
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-d60d6c53a784431e9b6d61419db88bba"></div>
+<div id="altair-viz-e96ed3e048c341ceb5ccd447260766f6"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d60d6c53a784431e9b6d61419db88bba") {
-      outputDiv = document.getElementById("altair-viz-d60d6c53a784431e9b6d61419db88bba");
+    if (outputDiv.id !== "altair-viz-e96ed3e048c341ceb5ccd447260766f6") {
+      outputDiv = document.getElementById("altair-viz-e96ed3e048c341ceb5ccd447260766f6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -717,7 +746,7 @@
 </div>
 <p><em>Aside</em>: note the use of <code>+datum.temp_min</code> within the calculate transform. As we are loading the data directly from a CSV file without any special parsing instructions, the temperature values may be internally represented as string values. Adding the <code>+</code> in front of the value forces it to be treated as a number.</p>
 <p>We’d now like to combine these charts by layering the midpoint lines over the range areas. Using the syntax <code>chart1 + chart2</code>, we can specify that we want a new layered chart in which <code>chart1</code> is the first layer and <code>chart2</code> is a second layer drawn on top:</p>
-<div id="DLOAw_LBzcuW" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="dc6a8c55-45cf-4029-fa68-29ea0214589e">
+<div class="cell" data-outputid="dc6a8c55-45cf-4029-fa68-29ea0214589e">
 <div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart(weather).mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>),</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>),</span>
@@ -736,12 +765,12 @@
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">+</span> tempMid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-c77ad1068ea3479d91823e8acc5205d8"></div>
+<div id="altair-viz-57b764f780044e71bab8dc82bfb4029d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c77ad1068ea3479d91823e8acc5205d8") {
-      outputDiv = document.getElementById("altair-viz-c77ad1068ea3479d91823e8acc5205d8");
+    if (outputDiv.id !== "altair-viz-57b764f780044e71bab8dc82bfb4029d") {
+      outputDiv = document.getElementById("altair-viz-57b764f780044e71bab8dc82bfb4029d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -789,7 +818,7 @@
 </div>
 <p><em>Now we have a multi-layer plot! However, the y-axis title (though informative) has become a bit long and unruly…</em></p>
 <p>Let’s customize our axes to clean up the plot. If we set a custom axis title within one of the layers, it will automatically be used as a shared axis title for all the layers:</p>
-<div id="LUyPrsgf2N-R" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="b261942a-7c09-4aab-c296-c0516e6343b6">
+<div class="cell" data-outputid="b261942a-7c09-4aab-c296-c0516e6343b6">
 <div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart(weather).mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>, title<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">'%b'</span>)),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>, title<span class="op">=</span><span class="st">'Avg. Temperature °C'</span>),</span>
@@ -808,12 +837,12 @@
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">+</span> tempMid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-00a6b669d8114ab1be4917214965aec6"></div>
+<div id="altair-viz-f14b6b763f5b4961b915883a22ac6283"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-00a6b669d8114ab1be4917214965aec6") {
-      outputDiv = document.getElementById("altair-viz-00a6b669d8114ab1be4917214965aec6");
+    if (outputDiv.id !== "altair-viz-f14b6b763f5b4961b915883a22ac6283") {
+      outputDiv = document.getElementById("altair-viz-f14b6b763f5b4961b915883a22ac6283");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -861,16 +890,16 @@
 </div>
 <p><em>What happens if both layers have custom axis titles? Modify the code above to find out…</em></p>
 <p>Above used the <code>+</code> operator, a convenient shorthand for Altair’s <code>layer</code> method. We can generate an identical layered chart using the <code>layer</code> method directly:</p>
-<div id="aPnJVekc5iOE" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="07beb43c-9dd8-4cbc-9bb0-4fda3216ace8">
+<div class="cell" data-outputid="07beb43c-9dd8-4cbc-9bb0-4fda3216ace8">
 <div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.layer(tempMinMax, tempMid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-9c70e263ac1644c2ab491c648d7bb9ab"></div>
+<div id="altair-viz-564effe542344a99b84fc5300060a7e0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9c70e263ac1644c2ab491c648d7bb9ab") {
-      outputDiv = document.getElementById("altair-viz-9c70e263ac1644c2ab491c648d7bb9ab");
+    if (outputDiv.id !== "altair-viz-564effe542344a99b84fc5300060a7e0") {
+      outputDiv = document.getElementById("altair-viz-564effe542344a99b84fc5300060a7e0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -922,7 +951,7 @@
 <h3 data-number="5.2.2" class="anchored" id="dual-axis-charts"><span class="header-section-number">5.2.2</span> Dual-Axis Charts</h3>
 <p><em>Seattle has a reputation as a rainy city. Is that deserved?</em></p>
 <p>Let’s look at precipitation alongside temperature to learn more. First let’s create a base plot the shows average monthly precipitation in Seattle:</p>
-<div id="kD70HRtQaN-e" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="f98c00a3-a8a6-485f-d61d-7ea40bcb6f97">
+<div class="cell" data-outputid="f98c00a3-a8a6-485f-d61d-7ea40bcb6f97">
 <div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(weather).transform_filter(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'datum.location == "Seattle"'</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>).mark_line(</span>
@@ -934,12 +963,12 @@
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-6451a248827645fdb88a3e002b016a6d"></div>
+<div id="altair-viz-08fe0ffc2866471fab15f5b305fb7ab3"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6451a248827645fdb88a3e002b016a6d") {
-      outputDiv = document.getElementById("altair-viz-6451a248827645fdb88a3e002b016a6d");
+    if (outputDiv.id !== "altair-viz-08fe0ffc2866471fab15f5b305fb7ab3") {
+      outputDiv = document.getElementById("altair-viz-08fe0ffc2866471fab15f5b305fb7ab3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -986,7 +1015,7 @@
 </div>
 </div>
 <p>To facilitate comparison with the temperature data, let’s create a new layered chart. Here’s what happens if we try to layer the charts as we did earlier:</p>
-<div id="eezzWWPR1tJ6" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="f22513cc-d5b7-4c7f-9e95-f73ff3dec020">
+<div class="cell" data-outputid="f22513cc-d5b7-4c7f-9e95-f73ff3dec020">
 <div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart(weather).transform_filter(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'datum.location == "Seattle"'</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>).mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
@@ -1008,12 +1037,12 @@
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>alt.layer(tempMinMax, precip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-2965693d326a47f8bce6855f739564ea"></div>
+<div id="altair-viz-ab41d95d354247aa9dcf26f709a1e3bc"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2965693d326a47f8bce6855f739564ea") {
-      outputDiv = document.getElementById("altair-viz-2965693d326a47f8bce6855f739564ea");
+    if (outputDiv.id !== "altair-viz-ab41d95d354247aa9dcf26f709a1e3bc") {
+      outputDiv = document.getElementById("altair-viz-ab41d95d354247aa9dcf26f709a1e3bc");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1062,7 +1091,7 @@
 <p><em>The precipitation values use a much smaller range of the y-axis then the temperatures!</em></p>
 <p>By default, layered charts use a <em>shared domain</em>: the values for the x-axis or y-axis are combined across all the layers to determine a shared extent. This default behavior assumes that the layered values have the same units. However, this doesn’t hold up for this example, as we are combining temperature values (degrees Celsius) with precipitation values (inches)!</p>
 <p>If we want to use different y-axis scales, we need to specify how we want Altair to <em>resolve</em> the data across layers. In this case, we want to resolve the y-axis <code>scale</code> domains to be <code>independent</code> rather than use a <code>shared</code> domain. The <code>Chart</code> object produced by a layer operator includes a <code>resolve_scale</code> method with which we can specify the desired resolution:</p>
-<div id="c2ZZBtzecCff" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="770e1942-479c-4ac4-bbac-94b853c39239">
+<div class="cell" data-outputid="770e1942-479c-4ac4-bbac-94b853c39239">
 <div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart(weather).transform_filter(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'datum.location == "Seattle"'</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>).mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
@@ -1084,12 +1113,12 @@
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>alt.layer(tempMinMax, precip).resolve_scale(y<span class="op">=</span><span class="st">'independent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-c26874c79a7f498aa9c4cccd09fa8c85"></div>
+<div id="altair-viz-81b33c8785924b29b814c17348c746c4"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c26874c79a7f498aa9c4cccd09fa8c85") {
-      outputDiv = document.getElementById("altair-viz-c26874c79a7f498aa9c4cccd09fa8c85");
+    if (outputDiv.id !== "altair-viz-81b33c8785924b29b814c17348c746c4") {
+      outputDiv = document.getElementById("altair-viz-81b33c8785924b29b814c17348c746c4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1137,7 +1166,7 @@
 </div>
 <p><em>We can now see that autumn is the rainiest season in Seattle (peaking in November), complemented by dry summers.</em></p>
 <p>You may have noticed some redundancy in our plot specifications above: both use the same dataset and the same filter to look at Seattle only. If you want, you can streamline the code a bit by providing the data and filter transform to the top-level layered chart. The individual layers will then inherit the data if they don’t have their own data definitions:</p>
-<div id="3XY7hQQrarSk" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="7360b4b6-1b15-4bc8-87f4-79d40bf6152f">
+<div class="cell" data-outputid="7360b4b6-1b15-4bc8-87f4-79d40bf6152f">
 <div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart().mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>, title<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">'%b'</span>)),</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>, title<span class="op">=</span><span class="st">'Avg. Temperature °C'</span>),</span>
@@ -1157,12 +1186,12 @@
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>).resolve_scale(y<span class="op">=</span><span class="st">'independent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-6fdb930ff9164f5783c95e251907e508"></div>
+<div id="altair-viz-ff5711171c9b4cacacc63b2cb00ae333"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6fdb930ff9164f5783c95e251907e508") {
-      outputDiv = document.getElementById("altair-viz-6fdb930ff9164f5783c95e251907e508");
+    if (outputDiv.id !== "altair-viz-ff5711171c9b4cacacc63b2cb00ae333") {
+      outputDiv = document.getElementById("altair-viz-ff5711171c9b4cacacc63b2cb00ae333");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1215,7 +1244,7 @@
 <h2 data-number="5.3" class="anchored" id="facet"><span class="header-section-number">5.3</span> Facet</h2>
 <p><em>Faceting</em> involves subdividing a dataset into groups and creating a separate plot for each group. In earlier notebooks, we learned how to create faceted charts using the <code>row</code> and <code>column</code> encoding channels. We’ll first review those channels and then show how they are instances of the more general <code>facet</code> operator.</p>
 <p>Let’s start with a basic histogram of maximum temperature values in Seattle:</p>
-<div id="sYjs5JvDcZ6R" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="c25f5b7a-ca1f-465b-fa1d-416f3a304f2b">
+<div class="cell" data-outputid="c25f5b7a-ca1f-465b-fa1d-416f3a304f2b">
 <div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(weather).mark_bar().transform_filter(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'datum.location == "Seattle"'</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
@@ -1224,12 +1253,12 @@
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-0ed47f1573ac42e5ae3780b237d80ac3"></div>
+<div id="altair-viz-7d1c37331b964b67a83c77dda6f0389a"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0ed47f1573ac42e5ae3780b237d80ac3") {
-      outputDiv = document.getElementById("altair-viz-0ed47f1573ac42e5ae3780b237d80ac3");
+    if (outputDiv.id !== "altair-viz-7d1c37331b964b67a83c77dda6f0389a") {
+      outputDiv = document.getElementById("altair-viz-7d1c37331b964b67a83c77dda6f0389a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1277,7 +1306,7 @@
 </div>
 <p><em>How does this temperature profile change based on the weather of a given day – that is, whether there was drizzle, fog, rain, snow, or sun?</em></p>
 <p>Let’s use the <code>column</code> encoding channel to facet the data by weather type. We can also use <code>color</code> as a redundant encoding, using a customized color range:</p>
-<div id="Q88OIqK5tm35" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="68b98e04-57c1-4ed4-960e-5919d0f597a4">
+<div class="cell" data-outputid="68b98e04-57c1-4ed4-960e-5919d0f597a4">
 <div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> alt.Scale(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  domain<span class="op">=</span>[<span class="st">'drizzle'</span>, <span class="st">'fog'</span>, <span class="st">'rain'</span>, <span class="st">'snow'</span>, <span class="st">'sun'</span>],</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">range</span><span class="op">=</span>[<span class="st">'#aec7e8'</span>, <span class="st">'#c7c7c7'</span>, <span class="st">'#1f77b4'</span>, <span class="st">'#9467bd'</span>, <span class="st">'#e7ba52'</span>]</span>
@@ -1296,12 +1325,12 @@
 <span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-f89b71ea08224651be49e7eba4a45812"></div>
+<div id="altair-viz-d27b96d057924bf9bf713321085168c8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f89b71ea08224651be49e7eba4a45812") {
-      outputDiv = document.getElementById("altair-viz-f89b71ea08224651be49e7eba4a45812");
+    if (outputDiv.id !== "altair-viz-d27b96d057924bf9bf713321085168c8") {
+      outputDiv = document.getElementById("altair-viz-d27b96d057924bf9bf713321085168c8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1351,7 +1380,7 @@
 <p>In addition to <code>row</code> and <code>column</code> encoding channels <em>within</em> a chart definition, we can take a basic chart definition and apply faceting using an explicit <code>facet</code> operator.</p>
 <p>Let’s recreate the chart above, but this time using <code>facet</code>. We start with the same basic histogram definition, but remove the data source, filter transform, and column channel. We can then invoke the <code>facet</code> method, passing in the data and specifying that we should facet into columns according to the <code>weather</code> field. The <code>facet</code> method accepts both <code>row</code> and <code>column</code> arguments. The two can be used together to create a 2D grid of faceted plots.</p>
 <p>Finally we include our filter transform, applying it to the top-level faceted chart. While we could apply the filter transform to the histogram definition as before, that is slightly less efficient. Rather than filter out “New York” values within each facet cell, applying the filter to the faceted chart lets Vega-Lite know that we can filter out those values up front, prior to the facet subdivision.</p>
-<div id="zbH63h3VWoxB" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="c0a8bcd2-08ec-4496-f572-7e476e7cb643">
+<div class="cell" data-outputid="c0a8bcd2-08ec-4496-f572-7e476e7cb643">
 <div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> alt.Scale(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  domain<span class="op">=</span>[<span class="st">'drizzle'</span>, <span class="st">'fog'</span>, <span class="st">'rain'</span>, <span class="st">'snow'</span>, <span class="st">'sun'</span>],</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">range</span><span class="op">=</span>[<span class="st">'#aec7e8'</span>, <span class="st">'#c7c7c7'</span>, <span class="st">'#1f77b4'</span>, <span class="st">'#9467bd'</span>, <span class="st">'#e7ba52'</span>]</span>
@@ -1372,12 +1401,12 @@
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-c6891118202f4e57874bf03530aa6c4c"></div>
+<div id="altair-viz-b5e43c4a7439427faa7d3971913b3970"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c6891118202f4e57874bf03530aa6c4c") {
-      outputDiv = document.getElementById("altair-viz-c6891118202f4e57874bf03530aa6c4c");
+    if (outputDiv.id !== "altair-viz-b5e43c4a7439427faa7d3971913b3970") {
+      outputDiv = document.getElementById("altair-viz-b5e43c4a7439427faa7d3971913b3970");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1425,7 +1454,7 @@
 </div>
 <p>Given all the extra code above, why would we want to use an explicit <code>facet</code> operator? For basic charts, we should certainly use the <code>column</code> or <code>row</code> encoding channels if we can. However, using the <code>facet</code> operator explicitly is useful if we want to facet composed views, such as layered charts.</p>
 <p>Let’s revisit our layered temperature plots from earlier. Instead of plotting data for New York and Seattle in the same plot, let’s break them up into separate facets. The individual chart definitions are nearly the same as before: one area chart and one line chart. The only difference is that this time we won’t pass the data directly to the chart constructors; we’ll wait and pass it to the facet operator later. We can layer the charts much as before, then invoke <code>facet</code> on the layered chart object, passing in the data and specifying <code>column</code> facets based on the <code>location</code> field:</p>
-<div id="DXPaA6CylJQE" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="29cd36bb-babc-4b4b-8820-75175feb7d23">
+<div class="cell" data-outputid="29cd36bb-babc-4b4b-8820-75175feb7d23">
 <div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart().mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>, title<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">'%b'</span>)),</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>, title<span class="op">=</span><span class="st">'Avg. Temperature (°C)'</span>),</span>
@@ -1447,12 +1476,12 @@
 <span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-36a0afee4f49429b907f1c470e7daecb"></div>
+<div id="altair-viz-42d1e429d1d84f01a58a0752de2dafa8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-36a0afee4f49429b907f1c470e7daecb") {
-      outputDiv = document.getElementById("altair-viz-36a0afee4f49429b907f1c470e7daecb");
+    if (outputDiv.id !== "altair-viz-42d1e429d1d84f01a58a0752de2dafa8") {
+      outputDiv = document.getElementById("altair-viz-42d1e429d1d84f01a58a0752de2dafa8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1500,7 +1529,7 @@
 </div>
 <p>The faceted charts we have seen so far use the same axis scale domains across the facet cells. This default of using <em>shared</em> scales and axes helps aid accurate comparison of values. However, in some cases you may wish to scale each chart independently, for example if the range of values in the cells differs significantly.</p>
 <p>Similar to layered charts, faceted charts also support <em>resolving</em> to independent scales or axes across plots. Let’s see what happens if we call the <code>resolve_axis</code> method to request <code>independent</code> y-axes:</p>
-<div id="tdkplJytl4vh" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="602817e3-0824-44ef-dc5a-3e2ced485cfa">
+<div class="cell" data-outputid="602817e3-0824-44ef-dc5a-3e2ced485cfa">
 <div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart().mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>, title<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">'%b'</span>)),</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>, title<span class="op">=</span><span class="st">'Avg. Temperature (°C)'</span>),</span>
@@ -1522,12 +1551,12 @@
 <span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>).resolve_axis(y<span class="op">=</span><span class="st">'independent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-5abbed1c2c2b4ca1bdd9b91bd2b98955"></div>
+<div id="altair-viz-ee0c9eb9f0964e9ebe15166542d211d7"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5abbed1c2c2b4ca1bdd9b91bd2b98955") {
-      outputDiv = document.getElementById("altair-viz-5abbed1c2c2b4ca1bdd9b91bd2b98955");
+    if (outputDiv.id !== "altair-viz-ee0c9eb9f0964e9ebe15166542d211d7") {
+      outputDiv = document.getElementById("altair-viz-ee0c9eb9f0964e9ebe15166542d211d7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1575,7 +1604,7 @@
 </div>
 <p><em>The chart above looks largely unchanged, but the plot for Seattle now includes its own axis.</em></p>
 <p>What if we instead call <code>resolve_scale</code> to resolve the underlying scale domains?</p>
-<div id="VjRyVRVfbCll" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="3b140df2-76f9-4f6d-df74-b38cb7d6e9f5">
+<div class="cell" data-outputid="3b140df2-76f9-4f6d-df74-b38cb7d6e9f5">
 <div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tempMinMax <span class="op">=</span> alt.Chart().mark_area(opacity<span class="op">=</span><span class="fl">0.3</span>).encode(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>, title<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">'%b'</span>)),</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>, title<span class="op">=</span><span class="st">'Avg. Temperature (°C)'</span>),</span>
@@ -1597,12 +1626,12 @@
 <span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>).resolve_scale(y<span class="op">=</span><span class="st">'independent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-e99816e16c674fe3818f3ce3347125d8"></div>
+<div id="altair-viz-3bc92a318c26438993793e665a0c3839"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e99816e16c674fe3818f3ce3347125d8") {
-      outputDiv = document.getElementById("altair-viz-e99816e16c674fe3818f3ce3347125d8");
+    if (outputDiv.id !== "altair-viz-3bc92a318c26438993793e665a0c3839") {
+      outputDiv = document.getElementById("altair-viz-3bc92a318c26438993793e665a0c3839");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1656,7 +1685,7 @@
 <p>Faceting creates <a href="https://en.wikipedia.org/wiki/Small_multiple">small multiple</a> plots that show separate subdivisions of the data. However, we might wish to create a multi-view display with different views of the <em>same</em> dataset (not subsets) or views involving <em>different</em> datasets.</p>
 <p>Altair provides <em>concatenation</em> operators to combine arbitrary charts into a composed chart. The <code>hconcat</code> operator (shorthand <code>|</code> ) performs horizontal concatenation, while the <code>vconcat</code> operator (shorthand <code>&amp;</code>) performs vertical concatenation.</p>
 <p>Let’s start with a basic line chart showing the average maximum temperature per month for both New York and Seattle, much like we’ve seen before:</p>
-<div id="KAkDG69Xhnr_" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="d97fa576-5791-4912-cf3a-934d12c685d4">
+<div class="cell" data-outputid="d97fa576-5791-4912-cf3a-934d12c685d4">
 <div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(weather).mark_line().encode(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>, title<span class="op">=</span><span class="va">None</span>),</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'average(temp_max):Q'</span>),</span>
@@ -1664,12 +1693,12 @@
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-499d922883044320b9ec9066e1fbcccb"></div>
+<div id="altair-viz-6eb9cde58726487583feb215432f4b79"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-499d922883044320b9ec9066e1fbcccb") {
-      outputDiv = document.getElementById("altair-viz-499d922883044320b9ec9066e1fbcccb");
+    if (outputDiv.id !== "altair-viz-6eb9cde58726487583feb215432f4b79") {
+      outputDiv = document.getElementById("altair-viz-6eb9cde58726487583feb215432f4b79");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1717,7 +1746,7 @@
 </div>
 <p><em>What if we want to compare not just temperature over time, but also precipitation and wind levels?</em></p>
 <p>Let’s create a concatenated chart consisting of three plots. We’ll start by defining a “base” chart definition that contains all the aspects that should be shared by our three plots. We can then modify this base chart to create customized variants, with different y-axis encodings for the <code>temp_max</code>, <code>precipitation</code>, and <code>wind</code> fields. We can then concatenate them using the pipe (<code>|</code>) shorthand operator:</p>
-<div id="crZTVb-FpHDk" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="6394136a-5be8-45b4-f610-744cf4cf70cb">
+<div class="cell" data-outputid="6394136a-5be8-45b4-f610-744cf4cf70cb">
 <div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> alt.Chart(weather).mark_line().encode(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>, title<span class="op">=</span><span class="va">None</span>),</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  color<span class="op">=</span><span class="st">'location:N'</span></span>
@@ -1733,12 +1762,12 @@
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>temp <span class="op">|</span> precip <span class="op">|</span> wind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-16a104418a18420c8105e00f0a04a900"></div>
+<div id="altair-viz-b91ffb97ed6e4497b6ea4e7a0f0ffd1d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-16a104418a18420c8105e00f0a04a900") {
-      outputDiv = document.getElementById("altair-viz-16a104418a18420c8105e00f0a04a900");
+    if (outputDiv.id !== "altair-viz-b91ffb97ed6e4497b6ea4e7a0f0ffd1d") {
+      outputDiv = document.getElementById("altair-viz-b91ffb97ed6e4497b6ea4e7a0f0ffd1d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1796,7 +1825,7 @@
 <p>For cases where only one or two variables are changing, the <code>repeat</code> operator provides a convenient shortcut for creating multiple charts. Given a <em>template</em> specification with some free variables, the repeat operator will then create a chart for each specified assignment to those variables.</p>
 <p>Let’s recreate our concatenation example above using the <code>repeat</code> operator. The only aspect that changes across charts is the choice of data field for the <code>y</code> encoding channel. To create a template specification, we can use the <em>repeater variable</em> <code>alt.repeat('column')</code> as our y-axis field. This code simply states that we want to use the variable assigned to the <code>column</code> repeater, which organizes repeated charts in a horizontal direction. (As the repeater provides the field name only, we have to specify the field data type separately as <code>type='quantitative'</code>.)</p>
 <p>We then invoke the <code>repeat</code> method, passing in data field names for each column:</p>
-<div id="Pp3X3Aa0oc28" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="3c27963c-cd25-42a5-ef61-99e22f4508e5">
+<div class="cell" data-outputid="3c27963c-cd25-42a5-ef61-99e22f4508e5">
 <div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(weather).mark_line().encode(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'month(date):T'</span>,title<span class="op">=</span><span class="va">None</span>),</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(alt.repeat(<span class="st">'column'</span>), aggregate<span class="op">=</span><span class="st">'average'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">'quantitative'</span>),</span>
@@ -1809,12 +1838,12 @@
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-98961489fe0b4745996c757157a52777"></div>
+<div id="altair-viz-335b6c80602d4ee1bbbf464d2c5dd3dd"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-98961489fe0b4745996c757157a52777") {
-      outputDiv = document.getElementById("altair-viz-98961489fe0b4745996c757157a52777");
+    if (outputDiv.id !== "altair-viz-335b6c80602d4ee1bbbf464d2c5dd3dd") {
+      outputDiv = document.getElementById("altair-viz-335b6c80602d4ee1bbbf464d2c5dd3dd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1863,7 +1892,7 @@
 <p>Repetition is supported for both columns and rows. <em>What happens if you modify the code above to use <code>row</code> instead of <code>column</code>?</em></p>
 <p>We can also use <code>row</code> and <code>column</code> repetition together! One common visualization for exploratory data analysis is the <a href="https://en.wikipedia.org/wiki/Scatter_plot#Scatterplot_matrices">scatter plot matrix (or SPLOM)</a>. Given a collection of variables to inspect, a SPLOM provides a grid of all pairwise plots of those variables, allowing us to assess potential associations.</p>
 <p>Let’s use the <code>repeat</code> operator to create a SPLOM for the <code>temp_max</code>, <code>precipitation</code>, and <code>wind</code> fields. We first create our template specification, with repeater variables for both the x- and y-axis data fields. We then invoke <code>repeat</code>, passing in arrays of field names to use for both <code>row</code> and <code>column</code>. Altair will then generate the <a href="https://en.wikipedia.org/wiki/Cartesian_product">cross product (or, Cartesian product)</a> to create the full space of repeated charts:</p>
-<div id="pEzPoVN_mtJr" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="e0589555-41c5-4cb4-dd78-7653ecc841b9">
+<div class="cell" data-outputid="e0589555-41c5-4cb4-dd78-7653ecc841b9">
 <div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>alt.Chart().mark_point(filled<span class="op">=</span><span class="va">True</span>, size<span class="op">=</span><span class="dv">15</span>, opacity<span class="op">=</span><span class="fl">0.5</span>).encode(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  alt.X(alt.repeat(<span class="st">'column'</span>), <span class="bu">type</span><span class="op">=</span><span class="st">'quantitative'</span>),</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(alt.repeat(<span class="st">'row'</span>), <span class="bu">type</span><span class="op">=</span><span class="st">'quantitative'</span>)</span>
@@ -1879,12 +1908,12 @@
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-07793c1793e4411f9666743df0fc7322"></div>
+<div id="altair-viz-18c53aa800f849f6b7905a522ab12a9b"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-07793c1793e4411f9666743df0fc7322") {
-      outputDiv = document.getElementById("altair-viz-07793c1793e4411f9666743df0fc7322");
+    if (outputDiv.id !== "altair-viz-18c53aa800f849f6b7905a522ab12a9b") {
+      outputDiv = document.getElementById("altair-viz-18c53aa800f849f6b7905a522ab12a9b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1938,7 +1967,7 @@
 <h2 data-number="5.6" class="anchored" id="a-view-composition-algebra"><span class="header-section-number">5.6</span> A View Composition Algebra</h2>
 <p>Together, the composition operators <code>layer</code>, <code>facet</code>, <code>concat</code>, and <code>repeat</code> form a <em>view composition algebra</em>: the various operators can be combined to construct a variety of multi-view visualizations.</p>
 <p>As an example, let’s start with two basic charts: a histogram and a simple line (a single <code>rule</code> mark) showing a global average.</p>
-<div id="JG_OLPpR5yUN" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="6776832d-c756-4936-e40d-954c18d3630b">
+<div class="cell" data-outputid="6776832d-c756-4936-e40d-954c18d3630b">
 <div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>basic1 <span class="op">=</span> alt.Chart(weather).transform_filter(</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'datum.location == "Seattle"'</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>).mark_bar().encode(</span>
@@ -1955,12 +1984,12 @@
 <span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>basic1 <span class="op">|</span> basic2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-52c92cbd340744c7b618d50d608c6efa"></div>
+<div id="altair-viz-e84aa40a975b4d399237c4479ef5a908"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-52c92cbd340744c7b618d50d608c6efa") {
-      outputDiv = document.getElementById("altair-viz-52c92cbd340744c7b618d50d608c6efa");
+    if (outputDiv.id !== "altair-viz-e84aa40a975b4d399237c4479ef5a908") {
+      outputDiv = document.getElementById("altair-viz-e84aa40a975b4d399237c4479ef5a908");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2007,7 +2036,7 @@
 </div>
 </div>
 <p>We can then combine the two charts using a <code>layer</code> operator, and then <code>repeat</code> that layered chart to show histograms with overlaid averages for multiple fields:</p>
-<div id="oi06I8yk0EUj" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="8f74c396-ae7d-462f-a156-427c14eda87f">
+<div class="cell" data-outputid="8f74c396-ae7d-462f-a156-427c14eda87f">
 <div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>alt.layer(</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  alt.Chart().mark_bar().encode(</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'month(date):O'</span>, title<span class="op">=</span><span class="st">'Month'</span>),</span>
@@ -2027,12 +2056,12 @@
 <span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-e3e7fae04df34899ae3d5e21b61bd1f3"></div>
+<div id="altair-viz-bcb72ab9b67e47169ceabcf9fce5421a"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e3e7fae04df34899ae3d5e21b61bd1f3") {
-      outputDiv = document.getElementById("altair-viz-e3e7fae04df34899ae3d5e21b61bd1f3");
+    if (outputDiv.id !== "altair-viz-bcb72ab9b67e47169ceabcf9fce5421a") {
+      outputDiv = document.getElementById("altair-viz-bcb72ab9b67e47169ceabcf9fce5421a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2139,12 +2168,12 @@
 <span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-95ed95be66ea48e2b56d6947107b7f06"></div>
+<div id="altair-viz-8313f977bb5b45ec980976c0a393f614"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-95ed95be66ea48e2b56d6947107b7f06") {
-      outputDiv = document.getElementById("altair-viz-95ed95be66ea48e2b56d6947107b7f06");
+    if (outputDiv.id !== "altair-viz-8313f977bb5b45ec980976c0a393f614") {
+      outputDiv = document.getElementById("altair-viz-8313f977bb5b45ec980976c0a393f614");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2233,7 +2262,6 @@
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

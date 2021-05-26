@@ -85,6 +85,8 @@
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./altair_scales_axes_legends.html" rel="next">
+  <link href="./altair_marks_encoding.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,6 +100,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -115,23 +143,25 @@
 <div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
   <div class="px-3 pt-lg-2 text-left">
     <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Visualization Curriculum
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -140,8 +170,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -151,13 +181,13 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -173,12 +203,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Curriculum
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -210,12 +240,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Support
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="support-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -253,7 +283,6 @@
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
-
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-7">3&nbsp; Data Transformation</h1>
 </header>
@@ -261,7 +290,7 @@
 <p>In previous notebooks we learned how to use marks and visual encodings to represent individual data records. Here we will explore methods for <em>transforming</em> data, including the use of aggregates to summarize multiple records. Data transformation is an integral part of visualization: choosing the variables to show and their level of detail is just as important as choosing appropriate visual encodings. After all, it doesn’t matter how well chosen your visual encodings are if you are showing the wrong information!</p>
 <p>As you work through this module, we recommend that you open the <a href="https://altair-viz.github.io/user_guide/transform.html">Altair Data Transformations documentation</a> in another tab. It will be a useful resource if at any point you’d like more details or want to see what other transformations are available.</p>
 <p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
-<div id="zYMsJwmgJ4R7" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -269,19 +298,19 @@
 <h2 data-number="3.1" class="anchored" id="the-movies-dataset"><span class="header-section-number">3.1</span> The Movies Dataset</h2>
 <p>We will be working with a table of data about motion pictures, taken from the <a href="https://vega.github.io/vega-datasets/">vega-datasets</a> collection. The data includes variables such as the film name, director, genre, release date, ratings, and gross revenues. However, <em>be careful when working with this data</em>: the films are from unevenly sampled years, using data combined from multiple sources. If you dig in you will find issues with missing values and even some subtle errors! Nevertheless, the data should prove interesting to explore…</p>
 <p>Let’s retrieve the URL for the JSON data file from the vega_datasets package, and then read the data into a Pandas data frame so that we can inspect its contents.</p>
-<div id="khT9YvmEicpo" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="cell">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>movies_url <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/movies.json'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>movies <span class="op">=</span> pd.read_json(movies_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>How many rows (records) and columns (fields) are in the movies dataset?</p>
-<div id="RR-fAxzmXM6H" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="4a4e1680-7da3-48e1-ba34-5129c433fbe1">
+<div class="cell" data-outputid="4a4e1680-7da3-48e1-ba34-5129c433fbe1">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>movies.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p>(3201, 16)</p>
 </div>
 </div>
 <p>Now let’s peek at the first 5 rows of the table to get a sense of the fields and data types…</p>
-<div id="Oby1ngC7VoUL" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="a9b8b839-6428-4da3-db0c-041cb78b703d">
+<div class="cell" data-outputid="a9b8b839-6428-4da3-db0c-041cb78b703d">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>movies.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -414,19 +443,19 @@
 <h2 data-number="3.2" class="anchored" id="histograms"><span class="header-section-number">3.2</span> Histograms</h2>
 <p>We’ll start our transformation tour by <em>binning</em> data into discrete groups and <em>counting</em> records to summarize those groups. The resulting plots are known as <a href="https://en.wikipedia.org/wiki/Histogram"><em>histograms</em></a>.</p>
 <p>Let’s first look at unaggregated data: a scatter plot showing movie ratings from Rotten Tomatoes versus ratings from IMDB users. We’ll provide data to Altair by passing the movies data URL to the <code>Chart</code> method. (We could also pass the Pandas data frame directly to get the same result.) We can then encode the Rotten Tomatoes and IMDB ratings fields using the <code>x</code> and <code>y</code> channels:</p>
-<div id="NPrkvLBOJ4SA" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="29bcb73e-95cc-4d04-e854-d6b248570c22">
+<div class="cell" data-outputid="29bcb73e-95cc-4d04-e854-d6b248570c22">
 <div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>),</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-24db0d2626ba454aa355a763514bd7d3"></div>
+<div id="altair-viz-12f728fb130542cd85ec0f9eacf56465"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-24db0d2626ba454aa355a763514bd7d3") {
-      outputDiv = document.getElementById("altair-viz-24db0d2626ba454aa355a763514bd7d3");
+    if (outputDiv.id !== "altair-viz-12f728fb130542cd85ec0f9eacf56465") {
+      outputDiv = document.getElementById("altair-viz-12f728fb130542cd85ec0f9eacf56465");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -473,19 +502,19 @@
 </div>
 </div>
 <p>To summarize this data, we can <em>bin</em> a data field to group numeric values into discrete groups. Here we bin along the x-axis by adding <code>bin=True</code> to the <code>x</code> encoding channel. The result is a set of ten bins of equal step size, each corresponding to a span of ten ratings points.</p>
-<div id="qTj6F82eJ4SF" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="3b04da50-11d1-47b4-fa36-c131b41f5e22">
+<div class="cell" data-outputid="3b04da50-11d1-47b4-fa36-c131b41f5e22">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span><span class="va">True</span>),</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-72fbb49ed310480e86483bd8ac8735bb"></div>
+<div id="altair-viz-da992f5e10344e139395d52d8b610e27"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-72fbb49ed310480e86483bd8ac8735bb") {
-      outputDiv = document.getElementById("altair-viz-72fbb49ed310480e86483bd8ac8735bb");
+    if (outputDiv.id !== "altair-viz-da992f5e10344e139395d52d8b610e27") {
+      outputDiv = document.getElementById("altair-viz-da992f5e10344e139395d52d8b610e27");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -532,19 +561,19 @@
 </div>
 </div>
 <p>Setting <code>bin=True</code> uses default binning settings, but we can exercise more control if desired. Let’s instead set the maximum bin count (<code>maxbins</code>) to 20, which has the effect of doubling the number of bins. Now each bin corresponds to a span of five ratings points.</p>
-<div id="JRYagm7tU2Yb" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="60e799d9-fe8d-4d2b-8081-aae7ae022571">
+<div class="cell" data-outputid="60e799d9-fe8d-4d2b-8081-aae7ae022571">
 <div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-329666ad379a4769a960000324e39e14"></div>
+<div id="altair-viz-626ce448711642169144c05d7c582dfd"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-329666ad379a4769a960000324e39e14") {
-      outputDiv = document.getElementById("altair-viz-329666ad379a4769a960000324e39e14");
+    if (outputDiv.id !== "altair-viz-626ce448711642169144c05d7c582dfd") {
+      outputDiv = document.getElementById("altair-viz-626ce448711642169144c05d7c582dfd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -592,19 +621,19 @@
 </div>
 <p>With the data binned, let’s now summarize the distribution of Rotten Tomatoes ratings. We will drop the IMDB ratings for now and instead use the <code>y</code> encoding channel to show an aggregate <code>count</code> of records, so that the vertical position of each point indicates the number of movies per Rotten Tomatoes rating bin.</p>
 <p>As the <code>count</code> aggregate counts the number of total records in each bin regardless of the field values, we do not need to include a field name in the <code>y</code> encoding.</p>
-<div id="NeutGiz8J664" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="dbae41cf-a7b4-4101-fd05-124519e4ece1">
+<div class="cell" data-outputid="dbae41cf-a7b4-4101-fd05-124519e4ece1">
 <div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'count()'</span>)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-5cfd9b5113eb4954afc9bc80b929ce3d"></div>
+<div id="altair-viz-99f59821684543ddb843049b9ac75af0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5cfd9b5113eb4954afc9bc80b929ce3d") {
-      outputDiv = document.getElementById("altair-viz-5cfd9b5113eb4954afc9bc80b929ce3d");
+    if (outputDiv.id !== "altair-viz-99f59821684543ddb843049b9ac75af0") {
+      outputDiv = document.getElementById("altair-viz-99f59821684543ddb843049b9ac75af0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -651,19 +680,19 @@
 </div>
 </div>
 <p>To arrive at a standard histogram, let’s change the mark type from <code>circle</code> to <code>bar</code>:</p>
-<div id="6xOHaNlek0y4" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="6ab75a03-7150-4dbc-e42c-54879cf3252a">
+<div class="cell" data-outputid="6ab75a03-7150-4dbc-e42c-54879cf3252a">
 <div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'count()'</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-e0fd667719f64090bd8665fff0185256"></div>
+<div id="altair-viz-9132f5473c324e42b570ec1fc3957dcf"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e0fd667719f64090bd8665fff0185256") {
-      outputDiv = document.getElementById("altair-viz-e0fd667719f64090bd8665fff0185256");
+    if (outputDiv.id !== "altair-viz-9132f5473c324e42b570ec1fc3957dcf") {
+      outputDiv = document.getElementById("altair-viz-9132f5473c324e42b570ec1fc3957dcf");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -711,19 +740,19 @@
 </div>
 <p><em>We can now examine the distribution of ratings more clearly: we can see fewer movies on the negative end, and a bit more movies on the high end, but a generally uniform distribution overall. Rotten Tomatoes ratings are determined by taking “thumbs up” and “thumbs down” judgments from film critics and calculating the percentage of positive reviews. It appears this approach does a good job of utilizing the full range of rating values.</em></p>
 <p>Similarly, we can create a histogram for IMDB ratings by changing the field in the <code>x</code> encoding channel:</p>
-<div id="7S9YSjoUlgAW" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="eb745925-3fdf-4ab7-b7c3-85875915a787">
+<div class="cell" data-outputid="eb745925-3fdf-4ab7-b7c3-85875915a787">
 <div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'IMDB_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'count()'</span>)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-0acaba79c03d43fe92f1a0fd338c2b4e"></div>
+<div id="altair-viz-872be4c770cd4eb69ae5f8ebe8cea0a1"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0acaba79c03d43fe92f1a0fd338c2b4e") {
-      outputDiv = document.getElementById("altair-viz-0acaba79c03d43fe92f1a0fd338c2b4e");
+    if (outputDiv.id !== "altair-viz-872be4c770cd4eb69ae5f8ebe8cea0a1") {
+      outputDiv = document.getElementById("altair-viz-872be4c770cd4eb69ae5f8ebe8cea0a1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -771,19 +800,19 @@
 </div>
 <p><em>In contrast to the more uniform distribution we saw before, IMDB ratings exhibit a bell-shaped (though <a href="https://en.wikipedia.org/wiki/Skewness">negatively skewed</a>) distribution. IMDB ratings are formed by averaging scores (ranging from 1 to 10) provided by the site’s users. We can see that this form of measurement leads to a different shape than the Rotten Tomatoes ratings. We can also see that the mode of the distribution is between 6.5 and 7: people generally enjoy watching movies, potentially explaining the positive bias!</em></p>
 <p>Now let’s turn back to our scatter plot of Rotten Tomatoes and IMDB ratings. Here’s what happens if we bin <em>both</em> axes of our original plot.</p>
-<div id="IKdIT0xMlsjN" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="0150c261-da40-4fdf-bb80-053922187a06">
+<div class="cell" data-outputid="0150c261-da40-4fdf-bb80-053922187a06">
 <div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-30c5e6f51a7541bb9a073116c7b9968a"></div>
+<div id="altair-viz-07dac4db462141d0b6c066e83cf991bb"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-30c5e6f51a7541bb9a073116c7b9968a") {
-      outputDiv = document.getElementById("altair-viz-30c5e6f51a7541bb9a073116c7b9968a");
+    if (outputDiv.id !== "altair-viz-07dac4db462141d0b6c066e83cf991bb") {
+      outputDiv = document.getElementById("altair-viz-07dac4db462141d0b6c066e83cf991bb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -831,7 +860,7 @@
 </div>
 <p>Detail is lost due to <em>overplotting</em>, with many points drawn directly on top of each other.</p>
 <p>To form a two-dimensional histogram we can add a <code>count</code> aggregate as before. As both the <code>x</code> and <code>y</code> encoding channels are already taken, we must use a different encoding channel to convey the counts. Here is the result of using circular area by adding a <em>size</em> encoding channel.</p>
-<div id="WDTzOh74l1S-" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="83941b77-0a16-49fc-b942-bf3e83991477">
+<div class="cell" data-outputid="83941b77-0a16-49fc-b942-bf3e83991477">
 <div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
@@ -839,12 +868,12 @@
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-d68dbc13b84e4e6db82505875cf137da"></div>
+<div id="altair-viz-bb8220481ea64a3c90bb2137fb948b04"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d68dbc13b84e4e6db82505875cf137da") {
-      outputDiv = document.getElementById("altair-viz-d68dbc13b84e4e6db82505875cf137da");
+    if (outputDiv.id !== "altair-viz-bb8220481ea64a3c90bb2137fb948b04") {
+      outputDiv = document.getElementById("altair-viz-bb8220481ea64a3c90bb2137fb948b04");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -891,7 +920,7 @@
 </div>
 </div>
 <p>Alternatively, we can encode counts using the <code>color</code> channel and change the mark type to <code>bar</code>. The result is a two-dimensional histogram in the form of a <a href="https://en.wikipedia.org/wiki/Heat_map"><em>heatmap</em></a>.</p>
-<div id="y0YfNuE5kkcO" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="b3cb0222-97aa-490d-e405-0d4f4a09f094">
+<div class="cell" data-outputid="b3cb0222-97aa-490d-e405-0d4f4a09f094">
 <div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
@@ -899,12 +928,12 @@
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-949c09fc45354c98ba2b9fb88be19524"></div>
+<div id="altair-viz-168ab76b96714174ab58953006f5da18"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-949c09fc45354c98ba2b9fb88be19524") {
-      outputDiv = document.getElementById("altair-viz-949c09fc45354c98ba2b9fb88be19524");
+    if (outputDiv.id !== "altair-viz-168ab76b96714174ab58953006f5da18") {
+      outputDiv = document.getElementById("altair-viz-168ab76b96714174ab58953006f5da18");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -960,19 +989,19 @@
 <h3 data-number="3.3.1" class="anchored" id="averages-and-sorting"><span class="header-section-number">3.3.1</span> Averages and Sorting</h3>
 <p><em>Do different genres of films receive consistently different ratings from critics?</em> As a first step towards answering this question, we might examine the <a href="https://en.wikipedia.org/wiki/Arithmetic_mean"><em>average</em> (a.k.a. the <em>arithmetic mean</em>)</a> rating for each genre of movie.</p>
 <p>Let’s visualize genre along the <code>y</code> axis and plot <code>average</code> Rotten Tomatoes ratings along the <code>x</code> axis.</p>
-<div id="VIvDbBiDmPyD" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="ce342b92-ef00-469a-f9ab-6e3288940ed5">
+<div class="cell" data-outputid="ce342b92-ef00-469a-f9ab-6e3288940ed5">
 <div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'average(Rotten_Tomatoes_Rating):Q'</span>),</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Major_Genre:N'</span>)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-b92b813bb9df4a409df99a58579a8b7c"></div>
+<div id="altair-viz-cf28f44ee74e475ebfaf1215952358dd"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b92b813bb9df4a409df99a58579a8b7c") {
-      outputDiv = document.getElementById("altair-viz-b92b813bb9df4a409df99a58579a8b7c");
+    if (outputDiv.id !== "altair-viz-cf28f44ee74e475ebfaf1215952358dd") {
+      outputDiv = document.getElementById("altair-viz-cf28f44ee74e475ebfaf1215952358dd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1020,7 +1049,7 @@
 </div>
 <p><em>There does appear to be some interesting variation, but looking at the data as an alphabetical list is not very helpful for ranking critical reactions to the genres.</em></p>
 <p>For a tidier picture, let’s sort the genres in descending order of average rating. To do so, we will add a <code>sort</code> parameter to the <code>y</code> encoding channel, stating that we wish to sort by the <em>average</em> (<code>op</code>, the aggregate operation) Rotten Tomatoes rating (the <code>field</code>) in descending <code>order</code>.</p>
-<div id="Oge7kcjUncLs" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="7cd1438a-1bda-4fd1-ad81-78ae206206c8">
+<div class="cell" data-outputid="7cd1438a-1bda-4fd1-ad81-78ae206206c8">
 <div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'average(Rotten_Tomatoes_Rating):Q'</span>),</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Major_Genre:N'</span>, sort<span class="op">=</span>alt.EncodingSortField(</span>
@@ -1029,12 +1058,12 @@
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-2921015b3a6f4485b406d5bf5ae43a00"></div>
+<div id="altair-viz-fb3fa3d054ef4440886af5b3faf7f7a9"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2921015b3a6f4485b406d5bf5ae43a00") {
-      outputDiv = document.getElementById("altair-viz-2921015b3a6f4485b406d5bf5ae43a00");
+    if (outputDiv.id !== "altair-viz-fb3fa3d054ef4440886af5b3faf7f7a9") {
+      outputDiv = document.getElementById("altair-viz-fb3fa3d054ef4440886af5b3faf7f7a9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1087,7 +1116,7 @@
 <p>While averages are a common way to summarize data, they can sometimes mislead. For example, very large or very small values (<a href="https://en.wikipedia.org/wiki/Outlier"><em>outliers</em></a>) might skew the average. To be safe, we can compare the genres according to the <a href="https://en.wikipedia.org/wiki/Median"><em>median</em></a> ratings as well.</p>
 <p>The median is a point that splits the data evenly, such that half of the values are less than the median and the other half are greater. The median is less sensitive to outliers and so is referred to as a <a href="https://en.wikipedia.org/wiki/Robust_statistics"><em>robust</em> statistic</a>. For example, arbitrarily increasing the largest rating value will not cause the median to change.</p>
 <p>Let’s update our plot to use a <code>median</code> aggregate and sort by those values:</p>
-<div id="9npR5D_EpXMJ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="ad4b2684-8608-4372-9931-e56128e1046e">
+<div class="cell" data-outputid="ad4b2684-8608-4372-9931-e56128e1046e">
 <div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'median(Rotten_Tomatoes_Rating):Q'</span>),</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Major_Genre:N'</span>, sort<span class="op">=</span>alt.EncodingSortField(</span>
@@ -1096,12 +1125,12 @@
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-122adbae353349abb8d75c123f6e5522"></div>
+<div id="altair-viz-909c2a49c28c4641be6cef16e19c8eb5"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-122adbae353349abb8d75c123f6e5522") {
-      outputDiv = document.getElementById("altair-viz-122adbae353349abb8d75c123f6e5522");
+    if (outputDiv.id !== "altair-viz-909c2a49c28c4641be6cef16e19c8eb5") {
+      outputDiv = document.getElementById("altair-viz-909c2a49c28c4641be6cef16e19c8eb5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1151,7 +1180,7 @@
 <p>It’s a good idea to stay skeptical when viewing aggregate statistics. So far we’ve only looked at <em>point estimates</em>. We have not examined how ratings vary within a genre.</p>
 <p>Let’s visualize the variation among the ratings to add some nuance to our rankings. Here we will encode the <a href="https://en.wikipedia.org/wiki/Interquartile_range"><em>inter-quartile range</em> (IQR)</a> for each genre. The IQR is the range in which the middle half of data values reside. A <a href="https://en.wikipedia.org/wiki/Quartile"><em>quartile</em></a> contains 25% of the data values. The inter-quartile range consists of the two middle quartiles, and so contains the middle 50%.</p>
 <p>To visualize ranges, we can use the <code>x</code> and <code>x2</code> encoding channels to indicate the starting and ending points. We use the aggregate functions <code>q1</code> (the lower quartile boundary) and <code>q3</code> (the upper quartile boundary) to provide the inter-quartile range. (In case you are wondering, <em>q2</em> would be the median.)</p>
-<div id="vJaDc25rqWPv" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="a2cf93b2-3d0b-4412-b609-2e40c86a9d8d">
+<div class="cell" data-outputid="a2cf93b2-3d0b-4412-b609-2e40c86a9d8d">
 <div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'q1(Rotten_Tomatoes_Rating):Q'</span>),</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    alt.X2(<span class="st">'q3(Rotten_Tomatoes_Rating):Q'</span>),</span>
@@ -1161,12 +1190,12 @@
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-63dadfe7c8064139b3cbdba7137f45e6"></div>
+<div id="altair-viz-b9d0d6b631fb419180e0bf757f7ad7ba"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-63dadfe7c8064139b3cbdba7137f45e6") {
-      outputDiv = document.getElementById("altair-viz-63dadfe7c8064139b3cbdba7137f45e6");
+    if (outputDiv.id !== "altair-viz-b9d0d6b631fb419180e0bf757f7ad7ba") {
+      outputDiv = document.getElementById("altair-viz-b9d0d6b631fb419180e0bf757f7ad7ba");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1218,19 +1247,19 @@
 <p><em>Now let’s ask a completely different question: do box office returns vary by season?</em></p>
 <p>To get an initial answer, let’s plot the median U.S. gross revenue by month.</p>
 <p>To make this chart, use the <code>timeUnit</code> transform to map release dates to the <code>month</code> of the year. The result is similar to binning, but using meaningful time intervals. Other valid time units include <code>year</code>, <code>quarter</code>, <code>date</code> (numeric day in month), <code>day</code> (day of the week), and <code>hours</code>, as well as compound units such as <code>yearmonth</code> or <code>hoursminutes</code>. See the Altair documentation for a <a href="https://altair-viz.github.io/user_guide/transform.html#timeunit-transform">complete list of time units</a>.</p>
-<div id="fcAsPlezscPl" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="f3f22ce9-7823-4b1e-ade6-3a14295de6ed">
+<div class="cell" data-outputid="f3f22ce9-7823-4b1e-ade6-3a14295de6ed">
 <div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_area().encode(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'month(Release_Date):T'</span>),</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'median(US_Gross):Q'</span>)</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-3d29fad03c92413cb46b700987deb60a"></div>
+<div id="altair-viz-a73bc29889b94e0ea56155a7d423c9d8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3d29fad03c92413cb46b700987deb60a") {
-      outputDiv = document.getElementById("altair-viz-3d29fad03c92413cb46b700987deb60a");
+    if (outputDiv.id !== "altair-viz-a73bc29889b94e0ea56155a7d423c9d8") {
+      outputDiv = document.getElementById("altair-viz-a73bc29889b94e0ea56155a7d423c9d8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1277,19 +1306,19 @@
 </div>
 </div>
 <p><em>Looking at the resulting plot, median movie sales in the U.S. appear to spike around the summer blockbuster season and the end of year holiday period. Of course, people around the world (not just the U.S.) go out to the movies. Does a similar pattern arise for worldwide gross revenue?</em></p>
-<div id="HO5Y5oszuQnZ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="158d5b83-19a8-414e-eaa4-e30739ec8881">
+<div class="cell" data-outputid="158d5b83-19a8-414e-eaa4-e30739ec8881">
 <div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_area().encode(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'month(Release_Date):T'</span>),</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'median(Worldwide_Gross):Q'</span>)</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-25fa0034cce94422bfba9f5057c942e8"></div>
+<div id="altair-viz-18abd51f62bb4b5c947c4941c10ee153"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-25fa0034cce94422bfba9f5057c942e8") {
-      outputDiv = document.getElementById("altair-viz-25fa0034cce94422bfba9f5057c942e8");
+    if (outputDiv.id !== "altair-viz-18abd51f62bb4b5c947c4941c10ee153") {
+      outputDiv = document.getElementById("altair-viz-18abd51f62bb4b5c947c4941c10ee153");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1346,7 +1375,7 @@
 <h3 data-number="3.4.1" class="anchored" id="calculate"><span class="header-section-number">3.4.1</span> Calculate</h3>
 <p><em>Think back to our comparison of U.S. gross and worldwide gross. Doesn’t worldwide revenue include the U.S.? (Indeed it does.) How might we get a better sense of trends outside the U.S.?</em></p>
 <p>With the <code>calculate</code> transform we can derive new fields. Here we want to subtract U.S. gross from worldwide gross. The <code>calculate</code> transform takes a <a href="https://vega.github.io/vega/docs/expressions/">Vega expression string</a> to define a formula over a single record. Vega expressions use JavaScript syntax. The <code>datum.</code> prefix accesses a field value on the input record.</p>
-<div id="fH-ot7TwmWgl" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="f8d99c87-d8fd-4e6d-d63a-6e6ba35fc92c">
+<div class="cell" data-outputid="f8d99c87-d8fd-4e6d-d63a-6e6ba35fc92c">
 <div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies).mark_area().transform_calculate(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    NonUS_Gross<span class="op">=</span><span class="st">'datum.Worldwide_Gross - datum.US_Gross'</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
@@ -1355,12 +1384,12 @@
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-eab41e29e0eb4a55a5ebc68d08308b87"></div>
+<div id="altair-viz-d4d8b2ad7be041df907b10d9c3b518fe"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-eab41e29e0eb4a55a5ebc68d08308b87") {
-      outputDiv = document.getElementById("altair-viz-eab41e29e0eb4a55a5ebc68d08308b87");
+    if (outputDiv.id !== "altair-viz-d4d8b2ad7be041df907b10d9c3b518fe") {
+      outputDiv = document.getElementById("altair-viz-d4d8b2ad7be041df907b10d9c3b518fe");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1412,19 +1441,19 @@
 <h3 data-number="3.4.2" class="anchored" id="filter"><span class="header-section-number">3.4.2</span> Filter</h3>
 <p>The <em>filter</em> transform creates a new table with a subset of the original data, removing rows that fail to meet a provided <a href="https://en.wikipedia.org/wiki/Predicate_%28mathematical_logic%29"><em>predicate</em></a> test. Similar to the <em>calculate</em> transform, filter predicates are expressed using the <a href="https://vega.github.io/vega/docs/expressions/">Vega expression language</a>.</p>
 <p>Below we add a filter to limit our initial scatter plot of IMDB vs.&nbsp;Rotten Tomatoes ratings to only films in the major genre of “Romantic Comedy”.</p>
-<div id="PMynF2J1X9NT" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="7b3b674d-8fda-4480-ebcf-45a29f37d856">
+<div class="cell" data-outputid="7b3b674d-8fda-4480-ebcf-45a29f37d856">
 <div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>),</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>).transform_filter(<span class="st">'datum.Major_Genre == "Romantic Comedy"'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-7c87bb429a3c46c3863ce42cd1f088b5"></div>
+<div id="altair-viz-8003cf6108fd48b89450d982032f2fc6"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7c87bb429a3c46c3863ce42cd1f088b5") {
-      outputDiv = document.getElementById("altair-viz-7c87bb429a3c46c3863ce42cd1f088b5");
+    if (outputDiv.id !== "altair-viz-8003cf6108fd48b89450d982032f2fc6") {
+      outputDiv = document.getElementById("altair-viz-8003cf6108fd48b89450d982032f2fc6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1472,19 +1501,19 @@
 </div>
 <p><em>How does the plot change if we filter to view other genres? Edit the filter expression to find out.</em></p>
 <p>Now let’s filter to look at films released before 1970.</p>
-<div id="gNXhFhGoYz1P" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="21b6bbd9-3804-4650-f06a-5c5a9fe2b09f">
+<div class="cell" data-outputid="21b6bbd9-3804-4650-f06a-5c5a9fe2b09f">
 <div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>),</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>).transform_filter(<span class="st">'year(datum.Release_Date) &lt; 1970'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-f037a4f8d6ff45caa936ddf67de7f12b"></div>
+<div id="altair-viz-d85ede22b8424f57bae1ab5f8e6929bb"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f037a4f8d6ff45caa936ddf67de7f12b") {
-      outputDiv = document.getElementById("altair-viz-f037a4f8d6ff45caa936ddf67de7f12b");
+    if (outputDiv.id !== "altair-viz-d85ede22b8424f57bae1ab5f8e6929bb") {
+      outputDiv = document.getElementById("altair-viz-d85ede22b8424f57bae1ab5f8e6929bb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1537,7 +1566,7 @@
 <p>We have already seen <code>aggregate</code> transforms such as <code>count</code> and <code>average</code> in the context of encoding channels. We can also specify aggregates separately, as a pre-processing step for other transforms (as in the <code>window</code> transform examples below). The output of an <code>aggregate</code> transform is a new data table with records that contain both the <code>groupby</code> fields and the computed <code>aggregate</code> measures.</p>
 <p>Let’s recreate our plot of average ratings by genre, but this time using a separate <code>aggregate</code> transform. The output table from the aggregate transform contains 13 rows, one for each genre.</p>
 <p>To order the <code>y</code> axis we must include a required aggregate operation in our sorting instructions. Here we use the <code>max</code> operator, which works fine because there is only one output record per genre. We could similarly use the <code>min</code> operator and end up with the same plot.</p>
-<div id="31FWLbxc-yxv" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="9044ac17-3789-4416-b36d-2ffa7451c20b">
+<div class="cell" data-outputid="9044ac17-3789-4416-b36d-2ffa7451c20b">
 <div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().transform_aggregate(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    groupby<span class="op">=</span>[<span class="st">'Major_Genre'</span>],</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    Average_Rating<span class="op">=</span><span class="st">'average(Rotten_Tomatoes_Rating)'</span></span>
@@ -1550,12 +1579,12 @@
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-1ee10b0ad18a41ee8a223a3361469dc6"></div>
+<div id="altair-viz-355fd453eac44841bcfb1202645315d1"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1ee10b0ad18a41ee8a223a3361469dc6") {
-      outputDiv = document.getElementById("altair-viz-1ee10b0ad18a41ee8a223a3361469dc6");
+    if (outputDiv.id !== "altair-viz-355fd453eac44841bcfb1202645315d1") {
+      outputDiv = document.getElementById("altair-viz-355fd453eac44841bcfb1202645315d1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1608,7 +1637,7 @@
 <p>One use case for a <code>window</code> transform is to calculate top-k lists. Let’s plot the top 20 directors in terms of total worldwide gross.</p>
 <p>We first use a <code>filter</code> transform to remove records for which we don’t know the director. Otherwise, the director <code>null</code> would dominate the list! We then apply an <code>aggregate</code> to sum up the worldwide gross for all films, grouped by director. At this point we could plot a sorted bar chart, but we’d end up with hundreds and hundreds of directors. How can we limit the display to the top 20?</p>
 <p>The <code>window</code> transform allows us to determine the top directors by calculating their rank order. Within our <code>window</code> transform definition we can <code>sort</code> by gross and use the <code>rank</code> operation to calculate rank scores according to that sort order. We can then add a subsequent <code>filter</code> transform to limit the data to only records with a rank value less than or equal to 20.</p>
-<div id="wEE4sJa7j1lS" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="8de759fd-0b3e-482b-cf10-9fb37342a544">
+<div class="cell" data-outputid="8de759fd-0b3e-482b-cf10-9fb37342a544">
 <div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().transform_filter(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'datum.Director != null'</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>).transform_aggregate(</span>
@@ -1627,12 +1656,12 @@
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-47a0d8f70a1848e1867e66ea12820ee4"></div>
+<div id="altair-viz-e9c69c56b4554f6f89c1ff56d1557ef7"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-47a0d8f70a1848e1867e66ea12820ee4") {
-      outputDiv = document.getElementById("altair-viz-47a0d8f70a1848e1867e66ea12820ee4");
+    if (outputDiv.id !== "altair-viz-e9c69c56b4554f6f89c1ff56d1557ef7") {
+      outputDiv = document.getElementById("altair-viz-e9c69c56b4554f6f89c1ff56d1557ef7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1681,7 +1710,7 @@
 <p><em>We can see that Steven Spielberg has been quite successful in his career! However, showing sums might favor directors who have had longer careers, and so have made more movies and thus more money. What happens if we change the choice of aggregate operation? Who is the most successful director in terms of <code>average</code> or <code>median</code> gross per film? Modify the aggregate transform above!</em></p>
 <p>Earlier in this notebook we looked at histograms, which approximate the <a href="https://en.wikipedia.org/wiki/Probability_density_function"><em>probability density function</em></a> of a set of values. A complementary approach is to look at the <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function"><em>cumulative distribution</em></a>. For example, think of a histogram in which each bin includes not only its own count but also the counts from all previous bins — the result is a <em>running total</em>, with the last bin containing the total number of records. A cumulative chart directly shows us, for a given reference value, how many data values are less than or equal to that reference.</p>
 <p>As a concrete example, let’s look at the cumulative distribution of films by running time (in minutes). Only a subset of records actually include running time information, so we first <code>filter</code> down to the subset of films for which we have running times. Next, we apply an <code>aggregate</code> to count the number of films per duration (implicitly using “bins” of 1 minute each). We then use a <code>window</code> transform to compute a running total of counts across bins, sorted by increasing running time.</p>
-<div id="2uIdl9qTey9r" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="9c20912b-a865-4ef5-b915-bc4317ba93bf">
+<div class="cell" data-outputid="9c20912b-a865-4ef5-b915-bc4317ba93bf">
 <div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_line(interpolate<span class="op">=</span><span class="st">'step-before'</span>).transform_filter(</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'datum.Running_Time_min != null'</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>).transform_aggregate(</span>
@@ -1696,12 +1725,12 @@
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-35cac57b23aa4df4924243fbac924b62"></div>
+<div id="altair-viz-9c3a441097b247238560f68bbc43e145"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-35cac57b23aa4df4924243fbac924b62") {
-      outputDiv = document.getElementById("altair-viz-35cac57b23aa4df4924243fbac924b62");
+    if (outputDiv.id !== "altair-viz-9c3a441097b247238560f68bbc43e145") {
+      outputDiv = document.getElementById("altair-viz-9c3a441097b247238560f68bbc43e145");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1772,7 +1801,6 @@
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

@@ -25,9 +25,6 @@ book:
       chapters:
         - altair_debugging.ipynb
 
-freeze: auto
-allow-errors: true
-
 format:
   html:
     theme: cosmo

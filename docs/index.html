@@ -23,6 +23,7 @@
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./altair_introduction.html" rel="next">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -33,6 +34,32 @@
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -50,23 +77,25 @@
 <div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
   <div class="px-3 pt-lg-2 text-left">
     <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Visualization Curriculum
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -75,8 +104,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -86,13 +115,13 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -108,12 +137,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Curriculum
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -145,12 +174,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Support
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="support-collapse">
         <ul class="list-unstyled sidebar-item-contents">

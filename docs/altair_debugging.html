@@ -85,6 +85,7 @@
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./altair_cartographic.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,6 +99,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -115,23 +142,25 @@
 <div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
   <div class="px-3 pt-lg-2 text-left">
     <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Visualization Curriculum
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -140,8 +169,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -151,13 +180,13 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -173,12 +202,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Curriculum
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -210,12 +239,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Support
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="support-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -254,7 +283,6 @@
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
-
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-7">Altair Debugging Guide</h1>
 </header>
@@ -283,28 +311,28 @@
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install altair vega_datasets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>Requirement already satisfied: altair in ./.venv/lib/python3.8/site-packages (4.1.0)</code></pre>
+<pre><code>Requirement already satisfied: altair in ./.venv/lib/python3.8/site-packages (4.1.0)
+Requirement already satisfied: vega_datasets in ./.venv/lib/python3.8/site-packages (0.9.0)
+Requirement already satisfied: jsonschema in ./.venv/lib/python3.8/site-packages (from altair) (3.2.0)</code></pre>
 </div>
 <div class="cell-output-stdout">
-<pre><code>Requirement already satisfied: vega_datasets in ./.venv/lib/python3.8/site-packages (0.9.0)
-Requirement already satisfied: pandas&gt;=0.18 in ./.venv/lib/python3.8/site-packages (from altair) (1.2.4)
-Requirement already satisfied: numpy in ./.venv/lib/python3.8/site-packages (from altair) (1.20.3)
-Requirement already satisfied: toolz in ./.venv/lib/python3.8/site-packages (from altair) (0.11.1)
+<pre><code>Requirement already satisfied: toolz in ./.venv/lib/python3.8/site-packages (from altair) (0.11.1)
 Requirement already satisfied: entrypoints in ./.venv/lib/python3.8/site-packages (from altair) (0.3)
+Requirement already satisfied: numpy in ./.venv/lib/python3.8/site-packages (from altair) (1.20.3)
 Requirement already satisfied: jinja2 in ./.venv/lib/python3.8/site-packages (from altair) (3.0.0)
-Requirement already satisfied: jsonschema in ./.venv/lib/python3.8/site-packages (from altair) (3.2.0)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in ./.venv/lib/python3.8/site-packages (from pandas&gt;=0.18-&gt;altair) (2.8.1)
-Requirement already satisfied: pytz&gt;=2017.3 in ./.venv/lib/python3.8/site-packages (from pandas&gt;=0.18-&gt;altair) (2021.1)
-Requirement already satisfied: MarkupSafe&gt;=2.0.0rc2 in ./.venv/lib/python3.8/site-packages (from jinja2-&gt;altair) (2.0.0)
+Requirement already satisfied: pandas&gt;=0.18 in ./.venv/lib/python3.8/site-packages (from altair) (1.2.4)
+Requirement already satisfied: setuptools in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (47.1.0)
+Requirement already satisfied: six&gt;=1.11.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (1.16.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (0.17.3)
 Requirement already satisfied: attrs&gt;=17.4.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (21.2.0)</code></pre>
 </div>
 <div class="cell-output-stdout">
-<pre><code>Requirement already satisfied: six&gt;=1.11.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (1.16.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (0.17.3)
-Requirement already satisfied: setuptools in ./.venv/lib/python3.8/site-packages (from jsonschema-&gt;altair) (47.1.0)</code></pre>
+<pre><code>Requirement already satisfied: MarkupSafe&gt;=2.0.0rc2 in ./.venv/lib/python3.8/site-packages (from jinja2-&gt;altair) (2.0.0)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in ./.venv/lib/python3.8/site-packages (from pandas&gt;=0.18-&gt;altair) (2.8.1)
+Requirement already satisfied: pytz&gt;=2017.3 in ./.venv/lib/python3.8/site-packages (from pandas&gt;=0.18-&gt;altair) (2021.1)</code></pre>
 </div>
 <div class="cell-output-stdout">
-<pre><code>[33mWARNING: You are using pip version 20.1.1; however, version 21.1.1 is available.
+<pre><code>[33mWARNING: You are using pip version 20.1.1; however, version 21.1.2 is available.
 You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualization-curriculum/.venv/bin/python3 -m pip install --upgrade pip' command.[0m</code></pre>
 </div>
 </div>
@@ -346,12 +374,12 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-03ec0ab26bd54c768ba650257e6e18f4"></div>
+<div id="altair-viz-5cd2611b7beb4cbdb73eca4dc8554215"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-03ec0ab26bd54c768ba650257e6e18f4") {
-      outputDiv = document.getElementById("altair-viz-03ec0ab26bd54c768ba650257e6e18f4");
+    if (outputDiv.id !== "altair-viz-5cd2611b7beb4cbdb73eca4dc8554215") {
+      outputDiv = document.getElementById("altair-viz-5cd2611b7beb4cbdb73eca4dc8554215");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -431,12 +459,12 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-a32f5d337ee14b409bd6ead533ae98be"></div>
+<div id="altair-viz-6e20dff061944edf957aeed093fb77e9"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a32f5d337ee14b409bd6ead533ae98be") {
-      outputDiv = document.getElementById("altair-viz-a32f5d337ee14b409bd6ead533ae98be");
+    if (outputDiv.id !== "altair-viz-6e20dff061944edf957aeed093fb77e9") {
+      outputDiv = document.getElementById("altair-viz-6e20dff061944edf957aeed093fb77e9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -564,12 +592,12 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-aefc427cb27f482a929def26b2a3fd88"></div>
+<div id="altair-viz-3d86f057a22344d588524fc86e516e04"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-aefc427cb27f482a929def26b2a3fd88") {
-      outputDiv = document.getElementById("altair-viz-aefc427cb27f482a929def26b2a3fd88");
+    if (outputDiv.id !== "altair-viz-3d86f057a22344d588524fc86e516e04") {
+      outputDiv = document.getElementById("altair-viz-3d86f057a22344d588524fc86e516e04");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -640,7 +668,6 @@ You should consider upgrading via the '/Users/jjallaire/quarto/demo/visualizatio
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

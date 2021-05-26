@@ -85,6 +85,8 @@
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./altair_view_composition.html" rel="next">
+  <link href="./altair_data_transformation.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,6 +100,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -115,23 +143,25 @@
 <div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
   <div class="px-3 pt-lg-2 text-left">
     <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Visualization Curriculum
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -140,8 +170,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -151,13 +181,13 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -173,12 +203,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Curriculum
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -210,12 +240,12 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Support
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="support-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -252,7 +282,6 @@
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
-
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-7">4&nbsp; Scales, Axes, and Legends</h1>
 </header>
@@ -260,7 +289,7 @@
 <p>Visual encoding – mapping data to visual variables such as position, size, shape, or color – is the beating heart of data visualization. The workhorse that actually performs this mapping is the <em>scale</em>: a function that takes a data value as input (the scale <em>domain</em>) and returns a visual value, such as a pixel position or RGB color, as output (the scale <em>range</em>). Of course, a visualization is useless if no one can figure out what it conveys! In addition to graphical marks, a chart needs reference elements, or <em>guides</em>, that allow readers to decode the graphic. Guides such as <em>axes</em> (which visualize scales with spatial ranges) and <em>legends</em> (which visualize scales with color, size, or shape ranges), are the unsung heroes of effective data visualization!</p>
 <p>In this notebook, we will explore the options Altair provides to support customized designs of scale mappings, axes, and legends, using a running example about the effectiveness of antibiotic drugs.</p>
 <p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
-<div id="9-iDk57UO3ij" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -268,11 +297,11 @@
 <h2 data-number="4.1" class="anchored" id="antibiotics-data"><span class="header-section-number">4.1</span> Antibiotics Data</h2>
 <p>After World War II, antibiotics were considered “wonder drugs”, as they were an easy remedy for what had been intractable ailments. To learn which drug worked most effectively for which bacterial infection, performance of the three most popular antibiotics on 16 bacteria were gathered.</p>
 <p>We will be using an antibiotics dataset from the <a href="https://github.com/vega/vega-datasets">vega-datasets collection</a>. In the examples below, we will pass the URL directly to Altair:</p>
-<div id="jbtcg3fmJ5_A" class="cell" data-colab="[object Object]" data-colab_type="code">
+<div class="cell">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>antibiotics <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can first load the data with Pandas to view the dataset in its entirety and get acquainted with the available fields:</p>
-<div id="WoMzr0HE6ipZ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="fa9edadf-8744-4514-d8ba-5401b7f66bed">
+<div class="cell" data-outputid="fa9edadf-8744-4514-d8ba-5401b7f66bed">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pd.read_json(antibiotics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -447,18 +476,18 @@
 <section class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" id="plotting-antibiotic-resistance-adjusting-the-scale-type"><span class="header-section-number">4.2.1</span> Plotting Antibiotic Resistance: Adjusting the Scale Type</h3>
 <p>Let’s start by looking at a simple dot plot of the MIC for Neomycin.</p>
-<div id="dBOlbuYpKx6L" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="90dfa88f-a287-4d0f-84ee-02f88f2f4701">
+<div class="cell" data-outputid="90dfa88f-a287-4d0f-84ee-02f88f2f4701">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-5a848494abe745c491d0aad10c9d38df"></div>
+<div id="altair-viz-5c71e9eae8884e748bb3059f7fe3f209"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5a848494abe745c491d0aad10c9d38df") {
-      outputDiv = document.getElementById("altair-viz-5a848494abe745c491d0aad10c9d38df");
+    if (outputDiv.id !== "altair-viz-5c71e9eae8884e748bb3059f7fe3f209") {
+      outputDiv = document.getElementById("altair-viz-5c71e9eae8884e748bb3059f7fe3f209");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -508,19 +537,19 @@
 <p>By default Altair uses a <code>linear</code> mapping between the domain values (MIC) and the range values (pixels). To get a better overview of the data, we can apply a different scale transformation.</p>
 <p>To change the scale type, we’ll set the <code>scale</code> attribute, using the <code>alt.Scale</code> method and <code>type</code> parameter.</p>
 <p>Here’s the result of using a square root (<code>sqrt</code>) scale type. Distances in the pixel range now correspond to the square root of distances in the data domain.</p>
-<div id="QB5YNBMWLewL" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="45edabce-e14c-4e47-ee0e-838d03eaebb9">
+<div class="cell" data-outputid="45edabce-e14c-4e47-ee0e-838d03eaebb9">
 <div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'sqrt'</span>))</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-17438dacfe614dd5bd4d0387bd002f0f"></div>
+<div id="altair-viz-6a309725d1dd4ae5aa0a54dfc9c3d1b0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-17438dacfe614dd5bd4d0387bd002f0f") {
-      outputDiv = document.getElementById("altair-viz-17438dacfe614dd5bd4d0387bd002f0f");
+    if (outputDiv.id !== "altair-viz-6a309725d1dd4ae5aa0a54dfc9c3d1b0") {
+      outputDiv = document.getElementById("altair-viz-6a309725d1dd4ae5aa0a54dfc9c3d1b0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -568,19 +597,19 @@
 </div>
 <p><em>The points on the left are now better differentiated, but we still see some heavy skew.</em></p>
 <p>Let’s try using a <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic scale</a> (<code>log</code>) instead:</p>
-<div id="jGlWyOOMLoQ3" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="6e386312-0477-4f04-a845-f4c9f67a4ac0">
+<div class="cell" data-outputid="6e386312-0477-4f04-a845-f4c9f67a4ac0">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>))</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-5d817b0f3c44456183bee4a2cd8f94e5"></div>
+<div id="altair-viz-47ed2d3c58c44801a043be4390eeb15d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5d817b0f3c44456183bee4a2cd8f94e5") {
-      outputDiv = document.getElementById("altair-viz-5d817b0f3c44456183bee4a2cd8f94e5");
+    if (outputDiv.id !== "altair-viz-47ed2d3c58c44801a043be4390eeb15d") {
+      outputDiv = document.getElementById("altair-viz-47ed2d3c58c44801a043be4390eeb15d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -633,7 +662,7 @@
 <h3 data-number="4.2.2" class="anchored" id="styling-an-axis"><span class="header-section-number">4.2.2</span> Styling an Axis</h3>
 <p>Lower dosages indicate higher effectiveness. However, some people may expect values that are “better” to be “up and to the right” within a chart. If we want to cater to this convention, we can reverse the axis to encode “effectiveness” as a reversed MIC scale.</p>
 <p>To do this, we can set the encoding <code>sort</code> property to <code>'descending'</code>:</p>
-<div id="4gNdIiP7Lu8_" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="d11f184f-9040-444b-b478-5e63cae4102a">
+<div class="cell" data-outputid="d11f184f-9040-444b-b478-5e63cae4102a">
 <div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -641,12 +670,12 @@
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-5f0c2de319b8442ab8196c3055e07ca6"></div>
+<div id="altair-viz-01836242c5534f8992e2a07c00be4ca8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5f0c2de319b8442ab8196c3055e07ca6") {
-      outputDiv = document.getElementById("altair-viz-5f0c2de319b8442ab8196c3055e07ca6");
+    if (outputDiv.id !== "altair-viz-01836242c5534f8992e2a07c00be4ca8") {
+      outputDiv = document.getElementById("altair-viz-01836242c5534f8992e2a07c00be4ca8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -694,7 +723,7 @@
 </div>
 <p><em>Unfortunately the axis is starting to get a bit confusing: we’re plotting data on a logarithmic scale, in the reverse direction, and without a clear indication of what our units are!</em></p>
 <p>Let’s add a more informative axis title: we’ll use the <code>title</code> property of the encoding to provide the desired title text:</p>
-<div id="aP8fcU36L4iB" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="936f1956-ae09-492e-897d-027093205576">
+<div class="cell" data-outputid="936f1956-ae09-492e-897d-027093205576">
 <div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -703,12 +732,12 @@
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-011759e98a36497fa8b5db79eb96bd86"></div>
+<div id="altair-viz-1deee85760f94a79b1758e79ec61954b"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-011759e98a36497fa8b5db79eb96bd86") {
-      outputDiv = document.getElementById("altair-viz-011759e98a36497fa8b5db79eb96bd86");
+    if (outputDiv.id !== "altair-viz-1deee85760f94a79b1758e79ec61954b") {
+      outputDiv = document.getElementById("altair-viz-1deee85760f94a79b1758e79ec61954b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -756,7 +785,7 @@
 </div>
 <p>Much better!</p>
 <p>By default, Altair places the x-axis along the bottom of the chart. To change these defaults, we can add an <code>axis</code> attribute with <code>orient='top'</code>:</p>
-<div id="GMR7Tg4n-Vgu" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="053818a8-0e6c-4a7c-cb15-a0441406096b">
+<div class="cell" data-outputid="053818a8-0e6c-4a7c-cb15-a0441406096b">
 <div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -766,12 +795,12 @@
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-c1d87e6b24d04954a3c3caab03e83bec"></div>
+<div id="altair-viz-1c0d0d67c5b847db99b166a1531e991d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c1d87e6b24d04954a3c3caab03e83bec") {
-      outputDiv = document.getElementById("altair-viz-c1d87e6b24d04954a3c3caab03e83bec");
+    if (outputDiv.id !== "altair-viz-1c0d0d67c5b847db99b166a1531e991d") {
+      outputDiv = document.getElementById("altair-viz-1c0d0d67c5b847db99b166a1531e991d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -823,7 +852,7 @@
 <h3 data-number="4.2.3" class="anchored" id="comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing"><span class="header-section-number">4.2.3</span> Comparing Antibiotics: Adjusting Grid Lines, Tick Counts, and Sizing</h3>
 <p><em>How does neomycin compare to other antibiotics, such as streptomycin and penicillin?</em></p>
 <p>To start answering this question, we can create scatter plots, adding a y-axis encoding for another antibiotic that mirrors the design of our x-axis for neomycin.</p>
-<div id="CjDce4pG_SXP" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="9459f0fb-088e-4e60-92f3-5f7992b3509d">
+<div class="cell" data-outputid="9459f0fb-088e-4e60-92f3-5f7992b3509d">
 <div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -836,12 +865,12 @@
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-731c6f5665ea4ccca779b7532656812f"></div>
+<div id="altair-viz-0ebcaa03b1e64abfbff0d9c40fda8373"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-731c6f5665ea4ccca779b7532656812f") {
-      outputDiv = document.getElementById("altair-viz-731c6f5665ea4ccca779b7532656812f");
+    if (outputDiv.id !== "altair-viz-0ebcaa03b1e64abfbff0d9c40fda8373") {
+      outputDiv = document.getElementById("altair-viz-0ebcaa03b1e64abfbff0d9c40fda8373");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -889,7 +918,7 @@
 </div>
 <p><em>We can see that neomycin and streptomycin appear highly correlated, as the bacterial strains respond similarly to both antibiotics.</em></p>
 <p>Let’s move on and compare neomycin with penicillin:</p>
-<div id="hqc6DFgvNHAT" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="6713ba6b-8879-43be-e7ed-4340974b2c20">
+<div class="cell" data-outputid="6713ba6b-8879-43be-e7ed-4340974b2c20">
 <div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -902,12 +931,12 @@
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-c7e4b79121314deaa416fc765480808d"></div>
+<div id="altair-viz-5731c241c1d147279bef907c152e5f49"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c7e4b79121314deaa416fc765480808d") {
-      outputDiv = document.getElementById("altair-viz-c7e4b79121314deaa416fc765480808d");
+    if (outputDiv.id !== "altair-viz-5731c241c1d147279bef907c152e5f49") {
+      outputDiv = document.getElementById("altair-viz-5731c241c1d147279bef907c152e5f49");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -956,7 +985,7 @@
 <p><em>Now we see a more differentiated response: some bacteria respond well to neomycin but not penicillin, and vice versa!</em></p>
 <p>While this plot is useful, we can make it better. The x and y axes use the same units, but have different extents (the chart width is larger than the height) and different domains (0.001 to 100 for the x-axis, and 0.001 to 1,000 for the y-axis).</p>
 <p>Let’s equalize the axes: we can add explicit <code>width</code> and <code>height</code> settings for the chart, and specify matching domains using the scale <code>domain</code> property.</p>
-<div id="8HdsAzWBNVoB" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="2701bbff-a789-4eb0-f6bd-3f66565be916">
+<div class="cell" data-outputid="2701bbff-a789-4eb0-f6bd-3f66565be916">
 <div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -969,12 +998,12 @@
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-0bdf599a6aa64befa94ba5365f47589a"></div>
+<div id="altair-viz-5a09ab46c03d47de909aa9a469c4cfd4"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0bdf599a6aa64befa94ba5365f47589a") {
-      outputDiv = document.getElementById("altair-viz-0bdf599a6aa64befa94ba5365f47589a");
+    if (outputDiv.id !== "altair-viz-5a09ab46c03d47de909aa9a469c4cfd4") {
+      outputDiv = document.getElementById("altair-viz-5a09ab46c03d47de909aa9a469c4cfd4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1023,7 +1052,7 @@
 <p><em>The resulting plot is more balanced, and less prone to subtle misinterpretations!</em></p>
 <p>However, the grid lines are now rather dense. If we want to remove grid lines altogether, we can add <code>grid=False</code> to the <code>axis</code> attribute. But what if we instead want to reduce the number of tick marks, for example only including grid lines for each order of magnitude?</p>
 <p>To change the number of ticks, we can specify a target <code>tickCount</code> property for an <code>Axis</code> object. The <code>tickCount</code> is treated as a <em>suggestion</em> to Altair, to be considered alongside other aspects such as using nice, human-friendly intervals. We may not get <em>exactly</em> the number of tick marks we request, but we should get something close.</p>
-<div id="v4Awwd_kN_bf" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="b047adfe-6491-44f4-d84b-8e22836ad923">
+<div class="cell" data-outputid="b047adfe-6491-44f4-d84b-8e22836ad923">
 <div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1038,12 +1067,12 @@
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-6ca7aa44b94a4dfaaae332dd7ab0ec74"></div>
+<div id="altair-viz-c517fe1bc40f4caf86df0452703f8552"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6ca7aa44b94a4dfaaae332dd7ab0ec74") {
-      outputDiv = document.getElementById("altair-viz-6ca7aa44b94a4dfaaae332dd7ab0ec74");
+    if (outputDiv.id !== "altair-viz-c517fe1bc40f4caf86df0452703f8552") {
+      outputDiv = document.getElementById("altair-viz-c517fe1bc40f4caf86df0452703f8552");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1091,7 +1120,7 @@
 </div>
 <p>By setting the <code>tickCount</code> to 5, we have the desired effect.</p>
 <p>Our scatter plot points feel a bit small. Let’s change the default size by setting the <code>size</code> property of the circle mark. This size value is the <em>area</em> of the mark in pixels.</p>
-<div id="aERDKc0KOhco" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="e3257bc3-40aa-4539-edea-a923c0329675">
+<div class="cell" data-outputid="e3257bc3-40aa-4539-edea-a923c0329675">
 <div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1106,12 +1135,12 @@
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-7e106896c65a44aa972ab4b5275930ce"></div>
+<div id="altair-viz-88ffd47ee4794d01ad2651b145f7fd21"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7e106896c65a44aa972ab4b5275930ce") {
-      outputDiv = document.getElementById("altair-viz-7e106896c65a44aa972ab4b5275930ce");
+    if (outputDiv.id !== "altair-viz-88ffd47ee4794d01ad2651b145f7fd21") {
+      outputDiv = document.getElementById("altair-viz-88ffd47ee4794d01ad2651b145f7fd21");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1166,7 +1195,7 @@
 <h3 data-number="4.3.1" class="anchored" id="color-by-gram-staining"><span class="header-section-number">4.3.1</span> Color by Gram Staining</h3>
 <p><em>Above we saw that neomycin is more effective for some bacteria, while penicillin is more effective for others. But how can we tell which antibiotic to use if we don’t know the specific species of bacteria? Gram staining serves as a diagnostic for discriminating classes of bacteria!</em></p>
 <p>Let’s encode <code>Gram_Staining</code> on the <code>color</code> channel as a nominal data type:</p>
-<div id="pkSc_PXyAuGg" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="01446cfb-f968-4dfb-c695-4372f55bd5f1">
+<div class="cell" data-outputid="01446cfb-f968-4dfb-c695-4372f55bd5f1">
 <div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1182,12 +1211,12 @@
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-a0178f2daf804ecc8f90d37418af6bf7"></div>
+<div id="altair-viz-7fcb3cc208654831bc67abf0253c74a4"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a0178f2daf804ecc8f90d37418af6bf7") {
-      outputDiv = document.getElementById("altair-viz-a0178f2daf804ecc8f90d37418af6bf7");
+    if (outputDiv.id !== "altair-viz-7fcb3cc208654831bc67abf0253c74a4") {
+      outputDiv = document.getElementById("altair-viz-7fcb3cc208654831bc67abf0253c74a4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1236,7 +1265,7 @@
 <p><em>We can see that Gram-positive bacteria seem most susceptible to penicillin, whereas neomycin is more effective for Gram-negative bacteria!</em></p>
 <p>The color scheme above was automatically chosen to provide perceptually-distinguishable colors for nominal (equal or not equal) comparisons. However, we might wish to customize the colors used. In this case, Gram staining results in <a href="https://en.wikipedia.org/wiki/Gram_stain#/media/File:Gram_stain_01.jpg">distinctive physical colorings: pink for Gram-negative, purple for Gram-positive</a>.</p>
 <p>Let’s use those colors by specifying an explicit scale mapping from the data <code>domain</code> to the color <code>range</code>:</p>
-<div id="XA4UUWriCEox" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="f2ada6d0-d969-4927-a268-6f842c1b65ad">
+<div class="cell" data-outputid="f2ada6d0-d969-4927-a268-6f842c1b65ad">
 <div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1254,12 +1283,12 @@
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-60a2fc9fc04e4bdfad072d008a322e19"></div>
+<div id="altair-viz-9a932809d3c6423e8dc46984e31fa21e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-60a2fc9fc04e4bdfad072d008a322e19") {
-      outputDiv = document.getElementById("altair-viz-60a2fc9fc04e4bdfad072d008a322e19");
+    if (outputDiv.id !== "altair-viz-9a932809d3c6423e8dc46984e31fa21e") {
+      outputDiv = document.getElementById("altair-viz-9a932809d3c6423e8dc46984e31fa21e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1306,7 +1335,7 @@
 </div>
 </div>
 <p>By default legends are placed on the right side of the chart. Similar to axes, we can change the legend orientation using the <code>orient</code> parameter:</p>
-<div id="wlb7-9SNBUdZ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="32b3e78c-7860-4ef4-850f-9af24cb58edd">
+<div class="cell" data-outputid="32b3e78c-7860-4ef4-850f-9af24cb58edd">
 <div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1325,12 +1354,12 @@
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-fb20f5e9f34e40f58fff628036cade04"></div>
+<div id="altair-viz-9e269262e2bb48d59b1b5567e02724b9"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fb20f5e9f34e40f58fff628036cade04") {
-      outputDiv = document.getElementById("altair-viz-fb20f5e9f34e40f58fff628036cade04");
+    if (outputDiv.id !== "altair-viz-9e269262e2bb48d59b1b5567e02724b9") {
+      outputDiv = document.getElementById("altair-viz-9e269262e2bb48d59b1b5567e02724b9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1377,7 +1406,7 @@
 </div>
 </div>
 <p>We can also remove a legend entirely by specifying <code>legend=None</code>:</p>
-<div id="YEcweSOABxss" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="a6e539ce-1b2c-4b6f-c504-edbeb659b5d4">
+<div class="cell" data-outputid="a6e539ce-1b2c-4b6f-c504-edbeb659b5d4">
 <div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1396,12 +1425,12 @@
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-849cd3bb7c694c9bbfe1fcf27a9e17dd"></div>
+<div id="altair-viz-a6b8ddb783384c66a66c832e5b121b5e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-849cd3bb7c694c9bbfe1fcf27a9e17dd") {
-      outputDiv = document.getElementById("altair-viz-849cd3bb7c694c9bbfe1fcf27a9e17dd");
+    if (outputDiv.id !== "altair-viz-a6b8ddb783384c66a66c832e5b121b5e") {
+      outputDiv = document.getElementById("altair-viz-a6b8ddb783384c66a66c832e5b121b5e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1452,7 +1481,7 @@
 <h3 data-number="4.3.2" class="anchored" id="color-by-species"><span class="header-section-number">4.3.2</span> Color by Species</h3>
 <p><em>So far we’ve considered the effectiveness of antibiotics. Let’s turn around and ask a different question: what might antibiotic response teach us about the different species of bacteria?</em></p>
 <p>To start, let’s encode <code>Bacteria</code> (a nominal data field) using the <code>color</code> channel:</p>
-<div id="di1mU7ynOq0u" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="4d7a1300-79ea-429c-9a6a-4de170eabddf">
+<div class="cell" data-outputid="4d7a1300-79ea-429c-9a6a-4de170eabddf">
 <div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1468,12 +1497,12 @@
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-234541d194f74645804ba0c22749bb34"></div>
+<div id="altair-viz-877341234886482bbcf8dec0be4d8c53"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-234541d194f74645804ba0c22749bb34") {
-      outputDiv = document.getElementById("altair-viz-234541d194f74645804ba0c22749bb34");
+    if (outputDiv.id !== "altair-viz-877341234886482bbcf8dec0be4d8c53") {
+      outputDiv = document.getElementById("altair-viz-877341234886482bbcf8dec0be4d8c53");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1522,7 +1551,7 @@
 <p><em>The result is a bit of a mess!</em> There are enough unique bacteria that Altair starts repeating colors from its default 10-color palette for nominal values.</p>
 <p>To use custom colors, we can update the color encoding <code>scale</code> property. One option is to provide explicit scale <code>domain</code> and <code>range</code> values to indicate the precise color mappings per value, as we did above for Gram staining. Another option is to use an alternative color scheme. Altair includes a variety of built-in color schemes. For a complete list, see the <a href="https://vega.github.io/vega/docs/schemes/#reference">Vega color scheme documentation</a>.</p>
 <p>Let’s try switching to a built-in 20-color scheme, <code>tableau20</code>, and set that using the scale <code>scheme</code> property.</p>
-<div id="wkt58FGQPCU2" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="365fc89f-4ab4-47aa-fe40-70f175c2c58d">
+<div class="cell" data-outputid="365fc89f-4ab4-47aa-fe40-70f175c2c58d">
 <div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1539,12 +1568,12 @@
 <span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-76cbd1bb32dd4bf0af909831687bcbe2"></div>
+<div id="altair-viz-2914df2e1b7b4d33b319e9ee04804014"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-76cbd1bb32dd4bf0af909831687bcbe2") {
-      outputDiv = document.getElementById("altair-viz-76cbd1bb32dd4bf0af909831687bcbe2");
+    if (outputDiv.id !== "altair-viz-2914df2e1b7b4d33b319e9ee04804014") {
+      outputDiv = document.getElementById("altair-viz-2914df2e1b7b4d33b319e9ee04804014");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1592,7 +1621,7 @@
 </div>
 <p><em>We now have a unique color for each bacteria, but the chart is still a mess. Among other issues, the encoding takes no account of bacteria that belong to the same genus. In the chart above, the two different Salmonella strains have very different hues (teal and pink), despite being biological cousins.</em></p>
 <p>To try a different scheme, we can also change the data type from nominal to ordinal. The default ordinal scheme uses blue shades, ramping from light to dark:</p>
-<div id="L3XSjQqePa-z" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="dd1dad11-c74e-4339-9533-4cd195af12a2">
+<div class="cell" data-outputid="dd1dad11-c74e-4339-9533-4cd195af12a2">
 <div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1608,12 +1637,12 @@
 <span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-55114a4d44724420a529a2eacc967260"></div>
+<div id="altair-viz-20312a0f848f43879613116bf78d84b7"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-55114a4d44724420a529a2eacc967260") {
-      outputDiv = document.getElementById("altair-viz-55114a4d44724420a529a2eacc967260");
+    if (outputDiv.id !== "altair-viz-20312a0f848f43879613116bf78d84b7") {
+      outputDiv = document.getElementById("altair-viz-20312a0f848f43879613116bf78d84b7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1661,7 +1690,7 @@
 </div>
 <p><em>Some of those blue shades may be hard to distinguish.</em></p>
 <p>For more differentiated colors, we can experiment with alternatives to the default <code>blues</code> color scheme. The <code>viridis</code> scheme ramps through both hue and luminance:</p>
-<div id="r7Jb5izEE1b4" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="3927106a-dd42-43c5-847a-4f030b467c4c">
+<div class="cell" data-outputid="3927106a-dd42-43c5-847a-4f030b467c4c">
 <div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1678,12 +1707,12 @@
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-4ff217a95e514b048db0fa6a8be6730a"></div>
+<div id="altair-viz-309dda6b3c1d4e11af67150b0240555f"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4ff217a95e514b048db0fa6a8be6730a") {
-      outputDiv = document.getElementById("altair-viz-4ff217a95e514b048db0fa6a8be6730a");
+    if (outputDiv.id !== "altair-viz-309dda6b3c1d4e11af67150b0240555f") {
+      outputDiv = document.getElementById("altair-viz-309dda6b3c1d4e11af67150b0240555f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1735,7 +1764,7 @@
 <h3 data-number="4.3.3" class="anchored" id="color-by-genus"><span class="header-section-number">4.3.3</span> Color by Genus</h3>
 <p>Let’s try to color by genus instead of bacteria. To do so, we will add a <code>calculate</code> transform that splits up the bacteria name on space characters and takes the first word in the resulting array. We can then encode the resulting <code>Genus</code> field using the <code>tableau20</code> color scheme.</p>
 <p>(Note that the antibiotics dataset includes a pre-calculated <code>Genus</code> field, but we will ignore it here in order to further explore Altair’s data transformations.)</p>
-<div id="39g0fVG6cuTG" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="654d3638-bded-4bbc-c88b-2e52c88e541c">
+<div class="cell" data-outputid="654d3638-bded-4bbc-c88b-2e52c88e541c">
 <div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).transform_calculate(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    Genus<span class="op">=</span><span class="st">'split(datum.Bacteria, " ")[0]'</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
@@ -1754,12 +1783,12 @@
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-a3bde89df5004c8bbc787c45cdc8ebe4"></div>
+<div id="altair-viz-4715e4e636f145fcadb5d6a198734453"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a3bde89df5004c8bbc787c45cdc8ebe4") {
-      outputDiv = document.getElementById("altair-viz-a3bde89df5004c8bbc787c45cdc8ebe4");
+    if (outputDiv.id !== "altair-viz-4715e4e636f145fcadb5d6a198734453") {
+      outputDiv = document.getElementById("altair-viz-4715e4e636f145fcadb5d6a198734453");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1809,7 +1838,7 @@
 <p><em>If we look at some of the previous charts carefully, we can see that only a handful of bacteria have a genus shared with another bacteria: Salmonella, Staphylococcus, and Streptococcus. To focus our comparison, we might add colors only for these repeated genus values.</em></p>
 <p>Let’s add another <code>calculate</code> transform that takes a genus name, keeps it if it is one of the repeated values, and otherwise uses the string <code>"Other"</code>.</p>
 <p>In addition, we can add custom color encodings using explicit <code>domain</code> and <code>range</code> arrays for the color encoding <code>scale</code>.</p>
-<div id="Qmi_geBiPgvr" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="9e06d0a1-756a-4a46-cedf-e2be85e7b09d">
+<div class="cell" data-outputid="9e06d0a1-756a-4a46-cedf-e2be85e7b09d">
 <div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).transform_calculate(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  Split<span class="op">=</span><span class="st">'split(datum.Bacteria, " ")[0]'</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>).transform_calculate(</span>
@@ -1833,12 +1862,12 @@
 <span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-ff79227449494712b5c9d99ce46d9c72"></div>
+<div id="altair-viz-e1df56b9bd8245c7bc4831a8d899e166"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ff79227449494712b5c9d99ce46d9c72") {
-      outputDiv = document.getElementById("altair-viz-ff79227449494712b5c9d99ce46d9c72");
+    if (outputDiv.id !== "altair-viz-e1df56b9bd8245c7bc4831a8d899e166") {
+      outputDiv = document.getElementById("altair-viz-e1df56b9bd8245c7bc4831a8d899e166");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1894,7 +1923,7 @@
 <h3 data-number="4.3.4" class="anchored" id="color-by-antibiotic-response"><span class="header-section-number">4.3.4</span> Color by Antibiotic Response</h3>
 <p>We might also use the <code>color</code> channel to encode quantitative values. Though keep in mind that typically color is not as effective for conveying quantities as position or size encodings!</p>
 <p>Here is a basic heatmap of penicillin MIC values for each bacteria. We’ll use a <code>rect</code> mark and sort the bacteria by descending MIC values (from most to least resistant):</p>
-<div id="orEjpD5uU2m0" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="0a92631d-1f68-4840-d5cd-26399f559aba">
+<div class="cell" data-outputid="0a92631d-1f68-4840-d5cd-26399f559aba">
 <div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_rect().encode(</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Bacteria:N'</span>,</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>      sort<span class="op">=</span>alt.EncodingSortField(field<span class="op">=</span><span class="st">'Penicillin'</span>, op<span class="op">=</span><span class="st">'max'</span>, order<span class="op">=</span><span class="st">'descending'</span>)</span>
@@ -1903,12 +1932,12 @@
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-7232923d6dd2469daf077d90f344b424"></div>
+<div id="altair-viz-73658a5c6a114e279fbc2bf73e22f50f"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7232923d6dd2469daf077d90f344b424") {
-      outputDiv = document.getElementById("altair-viz-7232923d6dd2469daf077d90f344b424");
+    if (outputDiv.id !== "altair-viz-73658a5c6a114e279fbc2bf73e22f50f") {
+      outputDiv = document.getElementById("altair-viz-73658a5c6a114e279fbc2bf73e22f50f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1955,7 +1984,7 @@
 </div>
 </div>
 <p>We can further improve this chart by combining features we’ve seen thus far: a log-transformed scale, a change of axis orientation, a custom color scheme (<code>plasma</code>), tick count adjustment, and custom title text. We’ll also exercise configuration options to adjust the axis title placement and legend title alignment.</p>
-<div id="spIpf8S6J1pJ" class="cell" data-colab="[object Object]" data-colab_type="code" data-outputid="96210f62-39b2-4e61-a528-cd6f8b552f77">
+<div class="cell" data-outputid="96210f62-39b2-4e61-a528-cd6f8b552f77">
 <div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_rect().encode(</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Bacteria:N'</span>,</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>      sort<span class="op">=</span>alt.EncodingSortField(field<span class="op">=</span><span class="st">'Penicillin'</span>, op<span class="op">=</span><span class="st">'max'</span>, order<span class="op">=</span><span class="st">'descending'</span>),</span>
@@ -1975,12 +2004,12 @@
 <span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-014c6eeb0d2c41bb92f5590ae46b650b"></div>
+<div id="altair-viz-44e9f9b399274a96886c2d47846fdf8e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-014c6eeb0d2c41bb92f5590ae46b650b") {
-      outputDiv = document.getElementById("altair-viz-014c6eeb0d2c41bb92f5590ae46b650b");
+    if (outputDiv.id !== "altair-viz-44e9f9b399274a96886c2d47846fdf8e") {
+      outputDiv = document.getElementById("altair-viz-44e9f9b399274a96886c2d47846fdf8e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2044,12 +2073,12 @@
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-970d92b1961a4df2b859774644a574bc"></div>
+<div id="altair-viz-b10095aa35724ebb960e7e9beb2a98ed"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-970d92b1961a4df2b859774644a574bc") {
-      outputDiv = document.getElementById("altair-viz-970d92b1961a4df2b859774644a574bc");
+    if (outputDiv.id !== "altair-viz-b10095aa35724ebb960e7e9beb2a98ed") {
+      outputDiv = document.getElementById("altair-viz-b10095aa35724ebb960e7e9beb2a98ed");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2125,7 +2154,6 @@
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

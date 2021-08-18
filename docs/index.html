@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
+  <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft">
   <title>Visualization Curriculum</title>
@@ -19,7 +19,7 @@
   <![endif]-->
   <script src="site_libs/quarto-nav/quarto-nav.js"></script>
   <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <meta name="quarto:offset" content=".">
+  <meta name="quarto:offset" content="./">
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
@@ -29,37 +29,11 @@
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
   <script src="site_libs/quarto-html/clipboard.min.js"></script>
   <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <script src="site_libs/quarto-html/quarto-html.js"></script>
   <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <style type="text/css">
-    details {
-      margin-bottom: 1em;
-    } 
-    details[show] {
-      margin-bottom: 0;
-    }
-
-    .quarto-unresolved-ref {
-      font-weight: 600;
-    }
-
-    .quarto-cover-image {
-      max-width: 35%;
-      float: right;
-      margin-left: 30px;
-    }
-
-    .cell-output-display {
-      overflow-x: scroll;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -74,17 +48,15 @@
 </nav>
 </header>
  <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
     <nav class="ms-lg-auto py-2 floating  overflow-scroll">
-  <div class="px-3 pt-lg-2 text-left">
-    <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
-    <div class="sidebar-title mt-1 mb-0 py-0">
-      <a href="./">
-      Visualization Curriculum
-      </a>
-        <div class="sidebar-tools-main mt-1">
+  <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header sidebar-header-stacked">
+    <img src="./altair-hist.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Visualization Curriculum</a> 
+        <div class="sidebar-tools-main">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -104,13 +76,13 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2 flex-shrink-0">
+    <div class="d-flex px-3 mt-2 flex-shrink-0 align-items-center">
       <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
       </div>
-        <div class="sidebar-tools-collapse mt-1">
+        <div class="sidebar-tools-collapse">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -130,42 +102,40 @@
 </div>
     </div>
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-3 px-3">
+  <ul class="list-unstyled mt-1 px-3">
       <li class="sidebar-item">
   <a href="./index.html" class="active">Introduction</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Curriculum
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Curriculum</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; Introduction to Altair</a>
+  <a href="./altair_introduction.html" class=""><span class="chapter-title">Introduction to Altair</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</a>
+  <a href="./altair_marks_encoding.html" class=""><span class="chapter-title">Data Types, Graphical Marks, and Visual Encoding Channels</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; Data Transformation</a>
+  <a href="./altair_data_transformation.html" class=""><span class="chapter-title">Data Transformation</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; Scales, Axes, and Legends</a>
+  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-title">Scales, Axes, and Legends</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; Multi-View Composition</a>
+  <a href="./altair_view_composition.html" class=""><span class="chapter-title">Multi-View Composition</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; Interaction</a>
+  <a href="./altair_interaction.html" class=""><span class="chapter-title">Interaction</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</a>
+  <a href="./altair_cartographic.html" class=""><span class="chapter-title">Cartographic Visualization</span></a>
 </li>
         </ul>
       </div>
@@ -174,10 +144,8 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Support
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Support</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
@@ -207,26 +175,26 @@
 </ul></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
-  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-7">Visualization Curriculum</h1>
 <p class="author">Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft</p>
 </header>
 
-<section class="level1 unnumbered">
+<section id="introduction" class="level1 unnumbered">
 <h1 class="unnumbered">Introduction</h1>
 <p>A data visualization curriculum of interactive notebooks, using <a href="https://vega.github.io/vega-lite/">Vega-Lite</a> and <a href="https://altair-viz.github.io/">Altair</a>. This book contains a series of Python-based Jupyter notebooks, a corresponding set of JavaScript notebooks are available online on <a href="https://observablehq.com/@uwdata/data-visualization-curriculum">Observable</a>.</p>
-<section class="level2">
-<h2 class="anchored" id="getting-started">Getting Started</h2>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>The visualization curriculum can be used either online or on your local computer. You can view and interact with the plots directly in this Jupyter Book. If you want to modify the code, you have a few different options:</p>
 <ul>
 <li>To read JavaScript notebooks online using <a href="https://observablehq.com/">Observable</a>, navigate to the “Observable” page above and click the corresponding notebook.</li>
 <li>To read Python notebooks online using <a href="https://colab.research.google.com/">Colab</a>, click the corresponding section in this book, hover over the little rocket ship at the top of the page, and select “Colab” from the menu.</li>
 <li>To read Python notebooks locally, follow the instructions below.</li>
 </ul>
-<section class="level3">
-<h3 class="anchored" id="local-installation">Local Installation</h3>
+<section id="local-installation" class="level3">
+<h3 class="anchored" data-anchor-id="local-installation">Local Installation</h3>
 <ol type="1">
 <li><a href="https://altair-viz.github.io/getting_started/installation.html">Install Altair and a notebook environment</a>. The most recent versions of these notebooks use <em>Altair version 4</em>.</li>
 <li>Download the notebooks from the <a href="https://github.com/uwdata/visualization-curriculum/releases">releases page</a>. Typically you will want to use the most recent release. (If you wish to use notebooks for Altair version 3, download the <a href="https://github.com/uwdata/visualization-curriculum/releases/tag/altair-v3">Altair v3.2 release</a>.)</li>
@@ -235,19 +203,89 @@
 <p>Depending on your programming environment (and whether or not you have a live internet connection), you may want to specify a particular <a href="https://altair-viz.github.io/user_guide/display_frontends.html">renderer</a> for Altair.</p>
 </section>
 </section>
-<section class="level2">
-<h2 class="anchored" id="credits">Credits</h2>
+<section id="credits" class="level2">
+<h2 class="anchored" data-anchor-id="credits">Credits</h2>
 <p>Developed at the University of Washington by Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft. Thanks to the <a href="https://idl.cs.washington.edu/">UW Interactive Data Lab</a> and Arvind Satyanarayan for their valuable input and feedback! Thanks also to the students of <a href="https://courses.cs.washington.edu/courses/cse512/19sp/">UW CSE512 Spring 2019</a>, the first group to use these notebooks within an integrated course curriculum.</p>
+
 <!-- -->
 </section>
 </section>
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    window.tippy(el, {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    }); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
 </main>
 <div class="page-navigation ">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
       <a href="./altair_introduction.html">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; Introduction to Altair</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Altair</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
+  <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Visualization Curriculum – 2&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</title>
   <style>
@@ -45,35 +45,35 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #007ba5; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
     code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
     code span.im { } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #007ba5; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #007ba5; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 
   <!--[if lt IE 9]>
@@ -81,7 +81,7 @@
   <![endif]-->
   <script src="site_libs/quarto-nav/quarto-nav.js"></script>
   <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <meta name="quarto:offset" content=".">
+  <meta name="quarto:offset" content="./">
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
@@ -92,47 +92,21 @@
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
   <script src="site_libs/quarto-html/clipboard.min.js"></script>
   <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <script src="site_libs/quarto-html/quarto-html.js"></script>
   <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-  <style type="text/css">
-    details {
-      margin-bottom: 1em;
-    } 
-    details[show] {
-      margin-bottom: 0;
-    }
-
-    .quarto-unresolved-ref {
-      font-weight: 600;
-    }
-
-    .quarto-cover-image {
-      max-width: 35%;
-      float: right;
-      margin-left: 30px;
-    }
-
-    .cell-output-display {
-      overflow-x: scroll;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top">
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">2&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Types, Graphical Marks, and Visual Encoding Channels</span></h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -140,17 +114,15 @@
 </nav>
 </header>
  <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
     <nav class="ms-lg-auto py-2 floating  overflow-scroll">
-  <div class="px-3 pt-lg-2 text-left">
-    <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
-    <div class="sidebar-title mt-1 mb-0 py-0">
-      <a href="./">
-      Visualization Curriculum
-      </a>
-        <div class="sidebar-tools-main mt-1">
+  <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header sidebar-header-stacked">
+    <img src="./altair-hist.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Visualization Curriculum</a> 
+        <div class="sidebar-tools-main">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -170,13 +142,13 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2 flex-shrink-0">
+    <div class="d-flex px-3 mt-2 flex-shrink-0 align-items-center">
       <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
       </div>
-        <div class="sidebar-tools-collapse mt-1">
+        <div class="sidebar-tools-collapse">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -196,42 +168,40 @@
 </div>
     </div>
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-3 px-3">
+  <ul class="list-unstyled mt-1 px-3">
       <li class="sidebar-item">
   <a href="./index.html" class="">Introduction</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Curriculum
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Curriculum</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; Introduction to Altair</a>
+  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Altair</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_marks_encoding.html" class="active"><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</a>
+  <a href="./altair_marks_encoding.html" class="active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Types, Graphical Marks, and Visual Encoding Channels</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; Data Transformation</a>
+  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Transformation</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; Scales, Axes, and Legends</a>
+  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Scales, Axes, and Legends</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; Multi-View Composition</a>
+  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-View Composition</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; Interaction</a>
+  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Interaction</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</a>
+  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cartographic Visualization</span></a>
 </li>
         </ul>
       </div>
@@ -240,10 +210,8 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Support
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Support</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
@@ -296,37 +264,37 @@
 <li><a href="#summary-1" class="nav-link" data-scroll-target="#summary-1"> <span class="header-section-number">2.5</span> Summary</a></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
-  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">2&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</h1>
+<h1 class="title d-none d-lg-block display-7"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Types, Graphical Marks, and Visual Encoding Channels</span></h1>
 </header>
 
 <p>A visualization represents data using a collection of <em>graphical marks</em> (bars, lines, points, etc.). The attributes of a mark — such as its position, shape, size, or color — serve as <em>channels</em> through which we can encode underlying data values.</p>
 <p>With a basic framework of <em>data types</em>, <em>marks</em>, and <em>encoding channels</em>, we can concisely create a wide variety of visualizations. In this notebook, we explore each of these elements and show how to use them to create custom statistical graphics.</p>
 <p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" id="global-development-data"><span class="header-section-number">2.1</span> Global Development Data</h2>
+<section id="global-development-data" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="global-development-data"><span class="header-section-number">2.1</span> Global Development Data</h2>
 <p>We will be visualizing global health and population data for a number of countries, over the time period of 1955 to 2005. The data was collected by the <a href="https://www.gapminder.org/">Gapminder Foundation</a> and shared in <a href="https://www.youtube.com/watch?v=hVimVzgtD6w">Hans Rosling’s popular TED talk</a>. If you haven’t seen the talk, we encourage you to watch it first!</p>
 <p>Let’s first load the dataset from the <a href="https://github.com/vega/vega-datasets">vega-datasets</a> collection into a Pandas data frame.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vega_datasets <span class="im">import</span> data <span class="im">as</span> vega_data</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vega_datasets <span class="im">import</span> data <span class="im">as</span> vega_data</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> vega_data.gapminder()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>How big is the data?</p>
 <div class="cell" data-outputid="134a2f4a-c15d-4fcd-fd93-49b26a4f5e30">
-<div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p>(693, 6)</p>
+<pre><code>(693, 6)</code></pre>
 </div>
 </div>
 <p>693 rows and 6 columns! Let’s take a peek at the data content:</p>
 <div class="cell" data-outputid="ec103505-4d8f-4310-a6e1-7eea3d789c28">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 
@@ -397,10 +365,10 @@
 <p>We also see a <code>cluster</code> field with an integer code. What might this represent? We’ll try and solve this mystery as we visualize the data!</p>
 <p>Let’s also create a smaller data frame, filtered down to values for the year 2000 only:</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data2000 <span class="op">=</span> data.loc[data[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data2000 <span class="op">=</span> data.loc[data[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-outputid="8629f998-e723-4b92-9a95-f0df3c9843a8">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data2000.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data2000.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 
@@ -468,45 +436,45 @@
 </div>
 </div>
 </section>
-<section class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" id="data-types"><span class="header-section-number">2.2</span> Data Types</h2>
+<section id="data-types" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="data-types"><span class="header-section-number">2.2</span> Data Types</h2>
 <p>The first ingredient in effective visualization is the input data. Data values can represent different forms of measurement. What kinds of comparisons do those measurements support? And what kinds of visual encodings then support those comparisons?</p>
 <p>We will start by looking at the basic data types that Altair uses to inform visual encoding choices. These data types determine the kinds of comparisons we can make, and thereby guide our visualization design decisions.</p>
-<section class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" id="nominal-n"><span class="header-section-number">2.2.1</span> Nominal (N)</h3>
+<section id="nominal-n" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="nominal-n"><span class="header-section-number">2.2.1</span> Nominal (N)</h3>
 <p><em>Nominal</em> data (also called <em>categorical</em> data) consist of category names.</p>
 <p>With nominal data we can compare the equality of values: <em>is value A the same or different than value B? (A = B)</em>, supporting statements like “A is equal to B” or “A is not equal to B”. In the dataset above, the <code>country</code> field is nominal.</p>
 <p>When visualizing nominal data we should readily be able to see if values are the same or different: position, color hue (blue, red, green, <em>etc.</em>), and shape can help. However, using a size channel to encode nominal data might mislead us, suggesting rank-order or magnitude differences among values that do not exist!</p>
 </section>
-<section class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" id="ordinal-o"><span class="header-section-number">2.2.2</span> Ordinal (O)</h3>
+<section id="ordinal-o" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="ordinal-o"><span class="header-section-number">2.2.2</span> Ordinal (O)</h3>
 <p><em>Ordinal</em> data consist of values that have a specific ordering.</p>
 <p>With ordinal data we can compare the rank-ordering of values: <em>does value A come before or after value B? (A &lt; B)</em>, supporting statements like “A is less than B” or “A is greater than B”. In the dataset above, we can treat the <code>year</code> field as ordinal.</p>
 <p>When visualizing ordinal data, we should perceive a sense of rank-order. Position, size, or color value (brightness) might be appropriate, where as color hue (which is not perceptually ordered) would be less appropriate.</p>
 </section>
-<section class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" id="quantitative-q"><span class="header-section-number">2.2.3</span> Quantitative (Q)</h3>
+<section id="quantitative-q" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="quantitative-q"><span class="header-section-number">2.2.3</span> Quantitative (Q)</h3>
 <p>With <em>quantitative</em> data we can measure numerical differences among values. There are multiple sub-types of quantitative data:</p>
 <p>For <em>interval</em> data we can measure the distance (interval) between points: <em>what is the distance to value A from value B? (A - B)</em>, supporting statements such as “A is 12 units away from B”.</p>
 <p>For <em>ratio</em> data the zero-point is meaningful and so we can also measure proportions or scale factors: <em>value A is what proportion of value B? (A / B)</em>, supporting statements such as “A is 10% of B” or “B is 7 times larger than A”.</p>
 <p>In the dataset above, <code>year</code> is a quantitative interval field (the value of year “zero” is subjective), whereas <code>fertility</code> and <code>life_expect</code> are quantitative ratio fields (zero is meaningful for calculating proportions). Vega-Lite represents quantitative data, but does not make a distinction between interval and ratio types.</p>
 <p>Quantitative values can be visualized using position, size, or color value, among other channels. An axis with a zero baseline is essential for proportional comparisons of ratio values, but can be safely omitted for interval comparisons.</p>
 </section>
-<section class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" id="temporal-t"><span class="header-section-number">2.2.4</span> Temporal (T)</h3>
+<section id="temporal-t" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="temporal-t"><span class="header-section-number">2.2.4</span> Temporal (T)</h3>
 <p><em>Temporal</em> values measure time points or intervals. This type is a special case of quantitative values (timestamps) with rich semantics and conventions (i.e., the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a>). The temporal type in Vega-Lite supports reasoning about time units (year, month, day, hour, etc.), and provides methods for requesting specific time intervals.</p>
 <p>Example temporal values include date strings such as <code>“2019-01-04”</code> and <code>“Jan 04 2019”</code>, as well as standardized date-times such as the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO date-time format</a>: <code>“2019-01-04T17:50:35.643Z”</code>.</p>
 <p>There are no temporal values in our global development dataset above, as the <code>year</code> field is simply encoded as an integer. For more details about using temporal data in Altair, see the <a href="https://altair-viz.github.io/user_guide/times_and_dates.html">Times and Dates documentation</a>.</p>
 </section>
-<section class="level3" data-number="2.2.5">
-<h3 data-number="2.2.5" class="anchored" id="summary"><span class="header-section-number">2.2.5</span> Summary</h3>
+<section id="summary" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.2.5</span> Summary</h3>
 <p>These data types are not mutually exclusive, but rather form a hierarchy: ordinal data support nominal (equality) comparisons, while quantitative data support ordinal (rank-order) comparisons.</p>
 <p>Moreover, these data types do <em>not</em> provide a fixed categorization. Just because a data field is represented using a number doesn’t mean we have to treat it as a quantitative type! For example, we might interpret a set of ages (10 years old, 20 years old, etc) as nominal (underage or overage), ordinal (grouped by year), or quantitative (calculate average age).</p>
 <p>Now let’s examine how to visually encode these data types!</p>
 </section>
 </section>
-<section class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" id="encoding-channels"><span class="header-section-number">2.3</span> Encoding Channels</h2>
+<section id="encoding-channels" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="encoding-channels"><span class="header-section-number">2.3</span> Encoding Channels</h2>
 <p>At the heart of Altair is the use of <em>encodings</em> that bind data fields (with a given data type) to available encoding <em>channels</em> of a chosen <em>mark</em> type. In this notebook we’ll examine the following encoding channels:</p>
 <ul>
 <li><code>x</code>: Horizontal (x-axis) position of the mark.</li>
@@ -521,13 +489,13 @@
 <li><code>row</code>: Facet the data into vertically-aligned subplots.</li>
 </ul>
 <p>For a complete list of available channels, see the <a href="https://altair-viz.github.io/user_guide/encoding.html">Altair encoding documentation</a>.</p>
-<section class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" id="x"><span class="header-section-number">2.3.1</span> X</h3>
+<section id="x" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="x"><span class="header-section-number">2.3.1</span> X</h3>
 <p>The <code>x</code> encoding channel sets a mark’s horizontal position (x-coordinate). In addition, default choices of axis and title are made automatically. In the chart below, the choice of a quantitative data type results in a continuous linear axis scale:</p>
 <div class="cell" data-outputid="2a958755-7f70-4a86-ab6f-2cfb24ad7231">
-<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-eff22498c40943008d25247747a4ab1b"></div>
@@ -582,14 +550,14 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" id="y"><span class="header-section-number">2.3.2</span> Y</h3>
+<section id="y" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="y"><span class="header-section-number">2.3.2</span> Y</h3>
 <p>The <code>y</code> encoding channel sets a mark’s vertical position (y-coordinate). Here we’ve added the <code>cluster</code> field using an ordinal (<code>O</code>) data type. The result is a discrete axis that includes a sized band, with a default step size, for each unique value:</p>
 <div class="cell" data-outputid="9ff5b4a8-143c-4595-845f-026ed2e747a8">
-<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:O'</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:O'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-b145c545341148bfb56f5594c25fb0e9"></div>
@@ -646,10 +614,10 @@
 <p><em>What happens to the chart above if you swap the <code>O</code> and <code>Q</code> field types?</em></p>
 <p>If we instead add the <code>life_expect</code> field as a quantitative (<code>Q</code>) variable, the result is a scatter plot with linear scales for both axes:</p>
 <div class="cell" data-outputid="ac41eaeb-4872-48db-ddf1-ab6b5c84f387">
-<div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-6dedf42d2e554f7695f2a85be5bf4433"></div>
@@ -705,10 +673,10 @@
 </div>
 <p>By default, axes for linear quantitative scales include zero to ensure a proper baseline for comparing ratio-valued data. In some cases, however, a zero baseline may be meaningless or you may want to focus on interval comparisons. To disable automatic inclusion of zero, configure the scale mapping using the encoding <code>scale</code> attribute:</p>
 <div class="cell" data-outputid="8cb0ca55-176b-4d2f-8891-2c124276e429">
-<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>, scale<span class="op">=</span>alt.Scale(zero<span class="op">=</span><span class="va">False</span>)),</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>, scale<span class="op">=</span>alt.Scale(zero<span class="op">=</span><span class="va">False</span>))</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>, scale<span class="op">=</span>alt.Scale(zero<span class="op">=</span><span class="va">False</span>)),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>, scale<span class="op">=</span>alt.Scale(zero<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-b42c8a914f734f6d85de2b71757687d0"></div>
@@ -765,16 +733,16 @@
 <p>Now the axis scales no longer include zero by default. Some padding still remains, as the axis domain end points are automatically snapped to <em>nice</em> numbers like multiples of 5 or 10.</p>
 <p><em>What happens if you also add <code>nice=False</code> to the scale attribute above?</em></p>
 </section>
-<section class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" id="size"><span class="header-section-number">2.3.3</span> Size</h3>
+<section id="size" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="size"><span class="header-section-number">2.3.3</span> Size</h3>
 <p>The <code>size</code> encoding channel sets a mark’s size or extent. The meaning of the channel can vary based on the mark type. For <code>point</code> marks, the <code>size</code> channel maps to the pixel area of the plotting symbol, such that the diameter of the point matches the square root of the size value.</p>
 <p>Let’s augment our scatter plot by encoding population (<code>pop</code>) on the <code>size</code> channel. As a result, the chart now also includes a legend for interpreting the size values.</p>
 <div class="cell" data-outputid="4f76557c-4e35-41fc-9e06-513be34969ae">
-<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-0b4975d831d64191ae99e58c7f7eb31b"></div>
@@ -830,11 +798,11 @@
 </div>
 <p>In some cases we might be unsatisfied with the default size range. To provide a customized span of sizes, set the <code>range</code> parameter of the <code>scale</code> attribute to an array indicating the smallest and largest sizes. Here we update the size encoding to range from 0 pixels (for zero values) to 1,000 pixels (for the maximum value in the scale domain):</p>
 <div class="cell" data-outputid="0d88f561-9737-43fa-a84a-7ad6dcdfbf0c">
-<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>]))</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>]))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-400b74c9a991492db8feda5d41ee8393"></div>
@@ -889,17 +857,17 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" id="color-and-opacity"><span class="header-section-number">2.3.4</span> Color and Opacity</h3>
+<section id="color-and-opacity" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="color-and-opacity"><span class="header-section-number">2.3.4</span> Color and Opacity</h3>
 <p>The <code>color</code> encoding channel sets a mark’s color. The style of color encoding is highly dependent on the data type: nominal data will default to a multi-hued qualitative color scheme, whereas ordinal and quantitative data will use perceptually ordered color gradients.</p>
 <p>Here, we encode the <code>cluster</code> field using the <code>color</code> channel and a nominal (<code>N</code>) data type, resulting in a distinct hue for each cluster value. Can you start to guess what the <code>cluster</code> field might indicate?</p>
 <div class="cell" data-outputid="f12aeb57-07c5-422e-8cb1-62253b545af8">
-<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-55c961abe8f84901a743866e7793bbc1"></div>
@@ -955,12 +923,12 @@
 </div>
 <p>If we prefer filled shapes, we can can pass a <code>filled=True</code> parameter to the <code>mark_point</code> method:</p>
 <div class="cell" data-outputid="8aba4f13-bfe3-43b1-e3ea-554a8d20b7f5">
-<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-0dc01a0e90c442aa8775986e31866c01"></div>
@@ -1017,13 +985,13 @@
 <p>By default, Altair uses a bit of transparency to help combat over-plotting. We are free to further adjust the opacity, either by passing a default value to the <code>mark_*</code> method, or using a dedicated encoding channel.</p>
 <p>Here we demonstrate how to provide a constant value to an encoding channel instead of binding a data field:</p>
 <div class="cell" data-outputid="2dd14842-8fd5-4997-ea47-91cd489e0193">
-<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-47630dcd84b44f5bb2731c58ae0fc11e"></div>
@@ -1078,19 +1046,19 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" id="shape"><span class="header-section-number">2.3.5</span> Shape</h3>
+<section id="shape" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="shape"><span class="header-section-number">2.3.5</span> Shape</h3>
 <p>The <code>shape</code> encoding channel sets the geometric shape used by <code>point</code> marks. Unlike the other channels we have seen so far, the <code>shape</code> channel can not be used by other mark types. The shape encoding channel should only be used with nominal data, as perceptual rank-order and magnitude comparisons are not supported.</p>
 <p>Let’s encode the <code>cluster</code> field using <code>shape</code> as well as <code>color</code>. Using multiple channels for the same underlying data field is known as a <em>redundant encoding</em>. The resulting chart combines both color and shape information into a single symbol legend:</p>
 <div class="cell" data-outputid="e418f006-988c-42a9-9a81-664d1d52d93c">
-<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-4b2245df4e6b4d1a966c13455343c704"></div>
@@ -1145,19 +1113,19 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.3.6">
-<h3 data-number="2.3.6" class="anchored" id="tooltips-ordering"><span class="header-section-number">2.3.6</span> Tooltips &amp; Ordering</h3>
+<section id="tooltips-ordering" class="level3" data-number="2.3.6">
+<h3 data-number="2.3.6" class="anchored" data-anchor-id="tooltips-ordering"><span class="header-section-number">2.3.6</span> Tooltips &amp; Ordering</h3>
 <p>By this point, you might feel a bit frustrated: we’ve built up a chart, but we still don’t know what countries the visualized points correspond to! Let’s add interactive tooltips to enable exploration.</p>
 <p>The <code>tooltip</code> encoding channel determines tooltip text to show when a user moves the mouse cursor over a mark. Let’s add a tooltip encoding for the <code>country</code> field, then investigate which countries are being represented.</p>
 <div class="cell" data-outputid="f13ddd14-3b6f-4f96-ca08-8d3b2ba94a34">
-<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country'</span>)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country'</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-18b1640c737f4f54a2587e20320b60fe"></div>
@@ -1215,15 +1183,15 @@
 <p>The <code>order</code> encoding channel determines the order of data points, affecting both the order in which they are drawn and, for <code>line</code> and <code>area</code> marks, the order in which they are connected to one another.</p>
 <p>Let’s order the values in descending rank order by the population (<code>pop</code>), ensuring that smaller circles are drawn later than larger circles:</p>
 <div class="cell" data-outputid="3b7254de-09f3-4850-f066-ea8318ec5479">
-<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-937d7dc087744b7f96c2642a7a335024"></div>
@@ -1281,19 +1249,19 @@
 <p>We can also now figure out what the <code>cluster</code> field represents. Mouse over the various colored points to formulate your own explanation.</p>
 <p>At this point we’ve added tooltips that show only a single property of the underlying data record. To show multiple values, we can provide the <code>tooltip</code> channel an array of encodings, one for each field we want to include:</p>
 <div class="cell" data-outputid="ee47eb3b-146d-4c6b-dfa7-94ddeb0fc5d3">
-<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>),</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    tooltip <span class="op">=</span> [</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'country:N'</span>),</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'life_expect:Q'</span>)</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    ]   </span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    tooltip <span class="op">=</span> [</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'country:N'</span>),</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'life_expect:Q'</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    ]   </span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-bc0247d3650346d2a07cffdd5f7f5e2e"></div>
@@ -1349,22 +1317,22 @@
 </div>
 <p>Now we can see multiple data fields upon mouse over!</p>
 </section>
-<section class="level3" data-number="2.3.7">
-<h3 data-number="2.3.7" class="anchored" id="column-and-row-facets"><span class="header-section-number">2.3.7</span> Column and Row Facets</h3>
+<section id="column-and-row-facets" class="level3" data-number="2.3.7">
+<h3 data-number="2.3.7" class="anchored" data-anchor-id="column-and-row-facets"><span class="header-section-number">2.3.7</span> Column and Row Facets</h3>
 <p>Spatial position is one of the most powerful and flexible channels for visual encoding, but what can we do if we already have assigned fields to the <code>x</code> and <code>y</code> channels? One valuable technique is to create a <em>trellis plot</em>, consisting of sub-plots that show a subset of the data. A trellis plot is one example of the more general technique of presenting data using <a href="https://en.wikipedia.org/wiki/Small_multiple">small multiples</a> of views.</p>
 <p>The <code>column</code> and <code>row</code> encoding channels generate either a horizontal (columns) or vertical (rows) set of sub-plots, in which the data is partitioned according to the provided data field.</p>
 <p>Here is a trellis plot that divides the data into one column per `cluster` value:</p>
 <div class="cell" data-outputid="b62aff8e-a2aa-409a-be1d-4cf3708f9ab3">
-<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>),</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    alt.Column(<span class="st">'cluster:N'</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>),</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    alt.Column(<span class="st">'cluster:N'</span>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-08ac9db9d3034200ba946e97150372ce"></div>
@@ -1420,17 +1388,17 @@
 </div>
 <p>The plot above does not fit on screen, making it difficult to compare all the sub-plots to each other! We can set the default <code>width</code> and <code>height</code> properties to create a smaller set of multiples. Also, as the column headers already label the <code>cluster</code> values, let’s remove our <code>color</code> legend by setting it to <code>None</code>. To make better use of space we can also orient our <code>size</code> legend to the <code>'bottom'</code> of the chart.</p>
 <div class="cell" data-outputid="3eb84b63-0c69-4985-ee9b-d0d69e5ffb33">
-<div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>]),</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>             legend<span class="op">=</span>alt.Legend(orient<span class="op">=</span><span class="st">'bottom'</span>, titleOrient<span class="op">=</span><span class="st">'left'</span>)),</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>),</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    alt.Column(<span class="st">'cluster:N'</span>)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">135</span>, height<span class="op">=</span><span class="dv">135</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>]),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>             legend<span class="op">=</span>alt.Legend(orient<span class="op">=</span><span class="st">'bottom'</span>, titleOrient<span class="op">=</span><span class="st">'left'</span>)),</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>),</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    alt.Column(<span class="st">'cluster:N'</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">135</span>, height<span class="op">=</span><span class="dv">135</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-9a80a72e7d44497f84e9c5f1a1b10f51"></div>
@@ -1487,25 +1455,25 @@
 <p>Underneath the hood, the <code>column</code> and <code>row</code> encodings are translated into a new specification that uses the <code>facet</code> view composition operator. We will re-visit faceting in greater depth later on!</p>
 <p>In the meantime, <em>can you rewrite the chart above to facet into rows instead of columns?</em></p>
 </section>
-<section class="level3" data-number="2.3.8">
-<h3 data-number="2.3.8" class="anchored" id="a-peek-ahead-interactive-filtering"><span class="header-section-number">2.3.8</span> A Peek Ahead: Interactive Filtering</h3>
+<section id="a-peek-ahead-interactive-filtering" class="level3" data-number="2.3.8">
+<h3 data-number="2.3.8" class="anchored" data-anchor-id="a-peek-ahead-interactive-filtering"><span class="header-section-number">2.3.8</span> A Peek Ahead: Interactive Filtering</h3>
 <p>In later modules, we’ll dive into interaction techniques for data exploration. Here is a sneak peak: binding a range slider to the <code>year</code> field to enable interactive scrubbing through each year of data. Don’t worry if the code below is a bit confusing at this point, as we will cover interaction in detail later.</p>
 <p><em>Drag the slider back and forth to see how the data values change over time!</em></p>
 <div class="cell" data-outputid="3c934853-9167-4ad1-e560-b366250eb40e">
-<div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>select_year <span class="op">=</span> alt.selection_single(</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'select'</span>, fields<span class="op">=</span>[<span class="st">'year'</span>], init<span class="op">=</span>{<span class="st">'year'</span>: <span class="dv">1955</span>},</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    bind<span class="op">=</span>alt.binding_range(<span class="bu">min</span><span class="op">=</span><span class="dv">1955</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">2005</span>, step<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>alt.Chart(data).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>, scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">9</span>])),</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>, scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">90</span>])),</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1200000000</span>], <span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>)</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>).add_selection(select_year).transform_filter(select_year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>select_year <span class="op">=</span> alt.selection_single(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'select'</span>, fields<span class="op">=</span>[<span class="st">'year'</span>], init<span class="op">=</span>{<span class="st">'year'</span>: <span class="dv">1955</span>},</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    bind<span class="op">=</span>alt.binding_range(<span class="bu">min</span><span class="op">=</span><span class="dv">1955</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">2005</span>, step<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>alt.Chart(data).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>, scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">9</span>])),</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'life_expect:Q'</span>, scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">90</span>])),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    alt.Size(<span class="st">'pop:Q'</span>, scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1200000000</span>], <span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1000</span>])),</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'cluster:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    alt.OpacityValue(<span class="fl">0.5</span>),</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>),</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    alt.Order(<span class="st">'pop:Q'</span>, sort<span class="op">=</span><span class="st">'descending'</span>)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>).add_selection(select_year).transform_filter(select_year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-c3321776a3874e65b3fbb7e3f038f619"></div>
@@ -1561,8 +1529,8 @@
 </div>
 </section>
 </section>
-<section class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" id="graphical-marks"><span class="header-section-number">2.4</span> Graphical Marks</h2>
+<section id="graphical-marks" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="graphical-marks"><span class="header-section-number">2.4</span> Graphical Marks</h2>
 <p>Our exploration of encoding channels above exclusively uses <code>point</code> marks to visualize the data. However, the <code>point</code> mark type is only one of the many geometric shapes that can be used to visually represent data. Altair includes a number of built-in mark types, including:</p>
 <ul>
 <li><code>mark_area()</code> - Filled areas defined by a top-line and a baseline.</li>
@@ -1577,16 +1545,16 @@
 <li><code>mark_tick()</code> - Vertical or horizontal tick marks.</li>
 </ul>
 <p>For a complete list, and links to examples, see the <a href="https://altair-viz.github.io/user_guide/marks.html">Altair marks documentation</a>. Next, we will step through a number of the most commonly used mark types for statistical graphics.</p>
-<section class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" id="point-marks"><span class="header-section-number">2.4.1</span> Point Marks</h3>
+<section id="point-marks" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="point-marks"><span class="header-section-number">2.4.1</span> Point Marks</h3>
 <p>The <code>point</code> mark type conveys specific points, as in <em>scatter plots</em> and <em>dot plots</em>. In addition to <code>x</code> and <code>y</code> encoding channels (to specify 2D point positions), point marks can use <code>color</code>, <code>size</code>, and <code>shape</code> encodings to convey additional data fields.</p>
 <p>Below is a dot plot of <code>fertility</code>, with the <code>cluster</code> field redundantly encoded using both the <code>y</code> and <code>shape</code> channels.</p>
 <div class="cell" data-outputid="6332a348-f8f0-4dd8-9c4a-63687e286d4a">
-<div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point().encode(</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-e742f7c3c5fe4d1e8d127d8eb16135c0"></div>
@@ -1643,11 +1611,11 @@
 <p>In addition to encoding channels, marks can be stylized by providing values to the <code>mark_*()</code> methods.</p>
 <p>For example: point marks are drawn with stroked outlines by default, but can be specified to use <code>filled</code> shapes instead. Similarly, you can set a default <code>size</code> to set the total pixel area of the point mark.</p>
 <div class="cell" data-outputid="dcf26fa9-281b-4297-da50-84c7f5ccd318">
-<div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>, size<span class="op">=</span><span class="dv">100</span>).encode(</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_point(filled<span class="op">=</span><span class="va">True</span>, size<span class="op">=</span><span class="dv">100</span>).encode(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-e45d3f06c7f14b2e92de32c84487d425"></div>
@@ -1702,15 +1670,15 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" id="circle-marks"><span class="header-section-number">2.4.2</span> Circle Marks</h3>
+<section id="circle-marks" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="circle-marks"><span class="header-section-number">2.4.2</span> Circle Marks</h3>
 <p>The <code>circle</code> mark type is a convenient shorthand for <code>point</code> marks drawn as filled circles.</p>
 <div class="cell" data-outputid="80cd9d0f-c126-4673-bfcf-eaf5b34e0058">
-<div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_circle(size<span class="op">=</span><span class="dv">100</span>).encode(</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_circle(size<span class="op">=</span><span class="dv">100</span>).encode(</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-3d07381ec4924f0fbf9e1593a6e71c3d"></div>
@@ -1765,15 +1733,15 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" id="square-marks"><span class="header-section-number">2.4.3</span> Square Marks</h3>
+<section id="square-marks" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="square-marks"><span class="header-section-number">2.4.3</span> Square Marks</h3>
 <p>The <code>square</code> mark type is a convenient shorthand for <code>point</code> marks drawn as filled squares.</p>
 <div class="cell" data-outputid="8ff4b0d4-f3ce-45e5-f597-1a6fd296ba47">
-<div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_square(size<span class="op">=</span><span class="dv">100</span>).encode(</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_square(size<span class="op">=</span><span class="dv">100</span>).encode(</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-3c20967d5ddb4b8f89a0a9f812d91822"></div>
@@ -1828,15 +1796,15 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.4.4">
-<h3 data-number="2.4.4" class="anchored" id="tick-marks"><span class="header-section-number">2.4.4</span> Tick Marks</h3>
+<section id="tick-marks" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="tick-marks"><span class="header-section-number">2.4.4</span> Tick Marks</h3>
 <p>The <code>tick</code> mark type conveys a data point using a short line segment or “tick”. These are particularly useful for comparing values along a single dimension with minimal overlap. A <em>dot plot</em> drawn with tick marks is sometimes referred to as a <em>strip plot</em>.</p>
 <div class="cell" data-outputid="c6133250-333f-4c29-e217-221634dd8337">
-<div class="sourceCode" id="cb27"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_tick().encode(</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_tick().encode(</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>),</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    alt.Shape(<span class="st">'cluster:N'</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-702803cad4af496788bd03d59009f6b3"></div>
@@ -1891,15 +1859,15 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.4.5">
-<h3 data-number="2.4.5" class="anchored" id="bar-marks"><span class="header-section-number">2.4.5</span> Bar Marks</h3>
+<section id="bar-marks" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="bar-marks"><span class="header-section-number">2.4.5</span> Bar Marks</h3>
 <p>The `bar` mark type draws a rectangle with a position, width, and height.</p>
 <p>The plot below is a simple bar chart of the population (`pop`) of each country.</p>
 <div class="cell" data-outputid="8da431d3-9ba7-4ecf-de55-e478c4527a39">
-<div class="sourceCode" id="cb28"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_bar().encode(</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'country:N'</span>),</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_bar().encode(</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'country:N'</span>),</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-ce5b672d9f4c473da6a9b37088722c80"></div>
@@ -1956,12 +1924,12 @@
 <p>The bar width is set to a default size. We will discuss how to adjust the bar width later in this notebook. (A subsequent notebook will take a closer look at configuring axes, scales, and legends.)</p>
 <p>Bars can also be stacked. Let’s change the <code>x</code> encoding to use the <code>cluster</code> field, and encode <code>country</code> using the <code>color</code> channel. We’ll also disable the legend (which would be very long with colors for all countries!) and use tooltips for the country name.</p>
 <div class="cell" data-outputid="7960be03-eefd-4c3f-a114-8405395c772c">
-<div class="sourceCode" id="cb29"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_bar().encode(</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'cluster:N'</span>),</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>),</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_bar().encode(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'cluster:N'</span>),</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>),</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-385be82139e44792adba03e35c47c269"></div>
@@ -2020,11 +1988,11 @@
 <p>The chart below uses the <code>x</code> (starting point) and <code>x2</code> (ending point) channels to show the range of life expectancies within each regional cluster. Below we use the <code>min</code> and <code>max</code> aggregation functions to determine the end points of the range; we will discuss aggregation in greater detail in the next notebook!</p>
 <p>Alternatively, you can use <code>x</code> and <code>width</code> to provide a starting point plus offset, such that <code>x2 = x + width</code>.</p>
 <div class="cell" data-outputid="2fa67514-b66c-4449-a1e3-c0b1b377ed3a">
-<div class="sourceCode" id="cb30"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_bar().encode(</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'min(life_expect):Q'</span>),</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    alt.X2(<span class="st">'max(life_expect):Q'</span>),</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data2000).mark_bar().encode(</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'min(life_expect):Q'</span>),</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    alt.X2(<span class="st">'max(life_expect):Q'</span>),</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'cluster:N'</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-5b9aaadae3a642e0af1862ea5e001bb3"></div>
@@ -2079,19 +2047,19 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.4.6">
-<h3 data-number="2.4.6" class="anchored" id="line-marks"><span class="header-section-number">2.4.6</span> Line Marks</h3>
+<section id="line-marks" class="level3" data-number="2.4.6">
+<h3 data-number="2.4.6" class="anchored" data-anchor-id="line-marks"><span class="header-section-number">2.4.6</span> Line Marks</h3>
 <p>The <code>line</code> mark type connects plotted points with line segments, for example so that a line’s slope conveys information about the rate of change.</p>
 <p>Let’s plot a line chart of fertility per country over the years, using the full, unfiltered global development data frame. We’ll again hide the legend and use tooltips instead.</p>
 <div class="cell" data-outputid="7bbd15a9-4b8f-4f66-fe7e-6a55f2c38449">
-<div class="sourceCode" id="cb31"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data).mark_line().encode(</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">400</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data).mark_line().encode(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">400</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-67f9e774f4924e21aab7404e18a36b07"></div>
@@ -2148,18 +2116,18 @@
 <p>We can see interesting variations per country, but overall trends for lower numbers of children per family over time. Also note that we set a custom width of 400 pixels. <em>Try changing (or removing) the widths and see what happens!</em></p>
 <p>Let’s change some of the default mark parameters to customize the plot. We can set the <code>strokeWidth</code> to determine the thickness of the lines and the <code>opacity</code> to add some transparency. By default, the <code>line</code> mark uses straight line segments to connect data points. In some cases we might want to smooth the lines. We can adjust the interpolation used to connect data points by setting the <code>interpolate</code> mark parameter. Let’s use <code>'monotone'</code> interpolation to provide smooth lines that are also guaranteed not to inadvertently generate “false” minimum or maximum values as a result of the interpolation.</p>
 <div class="cell" data-outputid="07007338-a2c7-4dc2-9f36-bb344e4103ec">
-<div class="sourceCode" id="cb32"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data).mark_line(</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    strokeWidth<span class="op">=</span><span class="dv">3</span>,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    interpolate<span class="op">=</span><span class="st">'monotone'</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>).encode(</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>),</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">400</span></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(data).mark_line(</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    strokeWidth<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    interpolate<span class="op">=</span><span class="st">'monotone'</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>).encode(</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>),</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">400</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-ffd334c2d024472ebf45195306199f46"></div>
@@ -2217,16 +2185,16 @@
 <p>Below let’s create a slope graph comparing the populations of each country at minimum and maximum years in our full dataset: 1955 and 2005. We first create a new Pandas data frame filtered to those years, then use Altair to create the slope graph.</p>
 <p>By default, Altair places the years close together. To better space out the years along the x-axis, we can indicate the size (in pixels) of discrete steps along the width of our chart as indicated by the comment below. Try adjusting the width <code>step</code> value below and see how the chart changes in response.</p>
 <div class="cell" data-outputid="edd1292a-97a7-44d1-b2ec-c5b8d755aa86">
-<div class="sourceCode" id="cb33"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dataTime <span class="op">=</span> data.loc[(data[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">1955</span>) <span class="op">|</span> (data[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2005</span>)]</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataTime).mark_line(opacity<span class="op">=</span><span class="fl">0.5</span>).encode(</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>),</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>{<span class="st">"step"</span>: <span class="dv">50</span>} <span class="co"># adjust the step parameter</span></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dataTime <span class="op">=</span> data.loc[(data[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">1955</span>) <span class="op">|</span> (data[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2005</span>)]</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataTime).mark_line(opacity<span class="op">=</span><span class="fl">0.5</span>).encode(</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>),</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>, legend<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    alt.Tooltip(<span class="st">'country:N'</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>{<span class="st">"step"</span>: <span class="dv">50</span>} <span class="co"># adjust the step parameter</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-89b198639cc3484796223ba7913ab01c"></div>
@@ -2281,17 +2249,17 @@
 </div>
 </div>
 </section>
-<section class="level3" data-number="2.4.7">
-<h3 data-number="2.4.7" class="anchored" id="area-marks"><span class="header-section-number">2.4.7</span> Area Marks</h3>
+<section id="area-marks" class="level3" data-number="2.4.7">
+<h3 data-number="2.4.7" class="anchored" data-anchor-id="area-marks"><span class="header-section-number">2.4.7</span> Area Marks</h3>
 <p>The <code>area</code> mark type combines aspects of <code>line</code> and <code>bar</code> marks: it visualizes connections (slopes) among data points, but also shows a filled region, with one edge defaulting to a zero-valued baseline.</p>
 <p>The chart below is an area chart of population over time for just the United States:</p>
 <div class="cell" data-outputid="37cd899d-2ad1-42ea-fbe0-12e591a28326">
-<div class="sourceCode" id="cb34"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dataUS <span class="op">=</span> data.loc[data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'United States'</span>]</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataUS).mark_area().encode(</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>)</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>dataUS <span class="op">=</span> data.loc[data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'United States'</span>]</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataUS).mark_area().encode(</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-d589e20d1895495c9d995542a8c774b3"></div>
@@ -2347,10 +2315,10 @@
 </div>
 <p>Similar to <code>line</code> marks, <code>area</code> marks support an <code>interpolate</code> parameter.</p>
 <div class="cell" data-outputid="eba5baab-44be-46ac-c9ae-0ad3b094573a">
-<div class="sourceCode" id="cb35"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataUS).mark_area(interpolate<span class="op">=</span><span class="st">'monotone'</span>).encode(</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataUS).mark_area(interpolate<span class="op">=</span><span class="st">'monotone'</span>).encode(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'fertility:Q'</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-ab293e6198464f03a7f9dc6898277265"></div>
@@ -2406,17 +2374,17 @@
 </div>
 <p>Similar to <code>bar</code> marks, <code>area</code> marks also support stacking. Here we create a new data frame with data for the three North American countries, then plot them using an <code>area</code> mark and a <code>color</code> encoding channel to stack by country.</p>
 <div class="cell" data-outputid="70e210aa-4771-4ed9-e5a3-0af587d03c60">
-<div class="sourceCode" id="cb36"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dataNA <span class="op">=</span> data.loc[</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    (data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'United States'</span>) <span class="op">|</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    (data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'Canada'</span>) <span class="op">|</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    (data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'Mexico'</span>)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>),</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>)</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>dataNA <span class="op">=</span> data.loc[</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    (data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'United States'</span>) <span class="op">|</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    (data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'Canada'</span>) <span class="op">|</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    (data[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'Mexico'</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>),</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-547d97c7bb1d43059ca2c9af80668563"></div>
@@ -2477,11 +2445,11 @@
 </ul>
 <p>Below we adapt the chart by setting the <code>y</code> encoding <code>stack</code> attribute to <code>center</code>. What happens if you instead set it <code>normalize</code>?</p>
 <div class="cell" data-outputid="3a7cb75a-3acf-4b0e-d0e8-cdc7c85fd5ee">
-<div class="sourceCode" id="cb37"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>, stack<span class="op">=</span><span class="st">'center'</span>),</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>, stack<span class="op">=</span><span class="st">'center'</span>),</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-18fd32dc2424430db97267d0db472c05"></div>
@@ -2537,11 +2505,11 @@
 </div>
 <p>To disable stacking altogether, set the <code>stack</code> attribute to <code>None</code>. We can also add <code>opacity</code> as a default mark parameter to ensure we see the overlapping areas!</p>
 <div class="cell" data-outputid="41345e53-eeaa-4c69-969d-738c1479ba26">
-<div class="sourceCode" id="cb38"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area(opacity<span class="op">=</span><span class="fl">0.5</span>).encode(</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>, stack<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>)</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area(opacity<span class="op">=</span><span class="fl">0.5</span>).encode(</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'pop:Q'</span>, stack<span class="op">=</span><span class="va">None</span>),</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">'country:N'</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-f634aa4ad46543cfb620749b24904878"></div>
@@ -2598,13 +2566,13 @@
 <p>The <code>area</code> mark type also supports data-driven baselines, with both the upper and lower series determined by data fields. As with <code>bar</code> marks, we can use the <code>x</code> and <code>x2</code> (or <code>y</code> and <code>y2</code>) channels to provide end points for the area mark.</p>
 <p>The chart below visualizes the range of minimum and maximum fertility, per year, for North American countries:</p>
 <div class="cell" data-outputid="fb6d0868-79f4-4f96-8f5d-aff6d504b3fe">
-<div class="sourceCode" id="cb39"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'min(fertility):Q'</span>),</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    alt.Y2(<span class="st">'max(fertility):Q'</span>)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>{<span class="st">"step"</span>: <span class="dv">40</span>}</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'year:O'</span>),</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'min(fertility):Q'</span>),</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    alt.Y2(<span class="st">'max(fertility):Q'</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>{<span class="st">"step"</span>: <span class="dv">40</span>}</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-4c798919fc1e408198bdf13b2c513e4f"></div>
@@ -2661,13 +2629,13 @@
 <p>We can see a larger range of values in 1995, from just under 4 to just under 7. By 2005, both the overall fertility values and the variability have declined, centered around 2 children per familty.</p>
 <p>All the <code>area</code> mark examples above use a vertically oriented area. However, Altair and Vega-Lite support horizontal areas as well. Let’s transpose the chart above, simply by swapping the <code>x</code> and <code>y</code> channels.</p>
 <div class="cell" data-outputid="e7bf35e5-c94b-4316-9f8d-0dc68f242763">
-<div class="sourceCode" id="cb40"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'year:O'</span>),</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'min(fertility):Q'</span>),</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    alt.X2(<span class="st">'max(fertility):Q'</span>)</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>{<span class="st">"step"</span>: <span class="dv">40</span>}</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(dataNA).mark_area().encode(</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'year:O'</span>),</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'min(fertility):Q'</span>),</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    alt.X2(<span class="st">'max(fertility):Q'</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>{<span class="st">"step"</span>: <span class="dv">40</span>}</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-4b3d6acb84f74aeeb34d0d1b94baa296"></div>
@@ -2723,8 +2691,8 @@
 </div>
 </section>
 </section>
-<section class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" id="summary-1"><span class="header-section-number">2.5</span> Summary</h2>
+<section id="summary-1" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="summary-1"><span class="header-section-number">2.5</span> Summary</h2>
 <p>We’ve completed our tour of data types, encoding channels, and graphical marks! You should now be well-equipped to further explore the space of encodings, mark types, and mark parameters. For a comprehensive reference – including features we’ve skipped over here! – see the Altair <a href="https://altair-viz.github.io/user_guide/marks.html">marks</a> and <a href="https://altair-viz.github.io/user_guide/encoding.html">encoding</a> documentation.</p>
 <p>In the next module, we will look at the use of data transformations to create charts that summarize data or visualize new derived fields. In a later module, we’ll examine how to further customize your charts by modifying scales, axes, and legends.</p>
 <p>Interested in learning more about visual encoding?</p>
@@ -2735,18 +2703,88 @@
 <li>The framework of data types, marks, and channels also guides <em>automated</em> visualization design tools, starting with <a href="https://scholar.google.com/scholar?cluster=10191273548472217907">Mackinlay’s APT (A Presentation Tool)</a> in 1986 and continuing in more recent systems such as <a href="http://idl.cs.washington.edu/papers/voyager/">Voyager</a> and <a href="http://idl.cs.washington.edu/papers/draco/">Draco</a>.</li>
 <li>The identification of nominal, ordinal, interval, and ratio types dates at least as far back as S. S. Steven’s 1947 article <a href="https://scholar.google.com/scholar?cluster=14356809180080326415"><em>On the theory of scales of measurement</em></a>.</li>
 </ul>
+
 <!-- -->
 </section>
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    window.tippy(el, {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    }); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
 </main>
 <div class="page-navigation ">
   <div class="nav-page nav-page-previous">
       <a href="./altair_introduction.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; Introduction to Altair</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Altair</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./altair_data_transformation.html">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; Data Transformation</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Transformation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
+  <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Visualization Curriculum – 1&nbsp; Introduction to Altair</title>
   <style>
@@ -45,35 +45,35 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #007ba5; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
     code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
     code span.im { } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #007ba5; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #007ba5; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 
   <!--[if lt IE 9]>
@@ -81,7 +81,7 @@
   <![endif]-->
   <script src="site_libs/quarto-nav/quarto-nav.js"></script>
   <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <meta name="quarto:offset" content=".">
+  <meta name="quarto:offset" content="./">
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
@@ -92,47 +92,21 @@
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
   <script src="site_libs/quarto-html/clipboard.min.js"></script>
   <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <script src="site_libs/quarto-html/quarto-html.js"></script>
   <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-  <style type="text/css">
-    details {
-      margin-bottom: 1em;
-    } 
-    details[show] {
-      margin-bottom: 0;
-    }
-
-    .quarto-unresolved-ref {
-      font-weight: 600;
-    }
-
-    .quarto-cover-image {
-      max-width: 35%;
-      float: right;
-      margin-left: 30px;
-    }
-
-    .cell-output-display {
-      overflow-x: scroll;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top">
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">1&nbsp; Introduction to Altair</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Altair</span></h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -140,17 +114,15 @@
 </nav>
 </header>
  <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
     <nav class="ms-lg-auto py-2 floating  overflow-scroll">
-  <div class="px-3 pt-lg-2 text-left">
-    <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
-    <div class="sidebar-title mt-1 mb-0 py-0">
-      <a href="./">
-      Visualization Curriculum
-      </a>
-        <div class="sidebar-tools-main mt-1">
+  <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header sidebar-header-stacked">
+    <img src="./altair-hist.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Visualization Curriculum</a> 
+        <div class="sidebar-tools-main">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -170,13 +142,13 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2 flex-shrink-0">
+    <div class="d-flex px-3 mt-2 flex-shrink-0 align-items-center">
       <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
       </div>
-        <div class="sidebar-tools-collapse mt-1">
+        <div class="sidebar-tools-collapse">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -196,42 +168,40 @@
 </div>
     </div>
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-3 px-3">
+  <ul class="list-unstyled mt-1 px-3">
       <li class="sidebar-item">
   <a href="./index.html" class="">Introduction</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Curriculum
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Curriculum</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./altair_introduction.html" class="active"><span class="chapter-number">1</span>&nbsp; Introduction to Altair</a>
+  <a href="./altair_introduction.html" class="active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Altair</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</a>
+  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Types, Graphical Marks, and Visual Encoding Channels</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; Data Transformation</a>
+  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Transformation</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; Scales, Axes, and Legends</a>
+  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Scales, Axes, and Legends</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; Multi-View Composition</a>
+  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-View Composition</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; Interaction</a>
+  <a href="./altair_interaction.html" class=""><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Interaction</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</a>
+  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cartographic Visualization</span></a>
 </li>
         </ul>
       </div>
@@ -240,10 +210,8 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Support
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Support</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
@@ -281,36 +249,46 @@
 <li><a href="#next-steps" class="nav-link" data-scroll-target="#next-steps"> <span class="header-section-number">1.13</span> Next Steps</a></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
-  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">1&nbsp; Introduction to Altair</h1>
+<h1 class="title d-none d-lg-block display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Altair</span></h1>
 </header>
 
+<div class="callout-note callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This book was originally created using <a href="https://jupyterbook.org/">Jupyter Book</a> and published at <a href="https://uwdata.github.io/visualization-curriculum/" class="uri">https://uwdata.github.io/visualization-curriculum/</a>. This site is a port of the original book source to the <a href="https://quarto.org">Quarto</a> publishing system in order to provide an example of it’s use.</p>
+</div>
+</div>
+</div>
 <p><a href="https://altair-viz.github.io/">Altair</a> is a declarative statistical visualization library for Python. Altair offers a powerful and concise visualization grammar for quickly building a wide range of statistical graphics.</p>
 <p>By <em>declarative</em>, we mean that you can provide a high-level specification of <em>what</em> you want the visualization to include, in terms of <em>data</em>, <em>graphical marks</em>, and <em>encoding channels</em>, rather than having to specify <em>how</em> to implement the visualization in terms of for-loops, low-level drawing commands, <em>etc</em>. The key idea is that you declare links between data fields and visual encoding channels, such as the x-axis, y-axis, color, <em>etc</em>. The rest of the plot details are handled automatically. Building on this declarative plotting idea, a surprising range of simple to sophisticated visualizations can be created using a concise grammar.</p>
 <p>Altair is based on <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>, a high-level grammar of interactive graphics. Altair provides a friendly Python <a href="https://en.wikipedia.org/wiki/Application_programming_interface">API (Application Programming Interface)</a> that generates Vega-Lite specifications in <a href="https://en.wikipedia.org/wiki/JSON">JSON (JavaScript Object Notation)</a> format. Environments such as Jupyter Notebooks, JupyterLab, and Colab can then take this specification and render it directly in the web browser. To learn more about the motivation and basic concepts behind Altair and Vega-Lite, watch the <a href="https://www.youtube.com/watch?v=9uaHRWj04D4">Vega-Lite presentation video from OpenVisConf 2017</a>.</p>
 <p>This notebook will guide you through the basic process of creating visualizations in Altair. First, you will need to make sure you have the Altair package and its dependencies installed (for more, see the <a href="https://altair-viz.github.io/getting_started/installation.html">Altair installation documentation</a>), or you are using a notebook environment that includes the dependencies pre-installed.</p>
 <p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
-<section class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" id="imports"><span class="header-section-number">1.1</span> Imports</h2>
+<section id="imports" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="imports"><span class="header-section-number">1.1</span> Imports</h2>
 <p>To start, we must import the necessary libraries: Pandas for data frames and Altair for visualization.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" id="renderers"><span class="header-section-number">1.2</span> Renderers</h2>
+<section id="renderers" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="renderers"><span class="header-section-number">1.2</span> Renderers</h2>
 <p>Depending on your environment, you may need to specify a <a href="https://altair-viz.github.io/user_guide/display_frontends.html">renderer</a> for Altair. If you are using <strong>JupyterLab</strong>, <strong>Jupyter Notebook</strong>, or <strong>Google Colab</strong> with a live Internet connection you should not need to do anything. Otherwise, please read the documentation for <a href="https://altair-viz.github.io/user_guide/display_frontends.html">Displaying Altair Charts</a>.</p>
 </section>
-<section class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" id="data"><span class="header-section-number">1.3</span> Data</h2>
+<section id="data" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="data"><span class="header-section-number">1.3</span> Data</h2>
 <p>Data in Altair is built around the Pandas data frame, which consists of a set of named data <em>columns</em>. We will also regularly refer to data columns as data <em>fields</em>.</p>
 <p>When using Altair, datasets are commonly provided as data frames. Alternatively, Altair can also accept a URL to load a network-accessible dataset. As we will see, the named columns of the data frame are an essential piece of plotting with Altair.</p>
 <p>We will often use datasets from the <a href="https://github.com/vega/vega-datasets">vega-datasets</a> repository. Some of these datasets are directly available as Pandas data frames:</p>
 <div class="cell" data-outputid="42a06146-8554-45fb-f2ac-1ec06a0b738d">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vega_datasets <span class="im">import</span> data  <span class="co"># import vega_datasets</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vega_datasets <span class="im">import</span> data  <span class="co"># import vega_datasets</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cars <span class="op">=</span> data.cars()              <span class="co"># load cars data as a Pandas data frame</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cars.head()                     <span class="co"># display the first five rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -399,14 +377,14 @@
 </div>
 <p>Datasets in the vega-datasets collection can also be accessed via URLs:</p>
 <div class="cell" data-outputid="b6a13a9f-07b2-4d9b-ab10-4eb3f8f8f262">
-<div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.cars.url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.cars.url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p>‘https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json’</p>
+<pre><code>'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json'</code></pre>
 </div>
 </div>
 <p>Dataset URLs can be passed directly to Altair (for supported formats like JSON and <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>), or loaded into a Pandas data frame like so:</p>
 <div class="cell" data-outputid="c6b5e94f-cefc-4298-d43d-f7676545030b">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pd.read_json(data.cars.url).head() <span class="co"># load JSON data into a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pd.read_json(data.cars.url).head() <span class="co"># load JSON data into a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 
@@ -492,17 +470,17 @@
 </div>
 </div>
 <p>For more information about data frames - and some useful transformations to prepare Pandas data frames for plotting with Altair! - see the <a href="https://altair-viz.github.io/user_guide/data.html">Specifying Data with Altair documentation</a>.</p>
-<section class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" id="weather-data"><span class="header-section-number">1.3.1</span> Weather Data</h3>
+<section id="weather-data" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="weather-data"><span class="header-section-number">1.3.1</span> Weather Data</h3>
 <p>Statistical visualization in Altair begins with <a href="http://vita.had.co.nz/papers/tidy-data.html">“tidy”</a> data frames. Here, we’ll start by creating a simple data frame (<code>df</code>) containing the average precipitation (<code>precip</code>) for a given <code>city</code> and <code>month</code> :</p>
 <div class="cell" data-outputid="27129375-c1a3-429a-e4a4-f8ed2c5e0263">
-<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'city'</span>: [<span class="st">'Seattle'</span>, <span class="st">'Seattle'</span>, <span class="st">'Seattle'</span>, <span class="st">'New York'</span>, <span class="st">'New York'</span>, <span class="st">'New York'</span>, <span class="st">'Chicago'</span>, <span class="st">'Chicago'</span>, <span class="st">'Chicago'</span>],</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'month'</span>: [<span class="st">'Apr'</span>, <span class="st">'Aug'</span>, <span class="st">'Dec'</span>, <span class="st">'Apr'</span>, <span class="st">'Aug'</span>, <span class="st">'Dec'</span>, <span class="st">'Apr'</span>, <span class="st">'Aug'</span>, <span class="st">'Dec'</span>],</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'precip'</span>: [<span class="fl">2.68</span>, <span class="fl">0.87</span>, <span class="fl">5.31</span>, <span class="fl">3.94</span>, <span class="fl">4.13</span>, <span class="fl">3.58</span>, <span class="fl">3.62</span>, <span class="fl">3.98</span>, <span class="fl">2.56</span>]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'city'</span>: [<span class="st">'Seattle'</span>, <span class="st">'Seattle'</span>, <span class="st">'Seattle'</span>, <span class="st">'New York'</span>, <span class="st">'New York'</span>, <span class="st">'New York'</span>, <span class="st">'Chicago'</span>, <span class="st">'Chicago'</span>, <span class="st">'Chicago'</span>],</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'month'</span>: [<span class="st">'Apr'</span>, <span class="st">'Aug'</span>, <span class="st">'Dec'</span>, <span class="st">'Apr'</span>, <span class="st">'Aug'</span>, <span class="st">'Dec'</span>, <span class="st">'Apr'</span>, <span class="st">'Aug'</span>, <span class="st">'Dec'</span>],</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'precip'</span>: [<span class="fl">2.68</span>, <span class="fl">0.87</span>, <span class="fl">5.31</span>, <span class="fl">3.94</span>, <span class="fl">4.13</span>, <span class="fl">3.58</span>, <span class="fl">3.62</span>, <span class="fl">3.98</span>, <span class="fl">2.56</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 
@@ -577,20 +555,20 @@
 </div>
 </section>
 </section>
-<section class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" id="the-chart-object"><span class="header-section-number">1.4</span> The Chart Object</h2>
+<section id="the-chart-object" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="the-chart-object"><span class="header-section-number">1.4</span> The Chart Object</h2>
 <p>The fundamental object in Altair is the <code>Chart</code>, which takes a data frame as a single argument:</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> alt.Chart(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> alt.Chart(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So far, we have defined the <code>Chart</code> object and passed it the simple data frame we generated above. We have not yet told the chart to <em>do</em> anything with the data.</p>
 </section>
-<section class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" id="marks-and-encodings"><span class="header-section-number">1.5</span> Marks and Encodings</h2>
+<section id="marks-and-encodings" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="marks-and-encodings"><span class="header-section-number">1.5</span> Marks and Encodings</h2>
 <p>With a chart object in hand, we can now specify how we would like the data to be visualized. We first indicate what kind of graphical <em>mark</em> (geometric shape) we want to use to represent the data. We can set the <code>mark</code> attribute of the chart object using the the <code>Chart.mark_*</code> methods.</p>
 <p>For example, we can show the data as a point using <code>Chart.mark_point()</code>:</p>
 <div class="cell" data-outputid="960ad0d0-ed22-4ebb-eff6-c652068d5b1e">
-<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-2956d3ec697643c68de3040d2dd43344"></div>
@@ -647,9 +625,9 @@
 <p>Here the rendering consists of one point per row in the dataset, all plotted on top of each other, since we have not yet specified positions for these points.</p>
 <p>To visually separate the points, we can map various <em>encoding channels</em>, or <em>channels</em> for short, to fields in the dataset. For example, we could <em>encode</em> the field <code>city</code> of the data using the <code>y</code> channel, which represents the y-axis position of the points. To specify this, use the <code>encode</code> method:</p>
 <div class="cell" data-outputid="88da80a6-f46f-4fc6-c27e-f139e372f6ff">
-<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  y<span class="op">=</span><span class="st">'city'</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  y<span class="op">=</span><span class="st">'city'</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-86f88e628dd34f9288daff853c19297e"></div>
@@ -706,10 +684,10 @@
 <p>The <code>encode()</code> method builds a key-value mapping between encoding channels (such as <code>x</code>, <code>y</code>, <code>color</code>, <code>shape</code>, <code>size</code>, <em>etc.</em>) to fields in the dataset, accessed by field name. For Pandas data frames, Altair automatically determines an appropriate data type for the mapped column, which in this case is the <em>nominal</em> type, indicating unordered, categorical values.</p>
 <p>Though we’ve now separated the data by one attribute, we still have multiple points overlapping within each category. Let’s further separate these by adding an <code>x</code> encoding channel, mapped to the <code>'precip'</code> field:</p>
 <div class="cell" data-outputid="ec3f1aa3-b6e0-41c1-ee00-06f3a587613a">
-<div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'precip'</span>,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'precip'</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-7b037d354c3b4a3d9d6e81ed986e22cd"></div>
@@ -767,10 +745,10 @@
 <p>The data type of the <code>'precip'</code> field is again automatically inferred by Altair, and this time is treated as a <em>quantitative</em> type (that is, a real-valued number). We see that grid lines and appropriate axis titles are automatically added as well.</p>
 <p>Above we have specified key-value pairs using keyword arguments (<code>x='precip'</code>). In addition, Altair provides construction methods for encoding definitions, using the syntax <code>alt.X('precip')</code>. This alternative is useful for providing more parameters to an encoding, as we will see later in this notebook.</p>
 <div class="cell" data-outputid="691ce8df-1978-4b2f-eeb0-7d79a7d77db3">
-<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'precip'</span>),</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'city'</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'precip'</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'city'</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-bd05df96b60e49e5b29add62c8ab6c99"></div>
@@ -837,14 +815,14 @@
 <p>What do you think will happen to our chart above if we treat <code>precip</code> as a nominal or ordinal variable, rather than a quantitative variable? <em>Modify the code above and find out!</em></p>
 <p>We will take a closer look at data types and encoding channels in the next notebook of the <a href="https://github.com/uwdata/visualization-curriculum#data-visualization-curriculum">data visualization curriculum</a>.</p>
 </section>
-<section class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" id="data-transformation-aggregation"><span class="header-section-number">1.6</span> Data Transformation: Aggregation</h2>
+<section id="data-transformation-aggregation" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="data-transformation-aggregation"><span class="header-section-number">1.6</span> Data Transformation: Aggregation</h2>
 <p>To allow for more flexibility in how data are visualized, Altair has a built-in syntax for <em>aggregation</em> of data. For example, we can compute the average of all values by specifying an aggregation function along with the field name:</p>
 <div class="cell" data-outputid="82847271-8dc6-4a2f-9496-de1d4ba4a58b">
-<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point().encode(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-c1f8215576e34bf18bb0f8ea5f992ba2"></div>
@@ -902,14 +880,14 @@
 <p><em>Does Seattle really have the lowest average precipitation of these cities? (It does!) Still, how might this plot mislead? Which months are included? What counts as precipitation?</em></p>
 <p>Altair supports a variety of aggregation functions, including <code>count</code>, <code>min</code> (minimum), <code>max</code> (maximum), <code>average</code>, <code>median</code>, and <code>stdev</code> (standard deviation). In a later notebook, we will take a tour of data transformations, including aggregation, sorting, filtering, and creation of new derived fields using calculation formulas.</p>
 </section>
-<section class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" id="changing-the-mark-type"><span class="header-section-number">1.7</span> Changing the Mark Type</h2>
+<section id="changing-the-mark-type" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="changing-the-mark-type"><span class="header-section-number">1.7</span> Changing the Mark Type</h2>
 <p>Let’s say we want to represent our aggregated values using rectangular bars rather than circular points. We can do this by replacing <code>Chart.mark_point</code> with <code>Chart.mark_bar</code>:</p>
 <div class="cell" data-outputid="6e1c1a06-d0ad-4b82-c964-60b211b4f714">
-<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_bar().encode(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_bar().encode(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-616e9c5bd71643d99cdd7e8718cac074"></div>
@@ -965,10 +943,10 @@
 </div>
 <p>Because the nominal field <code>a</code> is mapped to the <code>y</code>-axis, the result is a horizontal bar chart. To get a vertical bar chart, we can simply swap the <code>x</code> and <code>y</code> keywords:</p>
 <div class="cell" data-outputid="0d5d2a07-76d9-45a2-ea2f-a469730f802f">
-<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_bar().encode(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'city'</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'average(precip)'</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_bar().encode(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'city'</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'average(precip)'</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-24142936386b4fe18d6392594bb1136f"></div>
@@ -1023,14 +1001,14 @@
 </div>
 </div>
 </section>
-<section class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" id="customizing-a-visualization"><span class="header-section-number">1.8</span> Customizing a Visualization</h2>
+<section id="customizing-a-visualization" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="customizing-a-visualization"><span class="header-section-number">1.8</span> Customizing a Visualization</h2>
 <p>By default Altair / Vega-Lite make some choices about properties of the visualization, but these can be changed using methods to customize the look of the visualization. For example, we can specify the axis titles using the <code>axis</code> attribute of channel classes, we can modify scale properties using the <code>scale</code> attribute, and we can specify the color of the marking by setting the <code>color</code> keyword of the <code>Chart.mark_*</code> methods to any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">CSS color string</a>:</p>
 <div class="cell" data-outputid="0d7e0d3a-89a0-4583-d370-290090fff40f">
-<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point(color<span class="op">=</span><span class="st">'firebrick'</span>).encode(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'precip'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>), axis<span class="op">=</span>alt.Axis(title<span class="op">=</span><span class="st">'Log-Scaled Values'</span>)),</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'city'</span>, axis<span class="op">=</span>alt.Axis(title<span class="op">=</span><span class="st">'Category'</span>)),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df).mark_point(color<span class="op">=</span><span class="st">'firebrick'</span>).encode(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  alt.X(<span class="st">'precip'</span>, scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>), axis<span class="op">=</span>alt.Axis(title<span class="op">=</span><span class="st">'Log-Scaled Values'</span>)),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  alt.Y(<span class="st">'city'</span>, axis<span class="op">=</span>alt.Axis(title<span class="op">=</span><span class="st">'Category'</span>)),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-09583d927d444eb79b9f3f33b4c9fd03"></div>
@@ -1086,15 +1064,15 @@
 </div>
 <p>A subsequent module will explore the various options available for scales, axes, and legends to create customized charts.</p>
 </section>
-<section class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" id="multiple-views"><span class="header-section-number">1.9</span> Multiple Views</h2>
+<section id="multiple-views" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="multiple-views"><span class="header-section-number">1.9</span> Multiple Views</h2>
 <p>As we’ve seen above, the Altair <code>Chart</code> object represents a plot with a single mark type. What about more complicated diagrams, involving multiple charts or layers? Using a set of <em>view composition</em> operators, Altair can take multiple chart definitions and combine them to create more complex views.</p>
 <p>As a starting point, let’s plot the cars dataset in a line chart showing the average mileage by the year of manufacture:</p>
 <div class="cell" data-outputid="7016a081-72d8-4266-e39d-117f65b1ec10">
-<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(cars).mark_line().encode(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(cars).mark_line().encode(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-3631bcea9f77485d8b0d1de24fb82abe"></div>
@@ -1151,17 +1129,17 @@
 <p>To augment this plot, we might like to add <code>circle</code> marks for each averaged data point. (The <code>circle</code> mark is just a convenient shorthand for <code>point</code> marks that used filled circles.)</p>
 <p>We can start by defining each chart separately: first a line plot, then a scatter plot. We can then use the <code>layer</code> operator to combine the two into a layered chart. Here we use the shorthand <code>+</code> (plus) operator to invoke layering:</p>
 <div class="cell" data-outputid="323fccb1-44f9-4d9c-802d-843fe170e44c">
-<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> alt.Chart(cars).mark_line().encode(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> alt.Chart(cars).mark_circle().encode(</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>line <span class="op">+</span> point</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> alt.Chart(cars).mark_line().encode(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> alt.Chart(cars).mark_circle().encode(</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>line <span class="op">+</span> point</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-cf85cd3ede6b4728a1d85b98e23bf81b"></div>
@@ -1217,12 +1195,12 @@
 </div>
 <p>We can also create this chart by <em>reusing</em> and <em>modifying</em> a previous chart definition! Rather than completely re-write a chart, we can start with the line chart, then invoke the <code>mark_point</code> method to generate a new chart definition with a different mark type:</p>
 <div class="cell" data-outputid="7ad87e04-3c6e-49f4-ac1d-15443f4a17e0">
-<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> alt.Chart(cars).mark_line().encode(</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">+</span> mpg.mark_circle()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> alt.Chart(cars).mark_line().encode(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Miles_per_Gallon)'</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">+</span> mpg.mark_circle()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-eab08611cbbc4b7cae09c627158ee81c"></div>
@@ -1280,12 +1258,12 @@
 <p>Now, what if we’d like to see this chart alongside other plots, such as the average horsepower over time?</p>
 <p>We can use <em>concatenation</em> operators to place multiple charts side-by-side, either vertically or horizontally. Here, we’ll use the <code>|</code> (pipe) operator to perform horizontal concatenation of two charts:</p>
 <div class="cell" data-outputid="67704231-d319-4869-8741-93ee6b8bf899">
-<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>hp <span class="op">=</span> alt.Chart(cars).mark_line().encode(</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Horsepower)'</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>(mpg <span class="op">+</span> mpg.mark_circle()) <span class="op">|</span> (hp <span class="op">+</span> hp.mark_circle())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>hp <span class="op">=</span> alt.Chart(cars).mark_line().encode(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year'</span>),</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'average(Horsepower)'</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>(mpg <span class="op">+</span> mpg.mark_circle()) <span class="op">|</span> (hp <span class="op">+</span> hp.mark_circle())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-b679b3df6a7144ce946c0990b757717d"></div>
@@ -1342,16 +1320,16 @@
 <p><em>We can see that, in this dataset, over the 1970s and early ’80s the average fuel efficiency improved while the average horsepower decreased.</em></p>
 <p>A later notebook will focus on <em>view composition</em>, including not only layering and concatenation, but also the <code>facet</code> operator for splitting data into sub-plots and the <code>repeat</code> operator to concisely generate concatenated charts from a template.</p>
 </section>
-<section class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" id="interactivity"><span class="header-section-number">1.10</span> Interactivity</h2>
+<section id="interactivity" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="interactivity"><span class="header-section-number">1.10</span> Interactivity</h2>
 <p>In addition to basic plotting and view composition, one of Altair and Vega-Lite’s most exciting features is its support for interaction.</p>
 <p>To create a simple interactive plot that supports panning and zooming, we can invoke the <code>interactive()</code> method of the <code>Chart</code> object. In the chart below, click and drag to <em>pan</em> or use the scroll wheel to <em>zoom</em>:</p>
 <div class="cell" data-outputid="a5fa630d-1087-4950-b386-0f7b6f274686">
-<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(cars).mark_point().encode(</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Horsepower'</span>,</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Miles_per_Gallon'</span>,</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'Origin'</span>,</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>).interactive()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(cars).mark_point().encode(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Horsepower'</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Miles_per_Gallon'</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'Origin'</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>).interactive()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-bea6a2671a12434e83c7da12929d2e00"></div>
@@ -1407,12 +1385,12 @@
 </div>
 <p>To provide more details upon mouse hover, we can use the <code>tooltip</code> encoding channel:</p>
 <div class="cell" data-outputid="b4a70f94-3f4f-4d65-9901-dd0c97a8599d">
-<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(cars).mark_point().encode(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Horsepower'</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Miles_per_Gallon'</span>,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'Origin'</span>,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span>[<span class="st">'Name'</span>, <span class="st">'Origin'</span>] <span class="co"># show Name and Origin in a tooltip</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>).interactive()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(cars).mark_point().encode(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Horsepower'</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Miles_per_Gallon'</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'Origin'</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span>[<span class="st">'Name'</span>, <span class="st">'Origin'</span>] <span class="co"># show Name and Origin in a tooltip</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>).interactive()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-0c8ba04c9996470f934373ae9df014fd"></div>
@@ -1470,38 +1448,38 @@
 <p>Below is a more complex example. The upper histogram shows the count of cars per year and uses an interactive selection to modify the opacity of points in the lower scatter plot, which shows horsepower versus mileage.</p>
 <p><em>Drag out an interval in the upper chart and see how it affects the points in the lower chart. As you examine the code, <strong>don’t worry if parts don’t make sense yet!</strong> This is an aspirational example, and we will fill in all the needed details over the course of the different notebooks.</em></p>
 <div class="cell" data-outputid="45347968-1e73-4a01-e2c9-8d32795fd085">
-<div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an interval selection over an x-axis encoding</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(encodings<span class="op">=</span>[<span class="st">'x'</span>])</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># determine opacity based on brush</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>opacity <span class="op">=</span> alt.condition(brush, alt.value(<span class="fl">0.9</span>), alt.value(<span class="fl">0.1</span>))</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># an overview histogram of cars per year</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># add the interval brush to select cars over time</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>overview <span class="op">=</span> alt.Chart(cars).mark_bar().encode(</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year:O'</span>, timeUnit<span class="op">=</span><span class="st">'year'</span>, <span class="co"># extract year unit, treat as ordinal</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>      axis<span class="op">=</span>alt.Axis(title<span class="op">=</span><span class="va">None</span>, labelAngle<span class="op">=</span><span class="dv">0</span>) <span class="co"># no title, no label angle</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'count()'</span>, title<span class="op">=</span><span class="va">None</span>), <span class="co"># counts, no axis title</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span>opacity</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>).add_selection(</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    brush      <span class="co"># add interval brush selection to the chart</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">400</span>, <span class="co"># set the chart width to 400 pixels</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">50</span>  <span class="co"># set the chart height to 50 pixels</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="co"># a detail scatterplot of horsepower vs. mileage</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="co"># modulate point opacity based on the brush selection</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>detail <span class="op">=</span> alt.Chart(cars).mark_point().encode(</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Horsepower'</span>),</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Miles_per_Gallon'</span>),</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># set opacity based on brush selection</span></span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span>opacity</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">400</span>) <span class="co"># set chart width to match the first chart</span></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="co"># vertically concatenate (vconcat) charts using the '&amp;' operator</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>overview <span class="op">&amp;</span> detail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an interval selection over an x-axis encoding</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(encodings<span class="op">=</span>[<span class="st">'x'</span>])</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># determine opacity based on brush</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>opacity <span class="op">=</span> alt.condition(brush, alt.value(<span class="fl">0.9</span>), alt.value(<span class="fl">0.1</span>))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># an overview histogram of cars per year</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># add the interval brush to select cars over time</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>overview <span class="op">=</span> alt.Chart(cars).mark_bar().encode(</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Year:O'</span>, timeUnit<span class="op">=</span><span class="st">'year'</span>, <span class="co"># extract year unit, treat as ordinal</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>      axis<span class="op">=</span>alt.Axis(title<span class="op">=</span><span class="va">None</span>, labelAngle<span class="op">=</span><span class="dv">0</span>) <span class="co"># no title, no label angle</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'count()'</span>, title<span class="op">=</span><span class="va">None</span>), <span class="co"># counts, no axis title</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span>opacity</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>).add_selection(</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    brush      <span class="co"># add interval brush selection to the chart</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">400</span>, <span class="co"># set the chart width to 400 pixels</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">50</span>  <span class="co"># set the chart height to 50 pixels</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="co"># a detail scatterplot of horsepower vs. mileage</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="co"># modulate point opacity based on the brush selection</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>detail <span class="op">=</span> alt.Chart(cars).mark_point().encode(</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Horsepower'</span>),</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Miles_per_Gallon'</span>),</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># set opacity based on brush selection</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span>opacity</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">400</span>) <span class="co"># set chart width to match the first chart</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="co"># vertically concatenate (vconcat) charts using the '&amp;' operator</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>overview <span class="op">&amp;</span> detail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div id="altair-viz-5d8de6e949714eb6abcce4a6ddfb7851"></div>
@@ -1556,15 +1534,15 @@
 </div>
 </div>
 </section>
-<section class="level2" data-number="1.11">
-<h2 data-number="1.11" class="anchored" id="aside-examining-the-json-output"><span class="header-section-number">1.11</span> Aside: Examining the JSON Output</h2>
+<section id="aside-examining-the-json-output" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="aside-examining-the-json-output"><span class="header-section-number">1.11</span> Aside: Examining the JSON Output</h2>
 <p>As a Python API to Vega-Lite, Altair’s main purpose is to convert plot specifications to a JSON string that conforms to the Vega-Lite schema. Using the <code>Chart.to_json</code> method, we can inspect the JSON specification that Altair is exporting and sending to Vega-Lite:</p>
 <div class="cell" data-outputid="868d8f1c-16a0-45e2-c957-bf0a93502375">
-<div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> alt.Chart(df).mark_bar().encode(</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span>,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chart.to_json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> alt.Chart(df).mark_bar().encode(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span>,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chart.to_json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>{
   "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
@@ -1644,8 +1622,8 @@
 <p>Notice here that <code>encode(x='average(precip)')</code> has been expanded to a JSON structure with a <code>field</code> name, a <code>type</code> for the data, and includes an <code>aggregate</code> field. The <code>encode(y='city')</code> statement has been expanded similarly.</p>
 <p>As we saw earlier, Altair’s shorthand syntax includes a way to specify the type of the field as well:</p>
 <div class="cell" data-outputid="f4d88df7-3d8b-4b02-c12d-c9f154603f3d">
-<div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> alt.X(<span class="st">'average(precip):Q'</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.to_json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> alt.X(<span class="st">'average(precip):Q'</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.to_json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>{
   "aggregate": "average",
@@ -1656,8 +1634,8 @@
 </div>
 <p>This short-hand is equivalent to spelling-out the attributes by name:</p>
 <div class="cell" data-outputid="9b217b9f-32df-4245-9238-caf07b741700">
-<div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> alt.X(aggregate<span class="op">=</span><span class="st">'average'</span>, field<span class="op">=</span><span class="st">'precip'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">'quantitative'</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.to_json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> alt.X(aggregate<span class="op">=</span><span class="st">'average'</span>, field<span class="op">=</span><span class="st">'precip'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">'quantitative'</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.to_json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>{
   "aggregate": "average",
@@ -1667,51 +1645,121 @@
 </div>
 </div>
 </section>
-<section class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" id="publishing-a-visualization"><span class="header-section-number">1.12</span> Publishing a Visualization</h2>
+<section id="publishing-a-visualization" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="publishing-a-visualization"><span class="header-section-number">1.12</span> Publishing a Visualization</h2>
 <p>Once you have visualized your data, perhaps you would like to publish it somewhere on the web. This can be done straightforwardly using the <a href="https://github.com/vega/vega-embed">vega-embed JavaScript package</a>. A simple example of a stand-alone HTML document can be generated for any chart using the <code>Chart.save</code> method:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> alt.Chart(df).mark_bar().encode(</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span>,</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>chart.save(<span class="st">'chart.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> alt.Chart(df).mark_bar().encode(</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'average(precip)'</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'city'</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>chart.save(<span class="st">'chart.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The basic HTML template produces output that looks like this, where the JSON specification for your plot produced by <code>Chart.to_json</code> should be stored in the <code>spec</code> JavaScript variable:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/vega@5"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/vega-lite@4"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/vega-embed@6"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"vis"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script&gt;</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(vegaEmbed) {</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> spec <span class="op">=</span> {}<span class="op">;</span> <span class="co">/* JSON output for your chart's specification */</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> embedOpt <span class="op">=</span> {<span class="st">"mode"</span><span class="op">:</span> <span class="st">"vega-lite"</span>}<span class="op">;</span> <span class="co">/* Options for the embedding */</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">function</span> <span class="fu">showError</span>(el<span class="op">,</span> error){</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>          el<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> (<span class="st">'&lt;div style="color:red;"&gt;'</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">'&lt;p&gt;JavaScript Error: '</span> <span class="op">+</span> error<span class="op">.</span><span class="at">message</span> <span class="op">+</span> <span class="st">'&lt;/p&gt;'</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">"&lt;p&gt;This usually means there's a typo in your chart specification. "</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">"See the javascript console for the full traceback.&lt;/p&gt;"</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">'&lt;/div&gt;'</span>)<span class="op">;</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>          <span class="cf">throw</span> error<span class="op">;</span></span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> el <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'vis'</span>)<span class="op">;</span></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">vegaEmbed</span>(<span class="st">"#vis"</span><span class="op">,</span> spec<span class="op">,</span> embedOpt)</span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> <span class="fu">showError</span>(el<span class="op">,</span> error))<span class="op">;</span></span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>    })(vegaEmbed)<span class="op">;</span></span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/script&gt;</span></span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/vega@5"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/vega-lite@4"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/vega-embed@6"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"vis"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script&gt;</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(vegaEmbed) {</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> spec <span class="op">=</span> {}<span class="op">;</span> <span class="co">/* JSON output for your chart's specification */</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> embedOpt <span class="op">=</span> {<span class="st">"mode"</span><span class="op">:</span> <span class="st">"vega-lite"</span>}<span class="op">;</span> <span class="co">/* Options for the embedding */</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">function</span> <span class="fu">showError</span>(el<span class="op">,</span> error){</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>          el<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> (<span class="st">'&lt;div style="color:red;"&gt;'</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">'&lt;p&gt;JavaScript Error: '</span> <span class="op">+</span> error<span class="op">.</span><span class="at">message</span> <span class="op">+</span> <span class="st">'&lt;/p&gt;'</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">"&lt;p&gt;This usually means there's a typo in your chart specification. "</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">"See the javascript console for the full traceback.&lt;/p&gt;"</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>                          <span class="op">+</span> <span class="st">'&lt;/div&gt;'</span>)<span class="op">;</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>          <span class="cf">throw</span> error<span class="op">;</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> el <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'vis'</span>)<span class="op">;</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">vegaEmbed</span>(<span class="st">"#vis"</span><span class="op">,</span> spec<span class="op">,</span> embedOpt)</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> <span class="fu">showError</span>(el<span class="op">,</span> error))<span class="op">;</span></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>    })(vegaEmbed)<span class="op">;</span></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>Chart.save</code> method provides a convenient way to save such HTML output to file. For more information on embedding Altair/Vega-Lite, see the <a href="https://github.com/vega/vega-embed">documentation of the vega-embed project</a>.</p>
 </section>
-<section class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" id="next-steps"><span class="header-section-number">1.13</span> Next Steps</h2>
+<section id="next-steps" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">1.13</span> Next Steps</h2>
 <p>🎉 Hooray, you’ve completed the introduction to Altair! In the next notebook, we will dive deeper into creating visualizations using Altair’s model of data types, graphical marks, and visual encoding channels.</p>
+
 <!-- -->
 </section>
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    window.tippy(el, {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    }); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
 </main>
 <div class="page-navigation ">
   <div class="nav-page nav-page-previous">
@@ -1721,7 +1769,7 @@
   </div>
   <div class="nav-page nav-page-next">
       <a href="./altair_marks_encoding.html">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Types, Graphical Marks, and Visual Encoding Channels</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>

@@ -8,6 +8,6 @@
 *_cache/
 visualization-curriculum.Rproj
 .DS_Store
-
-
-
+.venv/
+.condaenv/
+.ipynb_checkpoints/

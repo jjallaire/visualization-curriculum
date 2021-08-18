@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
+  <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Visualization Curriculum – 6&nbsp; Interaction</title>
   <style>
@@ -45,35 +45,35 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #007ba5; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
     code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
     code span.im { } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #007ba5; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #007ba5; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 
   <!--[if lt IE 9]>
@@ -81,7 +81,7 @@
   <![endif]-->
   <script src="site_libs/quarto-nav/quarto-nav.js"></script>
   <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <meta name="quarto:offset" content=".">
+  <meta name="quarto:offset" content="./">
   <script src="site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
@@ -92,47 +92,21 @@
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
   <script src="site_libs/quarto-html/clipboard.min.js"></script>
   <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <script src="site_libs/quarto-html/quarto-html.js"></script>
   <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-  <style type="text/css">
-    details {
-      margin-bottom: 1em;
-    } 
-    details[show] {
-      margin-bottom: 0;
-    }
-
-    .quarto-unresolved-ref {
-      font-weight: 600;
-    }
-
-    .quarto-cover-image {
-      max-width: 35%;
-      float: right;
-      margin-left: 30px;
-    }
-
-    .cell-output-display {
-      overflow-x: scroll;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top">
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">6&nbsp; Interaction</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Interaction</span></h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -140,17 +114,15 @@
 </nav>
 </header>
  <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
     <nav class="ms-lg-auto py-2 floating  overflow-scroll">
-  <div class="px-3 pt-lg-2 text-left">
-    <img src="./altair-hist.png" alt="" class="sidebar-logo my-1 py-0 d-lg-inline d-none">
-    <div class="sidebar-title mt-1 mb-0 py-0">
-      <a href="./">
-      Visualization Curriculum
-      </a>
-        <div class="sidebar-tools-main mt-1">
+  <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header sidebar-header-stacked">
+    <img src="./altair-hist.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Visualization Curriculum</a> 
+        <div class="sidebar-tools-main">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -170,13 +142,13 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2 flex-shrink-0">
+    <div class="d-flex px-3 mt-2 flex-shrink-0 align-items-center">
       <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
       </div>
-        <div class="sidebar-tools-collapse mt-1">
+        <div class="sidebar-tools-collapse">
     <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -196,42 +168,40 @@
 </div>
     </div>
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-3 px-3">
+  <ul class="list-unstyled mt-1 px-3">
       <li class="sidebar-item">
   <a href="./index.html" class="">Introduction</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Curriculum
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Curriculum</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; Introduction to Altair</a>
+  <a href="./altair_introduction.html" class=""><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Altair</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; Data Types, Graphical Marks, and Visual Encoding Channels</a>
+  <a href="./altair_marks_encoding.html" class=""><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Types, Graphical Marks, and Visual Encoding Channels</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; Data Transformation</a>
+  <a href="./altair_data_transformation.html" class=""><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Transformation</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; Scales, Axes, and Legends</a>
+  <a href="./altair_scales_axes_legends.html" class=""><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Scales, Axes, and Legends</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; Multi-View Composition</a>
+  <a href="./altair_view_composition.html" class=""><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-View Composition</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_interaction.html" class="active"><span class="chapter-number">6</span>&nbsp; Interaction</a>
+  <a href="./altair_interaction.html" class="active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Interaction</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</a>
+  <a href="./altair_cartographic.html" class=""><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cartographic Visualization</span></a>
 </li>
         </ul>
       </div>
@@ -240,10 +210,8 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Support
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Support</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
@@ -280,10 +248,10 @@
 <li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">6.8</span> Summary</a></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
-  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">6&nbsp; Interaction</h1>
+<h1 class="title d-none d-lg-block display-7"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Interaction</span></h1>
 </header>
 
 <p><em>“A graphic is not ‘drawn’ once and for all; it is ‘constructed’ and reconstructed until it reveals all the relationships constituted by the interplay of the data. The best graphic operations are those carried out by the decision-maker themself.”</em> — <a href="https://books.google.com/books?id=csqX_xnm4tcC">Jacques Bertin</a></p>
@@ -298,11 +266,11 @@
 <p>This notebook introduces interactive selections and explores how to use them to author a variety of interaction techniques, such as dynamic queries, panning &amp; zooming, details-on-demand, and brushing &amp; linking.</p>
 <p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" id="datasets"><span class="header-section-number">6.1</span> Datasets</h2>
+<section id="datasets" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="datasets"><span class="header-section-number">6.1</span> Datasets</h2>
 <p>We will visualize a variety of datasets from the <a href="https://github.com/vega/vega-datasets">vega-datasets</a> collection:</p>
 <ul>
 <li>A dataset of <code>cars</code> from the 1970s and early 1980s,</li>
@@ -312,23 +280,23 @@
 <li>A dataset of <code>flights</code>, including departure time, distance, and arrival delay.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cars <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/cars.json'</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cars <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/cars.json'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>movies <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/movies.json'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sp500 <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/sp500.csv'</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>stocks <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/stocks.csv'</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>flights <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/flights-5k.json'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" id="introducing-selections"><span class="header-section-number">6.2</span> Introducing Selections</h2>
+<section id="introducing-selections" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="introducing-selections"><span class="header-section-number">6.2</span> Introducing Selections</h2>
 <p>Let’s start with a basic selection: simply clicking a point to highlight it. Using the <code>cars</code> dataset, we’ll start with a scatter plot of horsepower versus miles per gallon, with a color encoding for the number cylinders in the car engine.</p>
 <p>In addition, we’ll create a selection instance by calling <code>alt.selection_single()</code>, indicating we want a selection defined over a <em>single value</em>. By default, the selection uses a mouse click to determine the selected value. To register a selection with a chart, we must add it using the <code>.add_selection()</code> method.</p>
 <p>Once our selection has been defined, we can use it as a parameter for <em>conditional encodings</em>, which apply a different encoding depending on whether a data record lies in or out of the selection. For example, consider the following code:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>color<span class="op">=</span>alt.condition(selection, <span class="st">'Cylinders:O'</span>, alt.value(<span class="st">'grey'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>color<span class="op">=</span>alt.condition(selection, <span class="st">'Cylinders:O'</span>, alt.value(<span class="st">'grey'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This encoding definition states that data points contained within the <code>selection</code> should be colored according to the <code>Cylinder</code> field, while non-selected data points should use a default <code>grey</code>. An empty selection includes <em>all</em> data points, and so initially all points will be colored.</p>
 <p><em>Try clicking different points in the chart below. What happens? (Click the background to clear the selection state and return to an “empty” selection.)</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>selection <span class="op">=</span> alt.selection_single()<span class="op">;</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>selection <span class="op">=</span> alt.selection_single()<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>alt.Chart(cars).mark_circle().add_selection(</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    selection</span>
@@ -340,12 +308,12 @@
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-2d056a1909454da79ad521b9b1668a08"></div>
+<div id="altair-viz-62b9068157144f0389216a288b24a4c5"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2d056a1909454da79ad521b9b1668a08") {
-      outputDiv = document.getElementById("altair-viz-2d056a1909454da79ad521b9b1668a08");
+    if (outputDiv.id !== "altair-viz-62b9068157144f0389216a288b24a4c5") {
+      outputDiv = document.getElementById("altair-viz-62b9068157144f0389216a288b24a4c5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -399,7 +367,7 @@
 </ul>
 <p>Let’s compare each of these selection types side-by-side. To keep our code tidy we’ll first define a function (<code>plot</code>) that generates a scatter plot specification just like the one above. We can pass a selection to the <code>plot</code> function to have it applied to the chart:</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot(selection):</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot(selection):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> alt.Chart(cars).mark_circle().add_selection(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        selection</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    ).encode(</span>
@@ -416,19 +384,19 @@
 <p>The first (<code>single</code>) chart replicates our earlier example. The second (<code>multi</code>) chart supports shift-click interactions to toggle inclusion of multiple points within the selection. The third (<code>interval</code>) chart generates a selection region (or <em>brush</em>) upon mouse drag. Once created, you can drag the brush around to select different points, or scroll when the cursor is inside the brush to scale (zoom) the brush size.</p>
 <p><em>Try interacting with each of the charts below!</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  plot(alt.selection_single()).properties(title<span class="op">=</span><span class="st">'Single (Click)'</span>),</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  plot(alt.selection_multi()).properties(title<span class="op">=</span><span class="st">'Multi (Shift-Click)'</span>),</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  plot(alt.selection_interval()).properties(title<span class="op">=</span><span class="st">'Interval (Drag)'</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-104326b7c3ee4aa9a89cb6aa77079cb5"></div>
+<div id="altair-viz-37560940e05846639cdeca17a01b42b1"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-104326b7c3ee4aa9a89cb6aa77079cb5") {
-      outputDiv = document.getElementById("altair-viz-104326b7c3ee4aa9a89cb6aa77079cb5");
+    if (outputDiv.id !== "altair-viz-37560940e05846639cdeca17a01b42b1") {
+      outputDiv = document.getElementById("altair-viz-37560940e05846639cdeca17a01b42b1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -477,18 +445,18 @@
 <p>The examples above use default interactions (click, shift-click, drag) for each selection type. We can further customize the interactions by providing input event specifications using <a href="https://vega.github.io/vega/docs/event-streams/">Vega event selector syntax</a>. For example, we can modify our <code>single</code> and <code>multi</code> charts to trigger upon <code>mouseover</code> events instead of <code>click</code> events.</p>
 <p><em>Hold down the shift key in the second chart to “paint” with data!</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  plot(alt.selection_single(on<span class="op">=</span><span class="st">'mouseover'</span>)).properties(title<span class="op">=</span><span class="st">'Single (Mouseover)'</span>),</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  plot(alt.selection_multi(on<span class="op">=</span><span class="st">'mouseover'</span>)).properties(title<span class="op">=</span><span class="st">'Multi (Shift-Mouseover)'</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-57bf0e265c844beaa83ff7206415938b"></div>
+<div id="altair-viz-afb6955a2708478085a5aa5715bce6e2"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-57bf0e265c844beaa83ff7206415938b") {
-      outputDiv = document.getElementById("altair-viz-57bf0e265c844beaa83ff7206415938b");
+    if (outputDiv.id !== "altair-viz-afb6955a2708478085a5aa5715bce6e2") {
+      outputDiv = document.getElementById("altair-viz-afb6955a2708478085a5aa5715bce6e2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -536,8 +504,8 @@
 </div>
 <p>Now that we’ve covered the basics of Altair selections, let’s take a tour through the various interaction techniques they enable!</p>
 </section>
-<section class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" id="dynamic-queries"><span class="header-section-number">6.3</span> Dynamic Queries</h2>
+<section id="dynamic-queries" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="dynamic-queries"><span class="header-section-number">6.3</span> Dynamic Queries</h2>
 <p><em>Dynamic queries</em> enables rapid, reversible exploration of data to isolate patterns of interest. As defined by <a href="https://www.cs.umd.edu/~ben/papers/Ahlberg1992Dynamic.pdf">Ahlberg, Williamson, &amp; Shneiderman</a>, a dynamic query:</p>
 <ul>
 <li>represents a query graphically,</li>
@@ -550,19 +518,19 @@
 <p>Let’s build an interactive scatter plot that uses a dynamic query to filter the display. Given a scatter plot of movie ratings (from Rotten Tomates and IMDB), we can add a selection over the <code>Major_Genre</code> field to enable interactive filtering by film genre.</p>
 <p>To start, let’s extract the unique (non-null) genres from the <code>movies</code> data:</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_json(movies) <span class="co"># load movies data</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_json(movies) <span class="co"># load movies data</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>genres <span class="op">=</span> df[<span class="st">'Major_Genre'</span>].unique() <span class="co"># get unique field values</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>genres <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> d: d <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, genres)) <span class="co"># filter out None values</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>genres.sort() <span class="co"># sort alphabetically</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For later use, let’s also define a list of unique <code>MPAA_Rating</code> values:</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mpaa <span class="op">=</span> [<span class="st">'G'</span>, <span class="st">'PG'</span>, <span class="st">'PG-13'</span>, <span class="st">'R'</span>, <span class="st">'NC-17'</span>, <span class="st">'Not Rated'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mpaa <span class="op">=</span> [<span class="st">'G'</span>, <span class="st">'PG'</span>, <span class="st">'PG-13'</span>, <span class="st">'R'</span>, <span class="st">'NC-17'</span>, <span class="st">'Not Rated'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s create a <code>single</code> selection bound to a drop-down menu.</p>
 <p><em>Use the dynamic query menu below to explore the data. How do ratings vary by genre? How would you revise the code to filter <code>MPAA_Rating</code> (G, PG, PG-13, etc.) instead of <code>Major_Genre</code>?</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>selectGenre <span class="op">=</span> alt.selection_single(</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>selectGenre <span class="op">=</span> alt.selection_single(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'Select'</span>, <span class="co"># name the selection 'Select'</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span>[<span class="st">'Major_Genre'</span>], <span class="co"># limit selection to the Major_Genre field</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    init<span class="op">=</span>{<span class="st">'Major_Genre'</span>: genres[<span class="dv">0</span>]}, <span class="co"># use first genre entry as initial value</span></span>
@@ -579,12 +547,12 @@
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-b60becc26c9f45f5bb66413bc6a9e43d"></div>
+<div id="altair-viz-71b28d79a49b4ded819d2438ea5908b8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b60becc26c9f45f5bb66413bc6a9e43d") {
-      outputDiv = document.getElementById("altair-viz-b60becc26c9f45f5bb66413bc6a9e43d");
+    if (outputDiv.id !== "altair-viz-71b28d79a49b4ded819d2438ea5908b8") {
+      outputDiv = document.getElementById("altair-viz-71b28d79a49b4ded819d2438ea5908b8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -638,12 +606,12 @@
 <li>We <code>bind</code> the selection to an interface widget, in this case a drop-down menu via <code>binding_select</code>.</li>
 <li>As before, we then use a conditional encoding to control the opacity channel.</li>
 </ul>
-<section class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" id="binding-selections-to-multiple-inputs"><span class="header-section-number">6.3.1</span> Binding Selections to Multiple Inputs</h3>
+<section id="binding-selections-to-multiple-inputs" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="binding-selections-to-multiple-inputs"><span class="header-section-number">6.3.1</span> Binding Selections to Multiple Inputs</h3>
 <p>One selection instance can be bound to <em>multiple</em> dynamic query widgets. Let’s modify the example above to provide filters for <em>both</em> <code>Major_Genre</code> and <code>MPAA_Rating</code>, using radio buttons instead of a menu. Our <code>single</code> selection is now defined over a single <em>pair</em> of genre and MPAA rating values</p>
 <p><em>Look for surprising conjunctions of genre and rating. Are there any G or PG-rated horror films?</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># single-value selection over [Major_Genre, MPAA_Rating] pairs</span></span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># single-value selection over [Major_Genre, MPAA_Rating] pairs</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use specific hard-wired values as the initial selected values</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>selection <span class="op">=</span> alt.selection_single(</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'Select'</span>,</span>
@@ -663,12 +631,12 @@
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-041e1eecd7a844e2b2b3ba62d8a7fc7e"></div>
+<div id="altair-viz-e30bc2cc7a194017bae17cc65fa7150f"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-041e1eecd7a844e2b2b3ba62d8a7fc7e") {
-      outputDiv = document.getElementById("altair-viz-041e1eecd7a844e2b2b3ba62d8a7fc7e");
+    if (outputDiv.id !== "altair-viz-e30bc2cc7a194017bae17cc65fa7150f") {
+      outputDiv = document.getElementById("altair-viz-e30bc2cc7a194017bae17cc65fa7150f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -716,14 +684,14 @@
 </div>
 <p><em>Fun facts: The PG-13 rating didn’t exist when the movies <a href="https://www.imdb.com/title/tt0073195/">Jaws</a> and <a href="https://www.imdb.com/title/tt0077766/">Jaws 2</a> were released. The first film to receive a PG-13 rating was 1984’s <a href="https://www.imdb.com/title/tt0087985/">Red Dawn</a>.</em></p>
 </section>
-<section class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" id="using-visualizations-as-dynamic-queries"><span class="header-section-number">6.3.2</span> Using Visualizations as Dynamic Queries</h3>
+<section id="using-visualizations-as-dynamic-queries" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="using-visualizations-as-dynamic-queries"><span class="header-section-number">6.3.2</span> Using Visualizations as Dynamic Queries</h3>
 <p>Though standard interface widgets show the <em>possible</em> query parameter values, they do not visualize the <em>distribution</em> of those values. We might also wish to use richer interactions, such as multi-value or interval selections, rather than input widgets that select only a single value at a time.</p>
 <p>To address these issues, we can author additional charts to both visualize data and support dynamic queries. Let’s add a histogram of the count of films per year and use an interval selection to dynamically highlight films over selected time periods.</p>
 <p><em>Interact with the year histogram to explore films from different time periods. Do you seen any evidence of <a href="https://en.wikipedia.org/wiki/Sampling_bias">sampling bias</a> across the years? (How do year and critics’ ratings relate?)</em></p>
 <p><em>The years range from 1930 to 2040! Are future films in pre-production, or are there “off-by-one century” errors? Also, depending on which time zone you’re in, you may see a small bump in either 1969 or 1970. Why might that be? (See the end of the notebook for an explanation!)</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    encodings<span class="op">=</span>[<span class="st">'x'</span>] <span class="co"># limit selection to x-axis (year) values</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -752,12 +720,12 @@
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>alt.vconcat(years, ratings).properties(spacing<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-c90ee901438e4a92bcfc0866d20e1918"></div>
+<div id="altair-viz-02643093db76439e8f88edefbbd980ea"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c90ee901438e4a92bcfc0866d20e1918") {
-      outputDiv = document.getElementById("altair-viz-c90ee901438e4a92bcfc0866d20e1918");
+    if (outputDiv.id !== "altair-viz-02643093db76439e8f88edefbbd980ea") {
+      outputDiv = document.getElementById("altair-viz-02643093db76439e8f88edefbbd980ea");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -812,14 +780,14 @@
 <p>This interaction technique of selecting elements in one chart and seeing linked highlights in one or more other charts is known as <a href="https://en.wikipedia.org/wiki/Brushing_and_linking"><em>brushing &amp; linking</em></a>.</p>
 </section>
 </section>
-<section class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" id="panning-zooming"><span class="header-section-number">6.4</span> Panning &amp; Zooming</h2>
+<section id="panning-zooming" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="panning-zooming"><span class="header-section-number">6.4</span> Panning &amp; Zooming</h2>
 <p>The movie rating scatter plot is a bit cluttered in places, making it hard to examine points in denser regions. Using the interaction techniques of <em>panning</em> and <em>zooming</em>, we can inspect dense regions more closely.</p>
 <p>Let’s start by thinking about how we might express panning and zooming using Altair selections. What defines the “viewport” of a chart? <em>Axis scale domains!</em></p>
 <p>We can change the scale domains to modify the visualized range of data values. To do so interactively, we can bind an <code>interval</code> selection to scale domains with the code <code>bind='scales'</code>. The result is that instead of an interval brush that we can drag and zoom, we instead can drag and zoom the entire plotting area!</p>
 <p><em>In the chart below, click and drag to pan (translate) the view, or scroll to zoom (scale) the view. What can you discover about the precision of the provided rating values?</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies).mark_circle().add_selection(</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies).mark_circle().add_selection(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    alt.selection_interval(bind<span class="op">=</span><span class="st">'scales'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Rotten_Tomatoes_Rating:Q'</span>,</span>
@@ -831,12 +799,12 @@
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-556a49194c8c46f594960abb3805b7ca"></div>
+<div id="altair-viz-15063704909a4941bb8dc092df828afe"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-556a49194c8c46f594960abb3805b7ca") {
-      outputDiv = document.getElementById("altair-viz-556a49194c8c46f594960abb3805b7ca");
+    if (outputDiv.id !== "altair-viz-15063704909a4941bb8dc092df828afe") {
+      outputDiv = document.getElementById("altair-viz-15063704909a4941bb8dc092df828afe");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -886,7 +854,7 @@
 <p>Reading the code above, you may notice the code <code>alt.Axis(minExtent=30)</code> in the <code>y</code> encoding channel. The <code>minExtent</code> parameter ensures a minimum amount of space is reserved for axis ticks and labels. Why do this? When we pan and zoom, the axis labels may change and cause the axis title position to shift. By setting a minimum extent we can reduce distracting movements in the plot. <em>Try changing the <code>minExtent</code> value, for example setting it to zero, and then zoom out to see what happens when longer axis labels enter the view.</em></p>
 <p>Altair also includes a shorthand for adding panning and zooming to a plot. Instead of directly creating a selection, you can call <code>.interactive()</code> to have Altair automatically generate an interval selection bound to the chart’s scales:</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies).mark_circle().encode(</span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies).mark_circle().encode(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Rotten_Tomatoes_Rating:Q'</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>alt.Y(<span class="st">'IMDB_Rating:Q'</span>, axis<span class="op">=</span>alt.Axis(minExtent<span class="op">=</span><span class="dv">30</span>)), <span class="co"># use min extent to stabilize axis title placement</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span>[<span class="st">'Title:N'</span>, <span class="st">'Release_Date:N'</span>, <span class="st">'IMDB_Rating:Q'</span>, <span class="st">'Rotten_Tomatoes_Rating:Q'</span>]</span>
@@ -896,12 +864,12 @@
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>).interactive()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-2a1bc24802374251aaea12f6725442ea"></div>
+<div id="altair-viz-2ad510d9e79941bb8f5902cb0f9abdb8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2a1bc24802374251aaea12f6725442ea") {
-      outputDiv = document.getElementById("altair-viz-2a1bc24802374251aaea12f6725442ea");
+    if (outputDiv.id !== "altair-viz-2ad510d9e79941bb8f5902cb0f9abdb8") {
+      outputDiv = document.getElementById("altair-viz-2ad510d9e79941bb8f5902cb0f9abdb8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -949,7 +917,7 @@
 </div>
 <p>By default, scale bindings for selections include both the <code>x</code> and <code>y</code> encoding channels. What if we want to limit panning and zooming along a single dimension? We can invoke <code>encodings=['x']</code> to constrain the selection to the <code>x</code> channel only:</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies).mark_circle().add_selection(</span>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies).mark_circle().add_selection(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.selection_interval(bind<span class="op">=</span><span class="st">'scales'</span>, encodings<span class="op">=</span>[<span class="st">'x'</span>])</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Rotten_Tomatoes_Rating:Q'</span>,</span>
@@ -961,12 +929,12 @@
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-6ac6c0881ebb48259a09dde7d2f502ee"></div>
+<div id="altair-viz-4ea45efbc99e4b84b0d2917c0db1b14e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6ac6c0881ebb48259a09dde7d2f502ee") {
-      outputDiv = document.getElementById("altair-viz-6ac6c0881ebb48259a09dde7d2f502ee");
+    if (outputDiv.id !== "altair-viz-4ea45efbc99e4b84b0d2917c0db1b14e") {
+      outputDiv = document.getElementById("altair-viz-4ea45efbc99e4b84b0d2917c0db1b14e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1014,12 +982,12 @@
 </div>
 <p><em>When zooming along a single axis only, the shape of the visualized data can change, potentially affecting our perception of relationships in the data. <a href="http://vis.stanford.edu/papers/arclength-banking">Choosing an appropriate aspect ratio</a> is an important visualization design concern!</em></p>
 </section>
-<section class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" id="navigation-overview-detail"><span class="header-section-number">6.5</span> Navigation: Overview + Detail</h2>
+<section id="navigation-overview-detail" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="navigation-overview-detail"><span class="header-section-number">6.5</span> Navigation: Overview + Detail</h2>
 <p>When panning and zooming, we directly adjust the “viewport” of a chart. The related navigation strategy of <em>overview + detail</em> instead uses an overview display to show <em>all</em> of the data, while supporting selections that pan and zoom a separate focus display.</p>
 <p>Below we have two area charts showing a decade of price fluctuations for the S&amp;P 500 stock index. Initially both charts show the same data range. <em>Click and drag in the bottom overview chart to update the focus display and examine specific time spans.</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(encodings<span class="op">=</span>[<span class="st">'x'</span>])<span class="op">;</span></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(encodings<span class="op">=</span>[<span class="st">'x'</span>])<span class="op">;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> alt.Chart().mark_area().encode(</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'date:T'</span>, title<span class="op">=</span><span class="va">None</span>),</span>
@@ -1035,12 +1003,12 @@
 <span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-b9bb56505ac743d7859543001f14f0b1"></div>
+<div id="altair-viz-3ff61249d49a4c45a232775b65c55202"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b9bb56505ac743d7859543001f14f0b1") {
-      outputDiv = document.getElementById("altair-viz-b9bb56505ac743d7859543001f14f0b1");
+    if (outputDiv.id !== "altair-viz-3ff61249d49a4c45a232775b65c55202") {
+      outputDiv = document.getElementById("altair-viz-3ff61249d49a4c45a232775b65c55202");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1088,13 +1056,13 @@
 </div>
 <p>Unlike our earlier panning &amp; zooming case, here we don’t want to bind a selection directly to the scales of a single interactive chart. Instead, we want to bind the selection to a scale domain in <em>another</em> chart. To do so, we update the <code>x</code> encoding channel for our focus chart, setting the scale <code>domain</code> property to reference our <code>brush</code> selection. If no interval is defined (the selection is empty), Altair ignores the brush and uses the underlying data to determine the domain. When a brush interval is created, Altair instead uses that as the scale <code>domain</code> for the focus chart.</p>
 </section>
-<section class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" id="details-on-demand"><span class="header-section-number">6.6</span> Details on Demand</h2>
+<section id="details-on-demand" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="details-on-demand"><span class="header-section-number">6.6</span> Details on Demand</h2>
 <p>Once we spot points of interest within a visualization, we often want to know more about them. <em>Details-on-demand</em> refers to interactively querying for more information about selected values. <em>Tooltips</em> are one useful means of providing details on demand. However, tooltips typically only show information for one data point at a time. How might we show more?</p>
 <p>The movie ratings scatterplot includes a number of potentially interesting outliers where the Rotten Tomatoes and IMDB ratings disagree. Let’s create a plot that allows us to interactively select points and show their labels. To trigger the filter query on either the hover or click interaction, we will use the <a href="https://altair-viz.github.io/user_guide/interactions.html#composing-multiple-selections">Altair composition operator</a> <code>|</code> (“or”).</p>
 <p><em>Mouse over points in the scatter plot below to see a highlight and title label. Shift-click points to make annotations persistent and view multiple labels at once. Which movies are loved by Rotten Tomatoes critics, but not the general audience on IMDB (or vice versa)? See if you can find possible errors, where two different movies with the same name were accidentally combined!</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>hover <span class="op">=</span> alt.selection_single(</span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>hover <span class="op">=</span> alt.selection_single(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    on<span class="op">=</span><span class="st">'mouseover'</span>,  <span class="co"># select on mouseover</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    nearest<span class="op">=</span><span class="va">True</span>,    <span class="co"># select nearest point to mouse cursor</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    empty<span class="op">=</span><span class="st">'none'</span>     <span class="co"># empty selection should match nothing</span></span>
@@ -1128,12 +1096,12 @@
 <span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-9edfc8c7f58b42d28e1602a03dc22d23"></div>
+<div id="altair-viz-26965ece48d842a08a8cc43e7fb0e59d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9edfc8c7f58b42d28e1602a03dc22d23") {
-      outputDiv = document.getElementById("altair-viz-9edfc8c7f58b42d28e1602a03dc22d23");
+    if (outputDiv.id !== "altair-viz-26965ece48d842a08a8cc43e7fb0e59d") {
+      outputDiv = document.getElementById("altair-viz-26965ece48d842a08a8cc43e7fb0e59d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1187,7 +1155,7 @@
 <p>Both selections include the set <code>empty='none'</code> to indicate that no points should be included if a selection is empty. These selections are then combined into a single filter predicate — the logical <em>or</em> of <code>hover</code> and <code>click</code> — to include points that reside in <em>either</em> selection. We use this predicate to filter the new layers to show annotations and labels for selected points only.</p>
 <p>Using selections and layers, we can realize a number of different designs for details on demand! For example, here is a log-scaled time series of technology stock prices, annotated with a guideline and labels for the date nearest the mouse cursor:</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select a point for which to provide details-on-demand</span></span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select a point for which to provide details-on-demand</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>label <span class="op">=</span> alt.selection_single(</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    encodings<span class="op">=</span>[<span class="st">'x'</span>], <span class="co"># limit selection to x-axis value</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    on<span class="op">=</span><span class="st">'mouseover'</span>,  <span class="co"># select on mouseover events</span></span>
@@ -1232,12 +1200,12 @@
 <span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-a89e392ca0b94b6aa88512690e768cff"></div>
+<div id="altair-viz-0de08a41e0ba42f6b102d9c71659f5b9"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a89e392ca0b94b6aa88512690e768cff") {
-      outputDiv = document.getElementById("altair-viz-a89e392ca0b94b6aa88512690e768cff");
+    if (outputDiv.id !== "altair-viz-0de08a41e0ba42f6b102d9c71659f5b9") {
+      outputDiv = document.getElementById("altair-viz-0de08a41e0ba42f6b102d9c71659f5b9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1285,13 +1253,13 @@
 </div>
 <p><em>Putting into action what we’ve learned so far: can you modify the movie scatter plot above (the one with the dynamic query over years) to include a <code>rule</code> mark that shows the average IMDB (or Rotten Tomatoes) rating for the data contained within the year <code>interval</code> selection?</em></p>
 </section>
-<section class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" id="brushing-linking-revisited"><span class="header-section-number">6.7</span> Brushing &amp; Linking, Revisited</h2>
+<section id="brushing-linking-revisited" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="brushing-linking-revisited"><span class="header-section-number">6.7</span> Brushing &amp; Linking, Revisited</h2>
 <p>Earlier in this notebook we saw an example of <em>brushing &amp; linking</em>: using a dynamic query histogram to highlight points in a movie rating scatter plot. Here, we’ll visit some additional examples involving linked selections.</p>
 <p>Returning to the <code>cars</code> dataset, we can use the <code>repeat</code> operator to build a <a href="https://en.wikipedia.org/wiki/Scatter_plot#Scatterplot_matrices">scatter plot matrix (SPLOM)</a> that shows associations between mileage, acceleration, and horsepower. We can define an <code>interval</code> selection and include it <em>within</em> our repeated scatter plot specification to enable linked selections among all the plots.</p>
 <p><em>Click and drag in any of the plots below to perform brushing &amp; linking!</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(</span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    resolve<span class="op">=</span><span class="st">'global'</span> <span class="co"># resolve all selections to a single global instance</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1311,12 +1279,12 @@
 <span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-98da89ce6e5c49a39da6bb7b629ca9fd"></div>
+<div id="altair-viz-e981e8317dee4365886f5d8403f8c72d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-98da89ce6e5c49a39da6bb7b629ca9fd") {
-      outputDiv = document.getElementById("altair-viz-98da89ce6e5c49a39da6bb7b629ca9fd");
+    if (outputDiv.id !== "altair-viz-e981e8317dee4365886f5d8403f8c72d") {
+      outputDiv = document.getElementById("altair-viz-e981e8317dee4365886f5d8403f8c72d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1364,14 +1332,14 @@
 </div>
 <p>Note above the use of <code>resolve='global'</code> on the <code>interval</code> selection. The default setting of <code>'global'</code> indicates that across all plots only one brush can be active at a time. However, in some cases we might want to define brushes in multiple plots and combine the results. If we use <code>resolve='union'</code>, the selection will be the <em>union</em> of all brushes: if a point resides within any brush it will be selected. Alternatively, if we use <code>resolve='intersect'</code>, the selection will consist of the <em>intersection</em> of all brushes: only points that reside within all brushes will be selected.</p>
 <p><em>Try setting the <code>resolve</code> parameter to <code>'union'</code> and <code>'intersect'</code> and see how it changes the resulting selection logic.</em></p>
-<section class="level3" data-number="6.7.1">
-<h3 data-number="6.7.1" class="anchored" id="cross-filtering"><span class="header-section-number">6.7.1</span> Cross-Filtering</h3>
+<section id="cross-filtering" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="cross-filtering"><span class="header-section-number">6.7.1</span> Cross-Filtering</h3>
 <p>The brushing &amp; linking examples we’ve looked at all use conditional encodings, for example to change opacity values in response to a selection. Another option is to use a selection defined in one view to <em>filter</em> the content of another view.</p>
 <p>Let’s build a collection of histograms for the <code>flights</code> dataset: arrival <code>delay</code> (how early or late a flight arrives, in minutes), <code>distance</code> flown (in miles), and <code>time</code> of departure (hour of the day). We’ll use the <code>repeat</code> operator to create the histograms, and add an <code>interval</code> selection for the <code>x</code> axis with brushes resolved via intersection.</p>
 <p>In particular, each histogram will consist of two layers: a gray background layer and a blue foreground layer, with the foreground layer filtered by our intersection of brush selections. The result is a <em>cross-filtering</em> interaction across the three charts!</p>
 <p><em>Drag out brush intervals in the charts below. As you select flights with longer or shorter arrival delays, how do the distance and time distributions respond?</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(</span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    encodings<span class="op">=</span>[<span class="st">'x'</span>],</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    resolve<span class="op">=</span><span class="st">'intersect'</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
@@ -1401,12 +1369,12 @@
 <span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="altair-viz-194235c1bdb840e495820509cbdd71b5"></div>
+<div id="altair-viz-19ac01021f3d4af483b8d1e4c2d05bd6"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-194235c1bdb840e495820509cbdd71b5") {
-      outputDiv = document.getElementById("altair-viz-194235c1bdb840e495820509cbdd71b5");
+    if (outputDiv.id !== "altair-viz-19ac01021f3d4af483b8d1e4c2d05bd6") {
+      outputDiv = document.getElementById("altair-viz-19ac01021f3d4af483b8d1e4c2d05bd6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1456,28 +1424,98 @@
 <p>The combination of multiple views and interactive selections can enable valuable forms of multi-dimensional reasoning, turning even basic histograms into powerful input devices for asking questions of a dataset!</p>
 </section>
 </section>
-<section class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" id="summary"><span class="header-section-number">6.8</span> Summary</h2>
+<section id="summary" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.8</span> Summary</h2>
 <p>For more information about the supported interaction options in Altair, please consult the <a href="https://altair-viz.github.io/user_guide/interactions.html">Altair interactive selection documentation</a>. For details about customizing event handlers, for example to compose multiple interaction techniques or support touch-based input on mobile devices, see the <a href="https://vega.github.io/vega-lite/docs/selection.html">Vega-Lite selection documentation</a>.</p>
 <p>Interested in learning more? - The <em>selection</em> abstraction was introduced in the paper <a href="http://idl.cs.washington.edu/papers/vega-lite/">Vega-Lite: A Grammar of Interactive Graphics</a>, by Satyanarayan, Moritz, Wongsuphasawat, &amp; Heer. - The PRIM-9 system (for projection, rotation, isolation, and masking in up to 9 dimensions) is one of the earliest interactive visualization tools, built in the early 1970s by Fisherkeller, Tukey, &amp; Friedman. <a href="http://stat-graphics.org/movies/prim9.html">A retro demo video survives!</a> - The concept of brushing &amp; linking was crystallized by Becker, Cleveland, &amp; Wilks in their 1987 article <a href="https://scholar.google.com/scholar?cluster=14817303117298653693">Dynamic Graphics for Data Analysis</a>. - For a comprehensive summary of interaction techniques for visualization, see <a href="https://queue.acm.org/detail.cfm?id=2146416">Interactive Dynamics for Visual Analysis</a> by Heer &amp; Shneiderman. - Finally, for a treatise on what makes interaction effective, read the classic <a href="https://scholar.google.com/scholar?cluster=15702972136892195211">Direct Manipulation Interfaces</a> paper by Hutchins, Hollan, &amp; Norman.</p>
-<section class="level4" data-number="6.8">
-<h4 data-number="6.8" class="anchored" id="appendix-on-the-representation-of-time"><span class="header-section-number">6.8</span> Appendix: On The Representation of Time</h4>
+<section id="appendix-on-the-representation-of-time" class="level4" data-number="6.8.0.1">
+<h4 data-number="6.8.0.1" class="anchored" data-anchor-id="appendix-on-the-representation-of-time"><span class="header-section-number">6.8.0.1</span> Appendix: On The Representation of Time</h4>
 <p>Earlier we observed a small bump in the number of movies in either 1969 and 1970. Where does that bump come from? And why 1969 <em>or</em> 1970? The answer stems from a combination of missing data and how your computer represents time.</p>
 <p>Internally, dates and times are represented relative to the <a href="https://en.wikipedia.org/wiki/Unix_time">UNIX epoch</a>, in which time “zero” corresponds to the stroke of midnight on January 1, 1970 in <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC time</a>, which runs along the <a href="https://en.wikipedia.org/wiki/Prime_meridian">prime meridian</a>. It turns out there are a few movies with missing (<code>null</code>) release dates. Those <code>null</code> values get interpreted as time <code>0</code>, and thus map to January 1, 1970 in UTC time. If you live in the Americas – and thus in “earlier” time zones – this precise point in time corresponds to an earlier hour on December 31, 1969 in your local time zone. On the other hand, if you live near or east of the prime meridian, the date in your local time zone will be January 1, 1970.</p>
 <p>The takeaway? Always be skeptical of your data, and be mindful that how data is represented (whether as date times, or floating point numbers, or latitudes and longitudes, <em>etc.</em>) can sometimes lead to artifacts that impact analysis!</p>
+
 <!-- -->
 </section>
 </section>
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    window.tippy(el, {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    }); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
 </main>
 <div class="page-navigation ">
   <div class="nav-page nav-page-previous">
       <a href="./altair_view_composition.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Multi-View Composition</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-View Composition</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./altair_cartographic.html">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; Cartographic Visualization</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cartographic Visualization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>

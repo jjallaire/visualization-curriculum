@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
   <meta charset="utf-8">
-  <meta name="generator" content="quarto-(Local Development)">
+  <meta name="generator" content="quarto-99.9.9">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Visualization Curriculum – 7&nbsp; Cartographic Visualization</title>
+  <title>Visualization Curriculum - 7&nbsp; Cartographic Visualization</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -81,8 +81,9 @@
   <![endif]-->
   <script src="site_libs/quarto-nav/quarto-nav.js"></script>
   <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
   <meta name="quarto:offset" content="./">
-  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
   <link href="./altair_debugging.html" rel="next">
@@ -90,35 +91,52 @@
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/clipboard.min.js"></script>
   <script src="site_libs/quarto-html/anchor.min.js"></script>
   <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
   <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 2,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
-<body>
+<body class="floating">
 <div id="quarto-search-results"></div>
-<header id="quarto-header" class="headroom fixed-top">
-<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cartographic Visualization</span></h1>
-    <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
-      <i class="bi bi-chevron-right"></i>
-    </button>
-  </div>
-</nav>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cartographic Visualization</span></h1>
+      <button type="button" class="quarto-btn-toggle btn">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
- <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
-<div class="row flex-fill">
-  <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
-  <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header sidebar-header-stacked">
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
     <img src="./altair-hist.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Visualization Curriculum</a> 
@@ -142,42 +160,22 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2 flex-shrink-0 align-items-center">
+    <div class="px-3 mt-2 flex-shrink-0 align-items-center">
       <div class="sidebar-search">
-      <form class="d-flex mb-0">
-  <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
+      <div id="quarto-search" class="" title="Search"></div>
       </div>
-        <div class="sidebar-tools-collapse">
-    <a href="https://github.com/uwdata/visualization-curriculum" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-            <i class="bi bi-bi-facebook pe-1"></i>
-          Facebook
-          </a>
-        </li>
-    </ul>
-</div>
     </div>
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-1 px-3">
+  <ul class="list-unstyled mt-1">
       <li class="sidebar-item">
   <a href="./index.html" class="">Introduction</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
-        <div class="me-auto ">
+        <div class="me-auto">
             <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#curriculum-collapse" aria-expanded="true">
-              <div class="me-auto  sidebar-section-item">Curriculum</div>
-            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+              <div class="me-auto sidebar-section-item">Curriculum</div>
+            <div><i class="bi bi-chevron-right ms-2"></i></div>
             </a>
         </div>
       <div class="collapse  show" id="curriculum-collapse">
@@ -209,10 +207,10 @@
   </ul>
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
-        <div class="me-auto ">
+        <div class="me-auto">
             <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#support-collapse" aria-expanded="true">
-              <div class="me-auto  sidebar-section-item">Support</div>
-            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+              <div class="me-auto sidebar-section-item">Support</div>
+            <div><i class="bi bi-chevron-right ms-2"></i></div>
             </a>
         </div>
       <div class="collapse  show" id="support-collapse">
@@ -227,8 +225,8 @@
   </ul>
   </div>
 </nav>
-  </div>
-  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<!-- toc -->
+    <nav id="TOC" role="doc-toc" class="sidebar sidebar-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
 <li><a href="#geographic-data-geojson-and-topojson" class="nav-link active" data-scroll-target="#geographic-data-geojson-and-topojson"> <span class="header-section-number">7.1</span> Geographic Data: GeoJSON and TopoJSON</a></li>
@@ -243,9 +241,9 @@
 <li><a href="#coda-wrangling-geographic-data" class="nav-link" data-scroll-target="#coda-wrangling-geographic-data"> <span class="header-section-number">7.7</span> Coda: Wrangling Geographic Data</a></li>
 <li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">7.8</span> Summary</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new">Report an issue</a></p></div></div></nav></div>
-  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
-<main>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/uwdata/visualization-curriculum/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<!-- main -->
+<main class="content">
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-7"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cartographic Visualization</span></h1>
 </header>
@@ -264,11 +262,9 @@
 <li>A review of common cartographic projections.</li>
 </ul>
 <p><em>This notebook is part of the <a href="https://github.com/uwdata/visualization-curriculum">data visualization curriculum</a>.</em></p>
-<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vega_datasets <span class="im">import</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <section id="geographic-data-geojson-and-topojson" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="geographic-data-geojson-and-topojson"><span class="header-section-number">7.1</span> Geographic Data: GeoJSON and TopoJSON</h2>
 <p>Up to this point, we have worked with JSON and CSV formatted datasets that correspond to data tables made up of rows (records) and columns (fields). In order to represent geographic regions (countries, states, <em>etc.</em>) and trajectories (flight paths, subway lines, <em>etc.</em>), we need to expand our repertoire with additional formats designed to support rich geometries.</p>
@@ -289,31 +285,29 @@
 <p>To learn more about the nitty-gritty details of GeoJSON, see the <a href="http://geojson.org/">official GeoJSON specification</a> or read <a href="https://macwright.org/2015/03/23/geojson-second-bite">Tom MacWright’s helpful primer</a>.</p>
 <p>One drawback of GeoJSON as a storage format is that it can be redundant, resulting in larger file sizes. Consider: Colorado shares boundaries with six other states (seven if you include the corner touching Arizona). Instead of using separate, overlapping coordinate lists for each of those states, a more compact approach is to encode shared borders only once, representing the <em>topology</em> of geographic regions. Fortunately, this is precisely what the <a href="https://github.com/topojson/topojson/blob/master/README.md">TopoJSON</a> format does!</p>
 <p>Let’s load a TopoJSON file of world countries (at 110 meter resolution):</p>
-<div class="cell">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>world <span class="op">=</span> data.world_110m.url</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="2">
 <pre><code>'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json'</code></pre>
 </div>
 </div>
-<div class="cell">
 <div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>world_topo <span class="op">=</span> data.world_110m()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>world_topo.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="4">
 <pre><code>dict_keys(['type', 'transform', 'objects', 'arcs'])</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>world_topo[<span class="st">'type'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="5">
 <pre><code>'Topology'</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>world_topo[<span class="st">'objects'</span>].keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="6">
 <pre><code>dict_keys(['land', 'countries'])</code></pre>
 </div>
 </div>
@@ -331,9 +325,9 @@
 <section id="geoshape-marks" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="geoshape-marks"><span class="header-section-number">7.2</span> Geoshape Marks</h2>
 <p>To visualize geographic data, Altair provides the <code>geoshape</code> mark type. To create a basic map, we can create a <code>geoshape</code> mark and pass it our TopoJSON data, which is then unpacked into GeoJSON features, one for each country of the world:</p>
-<div class="cell">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(world, <span class="st">'countries'</span>)).mark_geoshape()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="7">
 
 <div id="altair-viz-5fa33f2ec2f94fdebb298a8faa6a970f"></div>
 <script type="text/javascript">
@@ -387,13 +381,13 @@
 </div>
 </div>
 <p>In the example above, Altair applies a default blue color and uses a default map projection (<code>mercator</code>). We can customize the colors and boundary stroke widths using standard mark properties. Using the <code>project</code> method we can also add our own map projection:</p>
-<div class="cell">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(world, <span class="st">'countries'</span>)).mark_geoshape(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    fill<span class="op">=</span><span class="st">'#2a1d0c'</span>, stroke<span class="op">=</span><span class="st">'#706545'</span>, strokeWidth<span class="op">=</span><span class="fl">0.5</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>).project(</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'mercator'</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="8">
 
 <div id="altair-viz-3aa7d3da023949daa65480e57cfe7ee8"></div>
 <script type="text/javascript">
@@ -447,13 +441,13 @@
 </div>
 </div>
 <p>By default Altair automatically adjusts the projection so that all the data fits within the width and height of the chart. We can also specify projection parameters, such as <code>scale</code> (zoom level) and <code>translate</code> (panning), to customize the projection settings. Here we adjust the <code>scale</code> and <code>translate</code> parameters to focus on Europe:</p>
-<div class="cell">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(world, <span class="st">'countries'</span>)).mark_geoshape(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    fill<span class="op">=</span><span class="st">'#2a1d0c'</span>, stroke<span class="op">=</span><span class="st">'#706545'</span>, strokeWidth<span class="op">=</span><span class="fl">0.5</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>).project(</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'mercator'</span>, scale<span class="op">=</span><span class="dv">400</span>, translate<span class="op">=</span>[<span class="dv">100</span>, <span class="dv">550</span>]</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="9">
 
 <div id="altair-viz-02ed9a90da844bf58ca5a1ad0654a85f"></div>
 <script type="text/javascript">
@@ -513,7 +507,6 @@
 <li>The graticule generator (<code>{'graticule': ...}</code>) creates a GeoJSON feature representing a <em>graticule</em>: a grid formed by lines of latitude and longitude. The default graticule has meridians and parallels every 10° between ±80° latitude. For the polar regions, there are meridians every 90°. These settings can be customized using the <code>stepMinor</code> and <code>stepMajor</code> properties.</li>
 </ul>
 <p>Let’s layer sphere, graticule, and country marks into a reusable map specification:</p>
-<div class="cell">
 <div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">map</span> <span class="op">=</span> alt.layer(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># use the sphere of the Earth as the base layer</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    alt.Chart({<span class="st">'sphere'</span>: <span class="va">True</span>}).mark_geoshape(</span>
@@ -531,13 +524,12 @@
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">600</span>,</span>
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">400</span></span>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>We can extend the map with a desired projection and draw the result. Here we apply a <a href="https://en.wikipedia.org/wiki/Natural_Earth_projection">Natural Earth projection</a>. The <em>sphere</em> layer provides the light blue background; the <em>graticule</em> layer provides the white geographic reference lines.</p>
-<div class="cell">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode" id="cb18"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">map</span>.project(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'naturalEarth1'</span>, scale<span class="op">=</span><span class="dv">110</span>, translate<span class="op">=</span>[<span class="dv">300</span>, <span class="dv">200</span>]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="11">
 
 <div id="altair-viz-305b5f041ed149b5a19ac1f23b62fe4d"></div>
 <script type="text/javascript">
@@ -595,16 +587,16 @@
 <h2 data-number="7.3" class="anchored" data-anchor-id="point-maps"><span class="header-section-number">7.3</span> Point Maps</h2>
 <p>In addition to the <em>geometric</em> data provided by GeoJSON or TopoJSON files, many tabular datasets include geographic information in the form of fields for <code>longitude</code> and <code>latitude</code> coordinates, or references to geographic regions such as country names, state names, postal codes, <em>etc.</em>, which can be mapped to coordinates using a <a href="https://en.wikipedia.org/wiki/Geocoding">geocoding service</a>. In some cases, location data is rich enough that we can see meaningful patterns by projecting the data points alone — no base map required!</p>
 <p>Let’s look at a dataset of 5-digit zip codes in the United States, including <code>longitude</code>, <code>latitude</code> coordinates for each post office in addition to a <code>zip_code</code> field.</p>
-<div class="cell">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode" id="cb19"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>zipcodes <span class="op">=</span> data.zipcodes.url</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>zipcodes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="12">
 <pre><code>'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/zipcodes.csv'</code></pre>
 </div>
 </div>
 <p>We can visualize each post office location using a small (1-pixel) <code>square</code> mark. However, to set the positions we do <em>not</em> use <code>x</code> and <code>y</code> channels. <em>Why is that?</em></p>
 <p>While cartographic projections map (<code>longitude</code>, <code>latitude</code>) coordinates to (<code>x</code>, <code>y</code>) coordinates, they can do so in arbitrary ways. There is no guarantee, for example, that <code>longitude</code> → <code>x</code> and <code>latitude</code> → <code>y</code>! Instead, Altair includes special <code>longitude</code> and <code>latitude</code> encoding channels to handle geographic coordinates. These channels indicate which data fields should be mapped to <code>longitude</code> and <code>latitude</code> coordinates, and then applies a projection to map those coordinates to (<code>x</code>, <code>y</code>) positions.</p>
-<div class="cell">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(zipcodes).mark_square(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="dv">1</span>, opacity<span class="op">=</span><span class="dv">1</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
@@ -618,7 +610,7 @@
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
 <span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
 <span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="13">
 
 <div id="altair-viz-81ab1d082f294bd9bb1572f982b0c93a"></div>
 <script type="text/javascript">
@@ -674,7 +666,7 @@
 <p><em>Plotting zip codes only, we can see the outline of the United States and discern meaningful patterns in the density of post offices, without a base map or additional reference elements!</em></p>
 <p>We use the <code>albersUsa</code> projection, which takes some liberties with the actual geometry of the Earth, with scaled versions of Alaska and Hawaii in the bottom-left corner. As we did not specify projection <code>scale</code> or <code>translate</code> parameters, Altair sets them automatically to fit the visualized data.</p>
 <p>We can now go on to ask more questions of our dataset. For example, is there any rhyme or reason to the allocation of zip codes? To assess this question we can add a color encoding based on the first digit of the zip code. We first add a <code>calculate</code> transform to extract the first digit, and encode the result using the color channel:</p>
-<div class="cell">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(zipcodes).transform_calculate(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    digit<span class="op">=</span><span class="st">'datum.zip_code[0]'</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>).mark_square(</span>
@@ -691,7 +683,7 @@
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
 <span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
 <span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="14">
 
 <div id="altair-viz-90b6d4963aa6460eb6ceacc2f70794bd"></div>
 <script type="text/javascript">
@@ -747,7 +739,7 @@
 <p><em>To zoom in on a specific digit, add a filter transform to limit the data shown! Try adding an <a href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_interaction.ipynb">interactive selection</a> to filter to a single digit and dynamically update the map. And be sure to use strings (`‘1’`) instead of numbers (`1`) when filtering digit values!</em></p>
 <p>(This example is inspired by Ben Fry’s classic <a href="https://benfry.com/zipdecode/">zipdecode</a> visualization!)</p>
 <p>We might further wonder what the <em>sequence</em> of zip codes might indicate. One way to explore this question is to connect each consecutive zip code using a <code>line</code> mark, as done in Robert Kosara’s <a href="https://eagereyes.org/zipscribble-maps/united-states">ZipScribble</a> visualization:</p>
-<div class="cell">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(zipcodes).transform_filter(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'-150 &lt; datum.longitude &amp;&amp; 22 &lt; datum.latitude &amp;&amp; datum.latitude &lt; 55'</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>).transform_calculate(</span>
@@ -767,7 +759,7 @@
 <span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
 <span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
 <span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="15">
 
 <div id="altair-viz-816eb213fec34b74b1950710c3d8ce38"></div>
 <script type="text/javascript">
@@ -827,31 +819,31 @@
 <section id="symbol-maps" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="symbol-maps"><span class="header-section-number">7.4</span> Symbol Maps</h2>
 <p>Now let’s combine a base map and plotted data as separate layers. We’ll examine the U.S. commercial flight network, considering both airports and flight routes. To do so, we’ll need three datasets. For our base map, we’ll use a TopoJSON file for the United States at 10m resolution, containing features for <code>states</code> or <code>counties</code>:</p>
-<div class="cell">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>usa <span class="op">=</span> data.us_10m.url</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>usa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="16">
 <pre><code>'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json'</code></pre>
 </div>
 </div>
 <p>For the airports, we will use a dataset with fields for the <code>longitude</code> and <code>latitude</code> coordinates of each airport as well as the <code>iata</code> airport code — for example, <code>'SEA'</code> for <a href="https://en.wikipedia.org/wiki/Seattle%E2%80%93Tacoma_International_Airport">Seattle-Tacoma International Airport</a>.</p>
-<div class="cell">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode" id="cb26"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>airports <span class="op">=</span> data.airports.url</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>airports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="17">
 <pre><code>'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv'</code></pre>
 </div>
 </div>
 <p>Finally, we will use a dataset of flight routes, which contains <code>origin</code> and <code>destination</code> fields with the IATA codes for the corresponding airports:</p>
-<div class="cell">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode" id="cb28"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>flights <span class="op">=</span> data.flights_airport.url</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>flights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="18">
 <pre><code>'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-airport.csv'</code></pre>
 </div>
 </div>
 <p>Let’s start by creating a base map using the <code>albersUsa</code> projection, and add a layer that plots <code>circle</code> marks for each airport:</p>
-<div class="cell">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode" id="cb30"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>alt.layer(</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    alt.Chart(alt.topo_feature(usa, <span class="st">'states'</span>)).mark_geoshape(</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="st">'#ddd'</span>, stroke<span class="op">=</span><span class="st">'#fff'</span>, strokeWidth<span class="op">=</span><span class="dv">1</span></span>
@@ -869,7 +861,7 @@
 <span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
 <span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
 <span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="19">
 
 <div id="altair-viz-d697870f9c9840778999af6204ae816e"></div>
 <script type="text/javascript">
@@ -927,7 +919,7 @@
 <p><em>Update the map projection above to <code>albers</code> – side-stepping the idiosyncratic behavior of <code>albersUsa</code> – so that the actual locations of these additional points is revealed!</em></p>
 <p>Now, instead of showing all airports in an undifferentiated fashion, let’s identify major hubs by considering the total number of routes that originate at each airport. We’ll use the <code>routes</code> dataset as our primary data source: it contains a list of flight routes that we can aggregate to count the number of routes for each <code>origin</code> airport.</p>
 <p>However, the <code>routes</code> dataset does not include the <em>locations</em> of the airports! To augment the <code>routes</code> data with locations, we need a new data transformation: <code>lookup</code>. The <code>lookup</code> transform takes a field value in a primary dataset and uses it as a <em>key</em> to look up related information in another table. In this case, we want to match the <code>origin</code> airport code in our <code>routes</code> dataset against the <code>iata</code> field of the <code>airports</code> dataset, then extract the corresponding <code>latitude</code> and <code>longitude</code> fields.</p>
-<div class="cell">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode" id="cb31"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>alt.layer(</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    alt.Chart(alt.topo_feature(usa, <span class="st">'states'</span>)).mark_geoshape(</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="st">'#ddd'</span>, stroke<span class="op">=</span><span class="st">'#fff'</span>, strokeWidth<span class="op">=</span><span class="dv">1</span></span>
@@ -956,7 +948,7 @@
 <span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
 <span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
 <span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="20">
 
 <div id="altair-viz-34bfe7a737354312a9e4a264975b4c5f"></div>
 <script type="text/javascript">
@@ -1012,7 +1004,7 @@
 <p><em>Which U.S. airports have the highest number of outgoing routes?</em></p>
 <p>Now that we can see the airports, which may wish to interact with them to better understand the structure of the air traffic network. We can add a <code>rule</code> mark layer to represent paths from <code>origin</code> airports to <code>destination</code> airports, which requires two <code>lookup</code> transforms to retreive coordinates for each end point. In addition, we can use a <code>single</code> selection to filter these routes, such that only the routes originating at the currently selected airport are shown.</p>
 <p><em>Starting from the static map above, can you build an interactive version? Feel free to skip the code below to engage with the interactive map first, and think through how you might build it on your own!</em></p>
-<div class="cell">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode" id="cb32"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># interactive selection for origin airport</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># select nearest airport to mouse cursor</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>origin <span class="op">=</span> alt.selection_single(</span>
@@ -1074,7 +1066,7 @@
 <span id="cb32-59"><a href="#cb32-59" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
 <span id="cb32-60"><a href="#cb32-60" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
 <span id="cb32-61"><a href="#cb32-61" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="21">
 
 <div id="altair-viz-0df0c882fa61477bba7944ddc8146646"></div>
 <script type="text/javascript">
@@ -1133,15 +1125,15 @@
 <h2 data-number="7.5" class="anchored" data-anchor-id="choropleth-maps"><span class="header-section-number">7.5</span> Choropleth Maps</h2>
 <p>A <a href="https://en.wikipedia.org/wiki/Choropleth_map">choropleth map</a> uses shaded or textured regions to visualize data values. Sized symbol maps are often more accurate to read, as people tend to be better at estimating proportional differences between the area of circles than between color shades. Nevertheless, choropleth maps are popular in practice and particularly useful when too many symbols become perceptually overwhelming.</p>
 <p>For example, while the United States only has 50 states, it has thousands of counties within those states. Let’s build a choropleth map of the unemployment rate per county, back in the recession year of 2008. In some cases, input GeoJSON or TopoJSON files might include statistical data that we can directly visualize. In this case, however, we have two files: our TopoJSON file that includes county boundary features (<code>usa</code>), and a separate text file that contains unemployment statistics:</p>
-<div class="cell">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode" id="cb33"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>unemp <span class="op">=</span> data.unemployment.url</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>unemp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="22">
 <pre><code>'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment.tsv'</code></pre>
 </div>
 </div>
 <p>To integrate our data sources, we will again need to use the <code>lookup</code> transform, augmenting our TopoJSON-based <code>geoshape</code> data with unemployment rates. We can then create a map that includes a <code>color</code> encoding for the looked-up <code>rate</code> field.</p>
-<div class="cell">
+<div class="cell" data-execution_count="24">
 <div class="sourceCode" id="cb35"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(alt.topo_feature(usa, <span class="st">'counties'</span>)).mark_geoshape(</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="st">'#aaa'</span>, strokeWidth<span class="op">=</span><span class="fl">0.25</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>).transform_lookup(</span>
@@ -1159,7 +1151,7 @@
 <span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>).configure_view(</span>
 <span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">=</span><span class="va">None</span></span>
 <span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="23">
 
 <div id="altair-viz-46f1ca902b7a4fcfa97e53c1d543295a"></div>
 <script type="text/javascript">
@@ -1214,7 +1206,7 @@
 </div>
 <p><em>Examine the unemployment rates by county. Higher values in Michigan may relate to the automotive industry. Counties in the <a href="https://en.wikipedia.org/wiki/Great_Plains">Great Plains</a> and Mountain states exhibit both low <strong>and</strong> high rates. Is this variation meaningful, or is it possibly an <a href="https://medium.com/@uwdata/surprise-maps-showing-the-unexpected-e92b67398865">artifact of lower sample sizes</a>? To explore further, try changing the upper scale domain (e.g., to <code>0.2</code>) to adjust the color mapping.</em></p>
 <p>A central concern for choropleth maps is the choice of colors. Above, we use Altair’s default <code>'yellowgreenblue'</code> scheme for heatmaps. Below we compare other schemes, including a <em>single-hue sequential</em> scheme (<code>teals</code>) that varies in luminance only, a <em>multi-hue sequential</em> scheme (<code>viridis</code>) that ramps in both luminance and hue, and a <em>diverging</em> scheme (<code>blueorange</code>) that uses a white mid-point:</p>
-<div class="cell">
+<div class="cell" data-execution_count="25">
 <div class="sourceCode" id="cb36"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utility function to generate a map specification for a provided color scheme</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> map_(scheme):</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> alt.Chart().mark_geoshape().project(<span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span>).encode(</span>
@@ -1231,7 +1223,7 @@
 <span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>).resolve_scale(</span>
 <span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'independent'</span></span>
 <span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="24">
 
 <div id="altair-viz-67ca20f134604d508d157f2899302fe2"></div>
 <script type="text/javascript">
@@ -1305,7 +1297,7 @@
 <section id="a-tour-of-specific-projection-types" class="level3" data-number="7.6.1">
 <h3 data-number="7.6.1" class="anchored" data-anchor-id="a-tour-of-specific-projection-types"><span class="header-section-number">7.6.1</span> A Tour of Specific Projection Types</h3>
 <p><a href=""><strong>Cylindrical projections</strong></a> map the sphere onto a surrounding cylinder, then unroll the cylinder. If the major axis of the cylinder is oriented north-south, meridians are mapped to straight lines. <a href="https://en.wikipedia.org/wiki/Map_projection#Pseudocylindrical">Pseudo-cylindrical</a> projections represent a central meridian as a straight line, with other meridians “bending” away from the center.</p>
-<div class="cell">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode" id="cb37"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>minimap <span class="op">=</span> <span class="bu">map</span>.properties(width<span class="op">=</span><span class="dv">225</span>, height<span class="op">=</span><span class="dv">225</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'equirectangular'</span>).properties(title<span class="op">=</span><span class="st">'equirectangular'</span>),</span>
@@ -1313,7 +1305,7 @@
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'transverseMercator'</span>).properties(title<span class="op">=</span><span class="st">'transverseMercator'</span>),</span>
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'naturalEarth1'</span>).properties(title<span class="op">=</span><span class="st">'naturalEarth1'</span>)</span>
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>).properties(spacing<span class="op">=</span><span class="dv">10</span>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="25">
 
 <div id="altair-viz-6c6d34efd78a4fdf82f38d262b7d86c0"></div>
 <script type="text/javascript">
@@ -1373,7 +1365,7 @@
 <li><a href="https://en.wikipedia.org/wiki/Natural_Earth_projection">Natural Earth</a> (<code>naturalEarth1</code>): A pseudo-cylindrical projection designed for showing the whole Earth in one view. <br><br></li>
 </ul>
 <p><a href="https://en.wikipedia.org/wiki/Map_projection#Conic"><strong>Conic projections</strong></a> map the sphere onto a cone, and then unroll the cone on to the plane. Conic projections are configured by two <em>standard parallels</em>, which determine where the cone intersects the globe.</p>
-<div class="cell">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode" id="cb38"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>minimap <span class="op">=</span> <span class="bu">map</span>.properties(width<span class="op">=</span><span class="dv">180</span>, height<span class="op">=</span><span class="dv">130</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'conicEqualArea'</span>).properties(title<span class="op">=</span><span class="st">'conicEqualArea'</span>),</span>
@@ -1382,7 +1374,7 @@
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'albers'</span>).properties(title<span class="op">=</span><span class="st">'albers'</span>),</span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'albersUsa'</span>).properties(title<span class="op">=</span><span class="st">'albersUsa'</span>)</span>
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>).properties(spacing<span class="op">=</span><span class="dv">10</span>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="26">
 
 <div id="altair-viz-f277fa766b38454ab683783c189edde7"></div>
 <script type="text/javascript">
@@ -1443,7 +1435,7 @@
 <li><a href="https://en.wikipedia.org/wiki/Albers_projection">Albers USA</a> (<code>albersUsa</code>): A hybrid projection for the 50 states of the United States of America. This projection stitches together three Albers projections with different parameters for the continental U.S., Alaska, and Hawaii. <br><br></li>
 </ul>
 <p><a href="https://en.wikipedia.org/wiki/Map_projection#Azimuthal_%28projections_onto_a_plane%29"><strong>Azimuthal projections</strong></a> map the sphere directly onto a plane.</p>
-<div class="cell">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode" id="cb39"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>minimap <span class="op">=</span> <span class="bu">map</span>.properties(width<span class="op">=</span><span class="dv">180</span>, height<span class="op">=</span><span class="dv">180</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>alt.hconcat(</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'azimuthalEqualArea'</span>).properties(title<span class="op">=</span><span class="st">'azimuthalEqualArea'</span>),</span>
@@ -1452,7 +1444,7 @@
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'stereographic'</span>).properties(title<span class="op">=</span><span class="st">'stereographic'</span>),</span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    minimap.project(<span class="bu">type</span><span class="op">=</span><span class="st">'gnomonic'</span>).properties(title<span class="op">=</span><span class="st">'gnomonic'</span>)</span>
 <span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>).properties(spacing<span class="op">=</span><span class="dv">10</span>).configure_view(stroke<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="27">
 
 <div id="altair-viz-3716b15891114b86ae35f72a01311c00"></div>
 <script type="text/javascript">
@@ -1529,7 +1521,7 @@
 <h2 data-number="7.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.8</span> Summary</h2>
 <p>At this point, we’ve only dipped our toes into the waters of map-making. <em>(You didn’t expect a single notebook to impart centuries of learning, did you?)</em> For example, we left untouched topics such as <a href="https://en.wikipedia.org/wiki/Cartogram"><em>cartograms</em></a> and conveying <a href="https://en.wikipedia.org/wiki/Topography"><em>topography</em></a> — as in Imhof’s illuminating book <a href="https://books.google.com/books?id=cVy1Ms43fFYC"><em>Cartographic Relief Presentation</em></a>. Nevertheless, you should now be well-equipped to create a rich array of geo-visualizations. For more, MacEachren’s book <a href="https://books.google.com/books?id=xhAvN3B0CkUC"><em>How Maps Work: Representation, Visualization, and Design</em></a> provides a valuable overview of map-making from the perspective of data visualization.</p>
 
-<!-- -->
+
 </section>
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1559,22 +1551,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     e.clearSelection();
   });
   function tippyHover(el, contentFn) {
-    window.tippy(el, {
+    const config = {
       allowHTML: true,
       content: contentFn,
       maxWidth: 500,
       delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
       placement: 'bottom-start'
-    }); 
+    };
+    window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
@@ -1600,8 +1599,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</main>
-<div class="page-navigation ">
+</main> <!-- /main -->
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./altair_interaction.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Interaction</span></span>
@@ -1612,10 +1611,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text">Altair Debugging Guide</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</div>
-</div> <!-- /main column -->
-</div> <!-- /row -->
-</div> <!-- /container fluid -->
+</nav>
+</div> <!-- /content -->
 
 
 </body></html>
